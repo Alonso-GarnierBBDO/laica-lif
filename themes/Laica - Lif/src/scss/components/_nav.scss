@@ -187,6 +187,7 @@ header  {
         align-items: flex-end;
         opacity: 0;
         transition: .2s ease;
+        overflow: auto;
 
         .content{
             margin-bottom: 20px;

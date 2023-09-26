@@ -133,7 +133,8 @@ header {
     justify-content: center;
     align-items: flex-end;
     opacity: 0;
-    transition: .2s ease; }
+    transition: .2s ease;
+    overflow: auto; }
     header .modal .content {
       margin-bottom: 20px;
       background-color: #FFFDD7;
