@@ -129,7 +129,7 @@ header {
     top: 0px;
     left: 0px;
     width: 100vw;
-    height: 100vh;
+    height: 100%;
     background-color: #3504f7bd;
     backdrop-filter: blur(4px);
     display: flex;
