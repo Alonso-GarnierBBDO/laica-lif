@@ -1,0 +1,2 @@
+#Ignore the modeles of javascript or typescript
+node_modules

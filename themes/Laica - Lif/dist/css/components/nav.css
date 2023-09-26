@@ -1,0 +1,24 @@
+header {
+  position: fixed;
+  top: 25px;
+  width: 100vw; }
+  header nav {
+    width: 100%;
+    display: flex;
+    justify-content: center; }
+    header nav ul {
+      display: flex;
+      flex-flow: row wrap;
+      margin: auto;
+      align-items: center;
+      column-gap: 30px;
+      background-color: blue;
+      border-radius: 25px;
+      padding: 0px 30px; }
+      header nav ul li {
+        list-style: none; }
+        header nav ul li a {
+          text-decoration: none; }
+          header nav ul li a img {
+            height: 45px;
+            transform: scale(1.8); }

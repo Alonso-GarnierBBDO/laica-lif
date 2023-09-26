@@ -1,0 +1,43 @@
+// Reseteamos el documento
+
+html,
+body,
+*{
+    scroll-behavior: smooth;
+    margin: 0px;
+    padding: 0px;
+}
+
+
+// Mixins
+
+// Animation
+@mixin animate($name, $duration, $type, $loop){
+    animation: $name $duration $type $loop;
+}
+
+@mixin keyframes($name){
+    @keyframes #{$name}{
+        @content;
+    }
+}
+
+// Media query
+@mixin bp($point) {
+    @if $point == escritorio {
+        @media (min-width: 1600px) { @content; }
+    }
+    @else if $point == laptop {
+        @media (min-width: 1250px) { @content; }
+    }
+    @else if $point == tablet {
+        @media (min-width: 600px)  { @content; }
+    }
+}
+
+
+// variables
+@import './variables';
+
+// Importamos los componentes de css
+@import './components/nav';  
