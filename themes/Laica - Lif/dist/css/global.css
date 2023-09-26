@@ -5,6 +5,9 @@ body,
   margin: 0px;
   padding: 0px; }
 
+html {
+  height: 200vh; }
+
 header {
   position: fixed;
   top: 40px;
