@@ -197,7 +197,7 @@ header  {
             overflow: hidden;
             display: grid;
             grid-template-columns: 40% 60%;
-            justify-items: center;
+            justify-items: flex-start;
             align-items: center;
             padding: 20px;
             row-gap: 30px;
@@ -214,6 +214,8 @@ header  {
                 font-size: $font-subtitle;
                 text-transform: uppercase;
                 color: $color_secundary_light;
+                text-align: right;
+                width: 100%;
             }
 
             a{
@@ -226,8 +228,11 @@ header  {
                 display: flex;
                 flex-flow: row;
                 column-gap: 10px;  
+                justify-content: flex-end;
+                width: 100%;
 
                 a{
+                    text-align: right;
                     &:nth-of-type(2){
                         color: $color-orange;
                     }

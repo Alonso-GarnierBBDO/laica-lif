@@ -146,7 +146,7 @@ header {
       overflow: hidden;
       display: grid;
       grid-template-columns: 40% 60%;
-      justify-items: center;
+      justify-items: flex-start;
       align-items: center;
       padding: 20px;
       row-gap: 30px;
@@ -159,7 +159,9 @@ header {
       header .modal .content h2 {
         font-size: 1.5rem;
         text-transform: uppercase;
-        color: #04A83B; }
+        color: #04A83B;
+        text-align: right;
+        width: 100%; }
       header .modal .content a {
         font-size: 1rem;
         text-decoration: none;
@@ -167,9 +169,13 @@ header {
       header .modal .content .red_social {
         display: flex;
         flex-flow: row;
-        column-gap: 10px; }
-        header .modal .content .red_social a:nth-of-type(2) {
-          color: #FD6C02; }
+        column-gap: 10px;
+        justify-content: flex-end;
+        width: 100%; }
+        header .modal .content .red_social a {
+          text-align: right; }
+          header .modal .content .red_social a:nth-of-type(2) {
+            color: #FD6C02; }
     header .modal .content.escritorio {
       display: none;
       flex-flow: row;
