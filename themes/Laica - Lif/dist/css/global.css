@@ -232,8 +232,7 @@ header {
 .circulo .presentation {
   display: flex;
   flex-flow: column;
-  justify-content: space-between;
-  height: calc(100vh - 120px); }
+  justify-content: space-between; }
   .circulo .presentation section.img {
     display: flex;
     flex-flow: row;
