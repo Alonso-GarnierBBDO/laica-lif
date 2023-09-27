@@ -6,7 +6,6 @@ var view = function () {
         var contentPadding = parseInt(contentProperties.getPropertyValue('padding-top'));
         var heightView = window.innerHeight;
         var vh = heightView - contentPadding;
-        console.log(vh);
         view.style.height = "".concat(vh, "px");
     }
 };

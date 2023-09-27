@@ -4,6 +4,8 @@ import circles from './animations/circles.js';
 import title from './animations/title_principal.js';
 import hover from './animations/animation_hover.js';
 import viewport from './viewports/viewports.js';
+import scroll from './interacction/scroll.js';
+import titlePrincipal from './text/title_principal.js';
 window.addEventListener('load', function () {
     menu();
     hand();
@@ -11,6 +13,8 @@ window.addEventListener('load', function () {
     title();
     hover();
     viewport();
+    scroll();
+    titlePrincipal();
 });
 window.addEventListener('resize', function () {
     menu();

@@ -21,7 +21,7 @@
                     <a href="" class="hover_animation">
                         Tenemos cosas para contarte
                     </a>
-                    <button>
+                    <button class="bottom_scroll">
                         <img src="<?= get_stylesheet_directory_uri() ?>/assets/img/arrow.svg" class="naranja" alt="Naranja ilustrativa">
                     </button>
                 </section>

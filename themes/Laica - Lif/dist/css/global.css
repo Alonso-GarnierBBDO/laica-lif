@@ -247,16 +247,7 @@ header {
       width: 50%; }
     .circulo .presentation section.img img.lif_hojita {
       width: 100px;
-      transform: translate(-10px, 0px);
-      animation: hojita 5s ease infinite; }
-
-@keyframes hojita {
-  0% {
-    transform: translate(20px, 0px); }
-  50% {
-    transform: translate(-10px, 0px); }
-  100% {
-    transform: translate(20px, 0px); } }
+      transform: translate(-10px, 0px); }
     .circulo .presentation section.img img.lif_frasco {
       width: 150px;
       right: 0px;
@@ -278,16 +269,6 @@ header {
       display: flex;
       flex-flow: row;
       position: relative; }
-      .circulo .presentation section.img_two .objects img {
-        animation: hojita 5s ease infinite; }
-
-@keyframes hojita {
-  0% {
-    transform: translate(20px, 0px); }
-  50% {
-    transform: translate(-10px, 0px); }
-  100% {
-    transform: translate(20px, 0px); } }
       .circulo .presentation section.img_two .objects img.hoja {
         position: absolute;
         left: -25%;
@@ -301,21 +282,36 @@ header {
     color: #00943B; }
     .circulo .presentation h1 span {
       padding: 0px;
-      text-transform: uppercase; }
+      text-transform: uppercase;
+      transition: .6s ease; }
     .circulo .presentation h1 .principal {
       font-size: 4.5rem;
       display: inline-block;
-      height: calc(4.5rem - 0.5rem); }
+      height: calc(4.5rem - 0.5rem);
+      transform: translateY(30px);
+      opacity: 0; }
+    .circulo .presentation h1 .principal.view {
+      transform: translateY(0px);
+      opacity: 1; }
     .circulo .presentation h1 .small {
       font-size: 1.3rem;
       transform: translateY(10px);
-      top: -15px;
+      top: 0px;
       left: 15px;
-      position: relative; }
+      position: relative;
+      opacity: 0; }
+    .circulo .presentation h1 .small.view {
+      top: -15px;
+      opacity: 1; }
     .circulo .presentation h1 .normal {
       font-size: 2.5rem;
       left: 15px;
-      position: relative; }
+      position: relative;
+      opacity: 0;
+      top: 30px; }
+    .circulo .presentation h1 .normal.view {
+      opacity: 1;
+      top: 0px; }
   .circulo .presentation .actions {
     display: grid;
     grid-template-columns: 80% calc(20% - 10px);

@@ -4,12 +4,14 @@
      * All javascript scripts are executed in this file.
      */
 
-    //  function javascript_settings() {
-    //     wp_enqueue_script('settings_javascript', get_template_directory_uri() . '/dist/javascript/global.js', '1.0.0', true);
-    //     wp_script_add_data('settings_javascript', 'type', 'module'); // Indicar que es un módulo
-    // }
+    // User the librery "Locomotive"
+
+    function locomotive_settings() {
+        wp_enqueue_script('settings_javascript', 'https://cdn.jsdelivr.net/npm/locomotive-scroll@beta/bundled/locomotive-scroll.min.js', '1.0.0', true);
+    }
     
-    // add_action('wp_enqueue_scripts', 'javascript_settings'); 
+    add_action('wp_enqueue_scripts', 'locomotive_settings'); 
+
 
     wp_register_script('script', get_theme_file_uri('/dist/javascript/global.js'), '1.0');
     wp_enqueue_script('script');
@@ -23,3 +25,4 @@
 
         return $tag;
     }
+

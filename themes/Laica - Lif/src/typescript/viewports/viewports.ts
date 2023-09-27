@@ -12,7 +12,6 @@ const view = () : void => {
         const heightView : number = window.innerHeight;
         const vh : number = heightView - contentPadding;
 
-        console.log(vh);
 
         view.style.height = `${vh}px`;
     }
