@@ -219,7 +219,10 @@ header {
 .circulo {
   position: relative; }
   .circulo .carrousel {
-    height: 100vh; }
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
   .circulo .container_circles {
     position: absolute;
     top: 0%;
@@ -347,7 +350,7 @@ header {
       text-transform: initial; }
       @media (min-width: 700px) {
         .circulo .presentation h1 .principal {
-          font-size: 7rem; } }
+          font-size: 10rem; } }
     .circulo .presentation h1 .principal.view {
       transform: translateY(0px);
       opacity: 1; }
@@ -360,7 +363,7 @@ header {
       opacity: 0; }
       @media (min-width: 700px) {
         .circulo .presentation h1 .small {
-          font-size: 3rem; } }
+          font-size: 4rem; } }
     .circulo .presentation h1 .small.view {
       top: -10px;
       opacity: 1; }
@@ -372,7 +375,7 @@ header {
       top: 30px; }
       @media (min-width: 700px) {
         .circulo .presentation h1 .normal {
-          font-size: 4rem; } }
+          font-size: 5rem; } }
     .circulo .presentation h1 .normal.view {
       opacity: 1;
       top: 0px; }

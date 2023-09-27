@@ -40,15 +40,18 @@ const objetos = () => {
 
             // Elemento la posicion del todo el contenido del h1
             const titleHeight : number = title.offsetHeight;
-            // const titleWidth = title.offsetWidth;
+
+            // Obtenemos las cantidad de rems que contiene el h1 para asi ajustar los objetos alrededor
+
+            const titlePrincipalStyles = getComputedStyle(titlePrincipal);
+            const titlePixelSize = parseInt(titlePrincipalStyles.fontSize);
+
 
             // Estas seran las futuras posiciones de cada elemento
             let positionTop : number = 0;
             let positionLeft : number = 0;
 
             if(firstImage){
-
-                console.log(positionTitleY)
 
                 // Guardamos las posiciones del elemento 1
                 // positionTop = positionTitleY - (titleHeight + (firstImage.offsetWidth / 2.4));
@@ -68,7 +71,7 @@ const objetos = () => {
 
                 // Guardamos las pociciones del elemento 2
                 // positionTop = positionTitleY - (titleHeight + (secondImage.offsetWidth * 1.4)) + (secondImageHeight / 1.1);
-                positionTop = positionTitleY - 50;
+                positionTop = positionTitleY - (titlePixelSize / 10);
                 positionLeft = positionTitleX - (secondImage.clientWidth - titlePrincipal.offsetWidth) + (secondImage.offsetWidth / 2);
 
                 // Reajustamos tanto arriba como a la derecha el elemento, y asi el elemento llega a ser responsivo
@@ -80,7 +83,7 @@ const objetos = () => {
 
             if(tercerImage){
 
-                positionTop = positionTitleY + (titleHeight / 1);
+                positionTop = positionTitleY + titlePixelSize * 1.2;
                 positionLeft = 0 + (tercerImage.offsetWidth / 3);
 
                 tercerImage.style.position = "absolute";

@@ -27,36 +27,41 @@ include(get_stylesheet_directory() . '/includes/enqueue/javascript.php');
 // Css
 include(get_stylesheet_directory() . '/includes/enqueue/css.php');
 
-
-// In this area all the widgets that are necessary for the theme are initialized.
-
-    // function theme_widgets_init() {
-    //     // Registramos una zona de widgets
-    //     register_sidebar(array(
-    //         'name' => __('Área de Widgets', 'Ariane Garnier'),
-    //         'id' => 'sidebar-1', // Cambia el ID si es necesario
-    //         'description' => __('Área de widgets para agregar contenido personalizado.', 'Ariane Garnier'),
-    //         'before_widget' => '<div id="%1$s" class="widget %2$s">',
-    //         'after_widget' => '</div>',
-    //         'before_title' => '<h3 class="widget-title">',
-    //         'after_title' => '</h3>',
-    //     ));
-    // }
-
-    // add_action('widgets_init', 'theme_widgets_init');
-
-
-// We finish widget area
-
-
 // Custom Register
 function customRegister(WP_Customize_Manager $wp_customize){
 
+    // Esta funcion genera multiples desarrollos
+
+    class Multi_Image_Customize_Control extends WP_Customize_Control {
+        public function enqueue()
+        {
+        wp_enqueue_style('multi-image-style', get_template_directory_uri().'/includes/custom-registers/controls/custom.css');
+        wp_enqueue_script('multi-image-script', get_template_directory_uri() . '/includes/custom-registers/controls/customizer-multimedia.js', array( 'jquery' ), rand(), true);
+        }
+
+        public function render_content()
+        { ?>
+            <label>
+                <span class='customize-control-title'>Imagen del slider principal</span>
+            </label>
+            <div>
+                <ul class='images'></ul>
+            </div>
+            <div class='actions' id="agregar_nuevo">
+                <a class="button-secondary upload">Agregar</a>
+            </div>
+
+            <input class="wp-editor-area" id="images-input" type="hidden" <?php $this->link(); ?>>
+        <?php
+        }
+    }
+
     // Menu Logo
     include(get_stylesheet_directory() . '/includes/custom-registers/menu.php');
-
+    
     // Titulo del inicio
-    include(get_stylesheet_directory() . '/includes/custom-registers/title.php');
+    include(get_stylesheet_directory() . '/includes/custom-registers/inicio.php');
+
     
 }
 

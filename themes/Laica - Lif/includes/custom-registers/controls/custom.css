@@ -1,0 +1,54 @@
+
+ul.images{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 15px;
+}
+
+.image-list{
+    width: 100%;
+    height: 80px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    -webkit-box-shadow: inset 0 0 15px rgba(0,0,0,.1), inset 0 0 0 1px rgba(0,0,0,.05);
+    box-shadow: inset 0 0 15px rgba(0,0,0,.1), inset 0 0 0 1px rgba(0,0,0,.05);
+    background: #eee;
+    cursor: pointer;
+    vertical-align: middle;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow: hidden;
+    position: relative;
+}
+.image-list:before{
+    content: 'Remove';
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+    bottom: 0px;
+    background: #a7a7a74f;
+    opacity: 0;
+    transition: .2s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: black;
+    backdrop-filter: blur(3px);
+}
+.image-list:hover:before{
+    opacity: 1;
+}
+
+ul.images img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+div#agregar_nuevo {
+    margin-top: 10px;
+}
