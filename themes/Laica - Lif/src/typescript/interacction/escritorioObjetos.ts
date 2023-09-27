@@ -48,8 +48,11 @@ const objetos = () => {
 
             if(firstImage){
 
+                console.log(positionTitleY)
+
                 // Guardamos las posiciones del elemento 1
-                positionTop = positionTitleY - (titleHeight + (firstImage.offsetWidth / 2.4));
+                // positionTop = positionTitleY - (titleHeight + (firstImage.offsetWidth / 2.4));
+                positionTop = positionTitleY + (firstImage.offsetHeight / 2);
                 positionLeft = positionTitleX - (firstImage.clientWidth / 1.5);
 
                 // Reajustamos tanto arriba como a la izquierda el elemento, y asi el elemento llega a ser responsivo
@@ -64,7 +67,8 @@ const objetos = () => {
                 const secondImageHeight = secondImage.offsetHeight;
 
                 // Guardamos las pociciones del elemento 2
-                positionTop = positionTitleY - (titleHeight + (secondImage.offsetWidth * 1.4)) + (secondImageHeight / 1.1);
+                // positionTop = positionTitleY - (titleHeight + (secondImage.offsetWidth * 1.4)) + (secondImageHeight / 1.1);
+                positionTop = positionTitleY - 50;
                 positionLeft = positionTitleX - (secondImage.clientWidth - titlePrincipal.offsetWidth) + (secondImage.offsetWidth / 2);
 
                 // Reajustamos tanto arriba como a la derecha el elemento, y asi el elemento llega a ser responsivo
@@ -87,7 +91,7 @@ const objetos = () => {
 
             if(cuartaImage){
 
-                positionTop = positionTitleY + (titlePrincipal.offsetHeight * 3.5);
+                positionTop = positionTitleY + (titlePrincipal.offsetHeight * 3);
                 positionLeft = positionTitleX - (cuartaImage.clientWidth - titlePrincipal.offsetWidth) + (cuartaImage.offsetWidth * 1.1);
 
                 cuartaImage.style.position = "absolute";

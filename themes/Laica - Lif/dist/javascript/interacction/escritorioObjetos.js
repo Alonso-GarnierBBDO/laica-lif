@@ -31,8 +31,10 @@ var objetos = function () {
             var positionTop = 0;
             var positionLeft = 0;
             if (firstImage) {
+                console.log(positionTitleY);
                 // Guardamos las posiciones del elemento 1
-                positionTop = positionTitleY - (titleHeight + (firstImage.offsetWidth / 2.4));
+                // positionTop = positionTitleY - (titleHeight + (firstImage.offsetWidth / 2.4));
+                positionTop = positionTitleY + (firstImage.offsetHeight / 2);
                 positionLeft = positionTitleX - (firstImage.clientWidth / 1.5);
                 // Reajustamos tanto arriba como a la izquierda el elemento, y asi el elemento llega a ser responsivo
                 firstImage.style.position = "absolute";
@@ -43,7 +45,8 @@ var objetos = function () {
                 // Obtenemos el height de la imagen para acoplarla en el titulo
                 var secondImageHeight = secondImage.offsetHeight;
                 // Guardamos las pociciones del elemento 2
-                positionTop = positionTitleY - (titleHeight + (secondImage.offsetWidth * 1.4)) + (secondImageHeight / 1.1);
+                // positionTop = positionTitleY - (titleHeight + (secondImage.offsetWidth * 1.4)) + (secondImageHeight / 1.1);
+                positionTop = positionTitleY - 50;
                 positionLeft = positionTitleX - (secondImage.clientWidth - titlePrincipal.offsetWidth) + (secondImage.offsetWidth / 2);
                 // Reajustamos tanto arriba como a la derecha el elemento, y asi el elemento llega a ser responsivo
                 secondImage.style.position = "absolute";
@@ -58,7 +61,7 @@ var objetos = function () {
                 tercerImage.style.left = "".concat(positionLeft, "px");
             }
             if (cuartaImage) {
-                positionTop = positionTitleY + (titlePrincipal.offsetHeight * 3.5);
+                positionTop = positionTitleY + (titlePrincipal.offsetHeight * 3);
                 positionLeft = positionTitleX - (cuartaImage.clientWidth - titlePrincipal.offsetWidth) + (cuartaImage.offsetWidth * 1.1);
                 cuartaImage.style.position = "absolute";
                 cuartaImage.style.top = "".concat(positionTop, "px");
