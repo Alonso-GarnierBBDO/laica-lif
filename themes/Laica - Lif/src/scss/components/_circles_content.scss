@@ -1,0 +1,269 @@
+@use 'sass:math';
+
+.circulo{
+    .presentation{
+
+        display: flex;
+        flex-flow: column;
+        justify-content: space-between;
+        height: calc(100vh - 150px);
+
+        section.img{
+            display: flex;
+            flex-flow: row;
+            justify-content: space-between; 
+            align-items: center;
+            width: 100vw;
+            position: relative;
+
+            img{
+                pointer-events: none;
+                user-select: none;
+                width: 50%;
+            }
+
+            img.lif_hojita{
+                width: 100px;
+                transform: translate(-10px, 0px);
+
+                @include keyframes(hojita){
+    
+                    0%{
+                        transform: translate(20px, 0px);
+                    }
+                    50%{
+                        transform: translate(-10px, 0px);
+                    }
+                    100%{
+                        transform: translate(20px, 0px);
+                    }
+                  }
+                @include animate(hojita, 5s, ease, infinite);
+
+            }
+
+            img.lif_frasco{
+                width: 200px;
+                // position: absolute;
+                right: 0px;
+                transform: translate(40%, 0px);
+            }
+
+        }
+
+        section.img_two{
+            display: flex;
+            width: 100%;
+            flex-flow: row;
+            justify-content: space-between;
+            position: relative;
+
+            .lif_frasco{
+                width: 200px;
+                height: auto;
+                transform: translateX(-40%);
+                // position: absolute;
+                left: 0px;
+                top: 0px;
+            }
+
+            .objects{
+                display: flex;
+                flex-flow: row;
+                position: relative;
+
+                img{
+                    @include keyframes(hojita){
+    
+                        0%{
+                            transform: translate(20px, 0px);
+                        }
+                        50%{
+                            transform: translate(-10px, 0px);
+                        }
+                        100%{
+                            transform: translate(20px, 0px);
+                        }
+                      }
+                    @include animate(hojita, 5s, ease, infinite);
+                }
+
+                img.hoja{
+                    position: absolute;
+                    left: -25%;
+                    top: 30%;
+                    width: 70%;
+                    z-index: 1;
+                }
+
+                img.naranja{
+                    width: 100px;
+                }
+
+            }
+
+        }
+
+        h1{
+            text-align: center;
+            color: $color_secundary;
+
+            span{
+                padding: 0px;
+                text-transform: uppercase;
+            }
+
+            .principal{
+                font-size: $font-principal;
+                display: inline-block;
+                height: calc(#{$font-principal} - 0.5rem);
+            }
+
+            .small{
+                font-size: $font-small;
+                transform: translateY(10px);
+                top: -15px;
+                left: 15px;
+                position: relative;
+            }
+
+            .normal{
+                font-size: $font-normal;
+                left: 15px;
+                position: relative;
+            }
+
+        }
+
+        .actions{
+            display: grid;
+            grid-template-columns: 80% calc(20% - 10px);
+            grid-gap: 10px;
+            margin: 10px;
+            width: calc(100% - 20px);
+            justify-items: center;
+            align-items: center;
+
+            button{
+                background-color: $color_primary;
+                padding: 0px;
+                margin: 0px;
+                border: 0px;
+                display: flex;
+                border-radius: 10px;
+                overflow: hidden;
+                width: 40px;
+                height: 40px;
+                z-index: 1;
+                cursor: pointer;
+                
+                img{
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+
+            a{
+                background-color: transparent;
+                border-radius: 25px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                text-decoration: none;
+                color: $color_primary;
+                font-size: $font-size-small;
+                text-transform: uppercase;
+                border: 3px solid $color_primary;
+                position: relative;
+                transition: 1s ease;
+                z-index: 1;
+                height: 50px;
+
+                .container_animate{
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    background-color: $color_terciario;
+                    top: 0%;
+                    left: 0%;
+                    border-radius: 25px;
+                    z-index: -1;
+                    overflow: hidden;
+
+                    .item_animate{
+                        width: 105%;
+                        height: 100%;
+                        background-color: $color_primary;
+                        transform: translateX(-100%);
+                        transition: .5s ease;
+                        border-radius: 25px;
+                    }
+
+                }
+
+                .container_animate.active{
+                    .item_animate{
+                        transform: translateX(0%);
+                    }
+                }
+
+                .container_animate.active.exit{
+                    .item_animate{
+                        transform: translateX(100%);
+                    }
+                }
+
+                &:hover{
+
+                    color: $color_terciario;
+                    border: 3px solid $color_terciario;
+
+                    .container_animate{
+                        .item_animate{
+                            transform: translateX(0%);
+                        }
+                    }
+
+                    &::before{
+                        background-color: $color_terciario;
+                    }
+
+                }
+
+                &::after{
+
+                    content: "";
+                    position: absolute;
+                    top: -10px;
+                    right: -39px;
+                    width: 59px;
+                    height: 30px;
+                    background-color: $color_circles;
+                    transform: rotateZ(52deg);
+                    transition: .1s ease;
+                    opacity: 1;
+
+                }
+
+                &::before{
+                    content: "";
+                    position: absolute;
+                    width: 30px;
+                    height: 30px;
+                    background-color: $color_primary;
+                    right: -14px;
+                    top: -9px;
+                    border-radius: 50%;
+                    transition: 1s ease;
+                    opacity: 1;
+                }
+
+            }
+
+        }
+         
+    }
+
+}

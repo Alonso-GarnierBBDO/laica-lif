@@ -54,6 +54,9 @@ function customRegister(WP_Customize_Manager $wp_customize){
 
     // Menu Logo
     include(get_stylesheet_directory() . '/includes/custom-registers/menu.php');
+
+    // Titulo del inicio
+    include(get_stylesheet_directory() . '/includes/custom-registers/title.php');
     
 }
 
