@@ -6,7 +6,12 @@
         display: flex;
         flex-flow: column;
         justify-content: space-between;
-        // height: calc(100vh - 120px);
+        position: relative;
+
+        @include bp(tablet) {
+            justify-content: center;
+            // position: relative;
+        }
 
         section.img{
             display: flex;
@@ -17,6 +22,13 @@
             position: relative;
             overflow-x: hidden;
 
+            @include bp(tablet) {
+                justify-content: space-around;
+                position: absolute;
+                transform: translateY(-70px);
+                overflow-x: initial;
+            }
+
             img{
                 pointer-events: none;
                 user-select: none;
@@ -24,8 +36,12 @@
             }
 
             img.lif_hojita{
-                width: 100px;
+                width: 130px;
                 transform: translate(-10px, 0px);
+
+                @include bp(tablet) {
+                    width: 170px;
+                }
 
                 // @include keyframes(hojita){
     
@@ -44,10 +60,14 @@
             }
 
             img.lif_frasco{
-                width: 150px;
+                width: 200px;
                 // position: absolute;
                 right: 0px;
                 transform: translate(40%, 0px);
+
+                @include bp(tablet) {
+                    width: 350px;
+                }
             }
 
         }
@@ -60,14 +80,23 @@
             position: relative;
             overflow: hidden;
 
+            @include bp(tablet) {
+                justify-content: space-around;
+                position: initial;
+                overflow: initial;
+            }
+
             .lif_frasco{
-                width: 150px;
+                width: 200px;
                 height: auto;
                 transform: translateX(-40%);
-                // position: absolute;
                 left: 0px;
                 top: 0px;
-            }
+
+                @include bp(tablet) {
+                    width: 350px;
+                }
+            } 
 
             .objects{
                 display: flex;
@@ -99,7 +128,13 @@
                 }
 
                 img.naranja{
-                    width: 100px;
+                    width: 150px;
+
+                    @include bp(tablet) {
+                        width: 170px;
+                        transform: rotate(56deg);
+                    }
+
                 }
 
             }
@@ -109,6 +144,11 @@
         h1{
             text-align: center;
             color: $color_secundary;
+            font-family: $family-primary;
+
+            @include bp(tablet) {
+                z-index: -1;
+            }
 
             span{
                 padding: 0px;
@@ -124,6 +164,12 @@
                 height: calc(#{$font-principal} - 0.5rem);
                 transform: translateY(30px);
                 opacity: 0;
+                text-transform: initial;
+
+                @include bp(tablet) {
+                    font-size: $font-size-title-escritorio;    
+                }
+
             }
 
             .principal.view{
@@ -138,10 +184,14 @@
                 left: 15px;
                 position: relative;
                 opacity: 0;
+
+                @include bp(tablet) {
+                    font-size: $font-size-small-escritorio;    
+                }
             }
 
             .small.view{
-                top: -15px;
+                top: -10px;
                 opacity: 1;
             }
 
@@ -151,6 +201,10 @@
                 position: relative;
                 opacity: 0;
                 top: 30px;
+
+                @include bp(tablet) {
+                    font-size: $font-size-medium-escritorio;    
+                }
             }
 
             .normal.view{
@@ -168,6 +222,18 @@
             width: calc(100% - 20px);
             justify-items: center;
             align-items: center;
+
+            @include bp(tablet) {
+                position: absolute;
+                bottom: 20px;
+                margin: 10px 30px;
+                width: calc(100% - 60px);
+
+                display: flex;
+                flex-flow: row;
+                column-gap: 30px;
+
+            }
 
             button{
                 background-color: $color_primary;
@@ -205,6 +271,13 @@
                 transition: 1s ease;
                 z-index: 1;
                 height: 50px;
+                font-family: $family-primary;
+
+                @include bp(tablet) {
+                    justify-content: flex-start;
+                    padding: 0px 20px;
+                    font-size: $font-link-table;
+                }
 
                 .container_animate{
                     position: absolute;

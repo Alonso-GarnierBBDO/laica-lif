@@ -1,5 +1,27 @@
-// Colores
+// Fonts
 
+@font-face {
+    font-family: champ;
+    src: url(../../assets/fonts/Champ-Black.ttf);
+}
+
+@font-face {
+    font-family: poppints_bold;
+    src: url(../../assets/fonts/Poppins-Bold.ttf);
+}
+
+@font-face {
+    font-family: poppints_medium;
+    src: url(../../assets/fonts/Poppins-Medium_1.ttf);
+}
+
+@font-face {
+    font-family: poppints_regular;
+    src: url(../../assets/fonts/Poppins-Regular.ttf);
+}
+
+
+// Colores
 $color_primary: #FFFDD7; 
 $color_secundary: #00943B;
 $color_terciario_transparent: #3504f799;
@@ -20,3 +42,12 @@ $fr-value: 1fr;
 $font-principal: 4.5rem;
 $font-small: 1.3rem;
 $font-normal: 2.5rem;
+$font-size-title-escritorio: 7rem;
+$font-size-small-escritorio: 3rem;
+$font-size-medium-escritorio: 4rem;
+
+// Size
+$family-primary: champ;
+$family-secundary: poppints_bold;
+$family-third: poppints_medium;
+$family-: poppints_medium;

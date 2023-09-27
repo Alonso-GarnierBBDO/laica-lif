@@ -1,4 +1,8 @@
 
+/**
+ * Aqui se insertar la animation en los items de la imagen
+ */
+
 
 const titlePrincipal = () : void => {
 
@@ -20,13 +24,6 @@ const titlePrincipal = () : void => {
                 }
             }
         })
-        
-        // itemsTitle = Array.from(itemsTitle).filter(node => {
-        //     return node.nodeType !== Node.TEXT_NODE && node.tagName !== 'BR';
-        // });
-        
-        console.log(itemsTitle[3]);
-        
 
     }
 

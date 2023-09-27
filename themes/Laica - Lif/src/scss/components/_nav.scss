@@ -48,6 +48,7 @@ header  {
                     padding: 7px 5px;
                     display: block;
                     text-transform: uppercase;
+                    font-family: $family-secundary;
 
                     @include bp(tablet) {
                         font-size: $font-size-tablet;
@@ -216,6 +217,7 @@ header  {
                 color: $color_secundary_light;
                 text-align: right;
                 width: 100%;
+                font-family: $family-primary;
             }
 
             a{
@@ -223,6 +225,7 @@ header  {
                 text-decoration: none;
                 color: $color_secundary;
                 cursor: pointer;
+                font-family: $family-primary;
 
                 @include bp(tablet) {
                     font-size: $font-link-table;

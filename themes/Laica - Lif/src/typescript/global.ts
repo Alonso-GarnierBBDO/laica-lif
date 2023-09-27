@@ -6,6 +6,7 @@ import hover from './animations/animation_hover.js';
 import viewport from './viewports/viewports.js';
 import scroll from './interacction/scroll.js';
 import titlePrincipal from './text/title_principal.js';
+import objetos from './interacction/escritorioObjetos.js';
  
 
 window.addEventListener('load', () => {
@@ -17,9 +18,11 @@ window.addEventListener('load', () => {
     viewport();
     scroll();
     titlePrincipal(); 
+    objetos();
 })
 
 window.addEventListener('resize', () => {
     menu();    
     circles();
+    objetos();
 })

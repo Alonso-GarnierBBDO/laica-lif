@@ -1,3 +1,6 @@
+/**
+ * Aqui se insertar la animation en los items de la imagen
+ */
 var titlePrincipal = function () {
     var title = document.querySelector('.presentation h1');
     var timeAnimation = 100;
@@ -14,10 +17,6 @@ var titlePrincipal = function () {
                 }
             }
         });
-        // itemsTitle = Array.from(itemsTitle).filter(node => {
-        //     return node.nodeType !== Node.TEXT_NODE && node.tagName !== 'BR';
-        // });
-        console.log(itemsTitle[3]);
     }
 };
 export default titlePrincipal;
