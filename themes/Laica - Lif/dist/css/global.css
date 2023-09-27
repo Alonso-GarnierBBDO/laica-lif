@@ -283,7 +283,7 @@ header {
     .circulo .presentation h1 span {
       padding: 0px;
       text-transform: uppercase;
-      transition: .6s ease; }
+      transition: 1s ease; }
     .circulo .presentation h1 .principal {
       font-size: 4.5rem;
       display: inline-block;

@@ -10,7 +10,7 @@ var titlePrincipal = function () {
                     setTimeout(function () {
                         element_1.classList.add("view");
                     }, timeAnimation);
-                    timeAnimation += 300;
+                    timeAnimation += 80;
                 }
             }
         });

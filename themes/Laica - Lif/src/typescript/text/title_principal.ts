@@ -16,7 +16,7 @@ const titlePrincipal = () : void => {
                     setTimeout(() => {
                         element.classList.add("view");
                     }, timeAnimation);
-                    timeAnimation += 300;
+                    timeAnimation += 80;
                 }
             }
         })
