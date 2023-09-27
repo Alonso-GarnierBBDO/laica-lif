@@ -8,3 +8,7 @@
     License: GNU General Public License v2 or later
     Text Domain: lif
 */
+
+body{
+    overflow-x: hidden;
+}

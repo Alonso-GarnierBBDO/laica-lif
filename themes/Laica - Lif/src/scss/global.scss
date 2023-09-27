@@ -33,7 +33,6 @@
 @import './components/circles';
 @import './components/circles_content';  
 
-
 // Reseteamos el documento
 
 html,
@@ -46,10 +45,10 @@ body,
 
 html{
     background-color: $color_background;
+    width: 10px;
 }
 
 main{
     padding-top: 120px;
     width: 100vw;
-    overflow-x: hidden;
 }

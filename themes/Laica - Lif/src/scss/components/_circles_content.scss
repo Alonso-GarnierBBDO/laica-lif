@@ -6,7 +6,7 @@
         display: flex;
         flex-flow: column;
         justify-content: space-between;
-        height: calc(100vh - 150px);
+        height: calc(100vh - 120px);
 
         section.img{
             display: flex;
@@ -15,6 +15,7 @@
             align-items: center;
             width: 100vw;
             position: relative;
+            overflow-x: hidden;
 
             img{
                 pointer-events: none;
@@ -43,7 +44,7 @@
             }
 
             img.lif_frasco{
-                width: 200px;
+                width: 150px;
                 // position: absolute;
                 right: 0px;
                 transform: translate(40%, 0px);
@@ -53,13 +54,14 @@
 
         section.img_two{
             display: flex;
-            width: 100%;
+            width: 100vw;
             flex-flow: row;
             justify-content: space-between;
             position: relative;
+            overflow: hidden;
 
             .lif_frasco{
-                width: 200px;
+                width: 150px;
                 height: auto;
                 transform: translateX(-40%);
                 // position: absolute;

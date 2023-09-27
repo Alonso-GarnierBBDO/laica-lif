@@ -233,14 +233,15 @@ header {
   display: flex;
   flex-flow: column;
   justify-content: space-between;
-  height: calc(100vh - 150px); }
+  height: calc(100vh - 120px); }
   .circulo .presentation section.img {
     display: flex;
     flex-flow: row;
     justify-content: space-between;
     align-items: center;
     width: 100vw;
-    position: relative; }
+    position: relative;
+    overflow-x: hidden; }
     .circulo .presentation section.img img {
       pointer-events: none;
       user-select: none;
@@ -258,17 +259,18 @@ header {
   100% {
     transform: translate(20px, 0px); } }
     .circulo .presentation section.img img.lif_frasco {
-      width: 200px;
+      width: 150px;
       right: 0px;
       transform: translate(40%, 0px); }
   .circulo .presentation section.img_two {
     display: flex;
-    width: 100%;
+    width: 100vw;
     flex-flow: row;
     justify-content: space-between;
-    position: relative; }
+    position: relative;
+    overflow: hidden; }
     .circulo .presentation section.img_two .lif_frasco {
-      width: 200px;
+      width: 150px;
       height: auto;
       transform: translateX(-40%);
       left: 0px;
@@ -414,9 +416,9 @@ body,
   padding: 0px; }
 
 html {
-  background-color: #A1DB02; }
+  background-color: #A1DB02;
+  width: 10px; }
 
 main {
   padding-top: 120px;
-  width: 100vw;
-  overflow-x: hidden; }
+  width: 100vw; }
