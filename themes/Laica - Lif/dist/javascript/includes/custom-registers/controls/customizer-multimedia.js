@@ -1,5 +1,4 @@
 "use strict";
-// Esta configuracion de JQuery tiene como funcion insertar multiples items en un para un slider desde la seccion de personalizar
 (function ($) {
     $(window).load(function () {
         var begin_attachment_string = $("#images-input").val();
@@ -20,13 +19,16 @@
                     attachment = attachment.toJSON();
                     $(".images").append("<li class='image-list'><img src='" + attachment.url + "'></li>");
                     attachments.push(attachment.url);
-                    //
+                    console.log(attachment);
+                    // $(".supports-drag-drop").css({
+                    //     "display" : "none"
+                    // });
                 });
                 var attachment_string = attachments.join() + "," + $('#images-input').val();
                 $('#images-input').val(attachment_string).trigger('change');
                 // Cierra la ventana modal después de la selección
-                custom_uploader.close();
             });
+            // Abre el modal
             custom_uploader.open();
         });
         $(".images").click(function () {

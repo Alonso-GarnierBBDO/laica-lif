@@ -23,7 +23,7 @@ ul.images{
     position: relative;
 }
 .image-list:before{
-    content: 'Remove';
+    content: 'Remover';
     position: absolute;
     top: 0px;
     right: 0px;

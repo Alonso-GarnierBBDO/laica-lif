@@ -33,7 +33,26 @@
                 </section>
             </section>
             <section class="carrousel">
-                Aqui va el carrousel
+                <section class="slider_item">
+                    <?php
+                        $allImageString = get_theme_mod('multi_image_selector');
+                        $allImageArray = explode(",", $allImageString);
+                        
+                        if(count($allImageArray)){
+
+                            foreach( $allImageArray as $value ){
+                    ?>
+                            <figure>
+                                <img src="<?= $value ?>" alt="Imagen de lif">
+                            </figure>
+                    <?php
+                            }
+
+                        }
+
+                        
+                    ?>
+                </section>
             </section>
         </section>
 

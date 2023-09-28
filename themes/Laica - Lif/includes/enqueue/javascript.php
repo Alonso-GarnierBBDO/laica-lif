@@ -7,7 +7,7 @@
     // User the librery "Locomotive"
 
 
-    wp_register_script('script', get_theme_file_uri('/dist/javascript/global.js'), '1.0');
+    wp_register_script('script', get_theme_file_uri('/dist/javascript/src/typescript/global.js'), '1.0');
     wp_enqueue_script('script');
 
     add_filter("script_loader_tag", "javascript_settings", 10, 3);
@@ -19,12 +19,4 @@
 
         return $tag;
     }
-
-    // Esta configuracion es para el personalizar
-
-    function theme_enqueue_customizer_js() {
-        wp_enqueue_script('customizer-multimedia', get_template_directory_uri() . '/includes/custom-registers/controls/customizer-multimedia.js', array('jquery', 'customize-controls'), '1.0', true);
-    }
-    
-    add_action('customize_controls_enqueue_scripts', 'theme_enqueue_customizer_js');
 

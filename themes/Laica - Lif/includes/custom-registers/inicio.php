@@ -30,7 +30,7 @@
     ));
 
     $wp_customize->add_control(new WP_Customize_Upload_Control($wp_customize, 'sobre-uno', array(
-        'label' => __('Image del primer sobre de Lif', 'themename'),
+        'label' => __('Objeto principal', 'themename'),
         'section' => 'home-presentation',
         'settings' => 'img-uno-presentation-setting'
     )));
@@ -42,14 +42,14 @@
     ));
 
     $wp_customize->add_control(new WP_Customize_Upload_Control($wp_customize, 'sobre-dos', array(
-        'label' => __('Image del segundo sobre de Lif', 'themename'),
+        'label' => __('Objeto secundario', 'themename'),
         'section' => 'home-presentation',
         'settings' => 'img-dos-presentation-setting',
     )));
 
 
     // Multiples imagenes en el slider
-
+    
     // Registra la configuración personalizada para las imágenes múltiples
     $wp_customize->add_setting('multi_image_selector', array(
         'default'   => array(),

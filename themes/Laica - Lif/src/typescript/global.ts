@@ -7,6 +7,7 @@ import viewport from './viewports/viewports.js';
 import scroll from './interacction/scroll.js';
 import titlePrincipal from './text/title_principal.js';
 import objetos from './interacction/escritorioObjetos.js';
+import slider from './interacction/slider.js';
  
 
 window.addEventListener('load', () => {
@@ -19,10 +20,10 @@ window.addEventListener('load', () => {
     scroll();
     titlePrincipal(); 
     objetos();
+    slider();
 })
 
 window.addEventListener('resize', () => {
     menu();    
-    circles();
-    // objetos();
+    circles();      
 })

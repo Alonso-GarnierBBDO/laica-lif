@@ -1,15 +1,14 @@
-// Esta configuracion de JQuery tiene como funcion insertar multiples items en un para un slider desde la seccion de personalizar
-
 ( function( $ ) {
-
     $(window).load(function(){
         var begin_attachment_string = $("#images-input").val();
         var begin_attachment_array = begin_attachment_string.split(",");
+
         for(var i = 0; i < begin_attachment_array.length; i++){
             if(begin_attachment_array[i] != ""){
                 $(".images").append( "<li class='image-list'><img src='"+begin_attachment_array[i]+"'></li>" );
             }
         }
+
         $(".button-secondary.upload").click(function(){
             var custom_uploader = wp.media.frames.file_frame = wp.media({
                 multiple: true
@@ -22,15 +21,21 @@
                     attachment = attachment.toJSON();
                     $(".images").append( "<li class='image-list'><img src='"+attachment.url+"'></li>" );
                     attachments.push(attachment.url);
-                    //
+
+                    console.log(attachment);
+
+                    // $(".supports-drag-drop").css({
+                    //     "display" : "none"
+                    // });
                 });
 
                 var attachment_string = attachments.join() + "," + $('#images-input').val();
                 $('#images-input').val(attachment_string).trigger('change');
                 
                 // Cierra la ventana modal después de la selección
-                custom_uploader.close();
              });
+
+             // Abre el modal
              custom_uploader.open();
          });
 
@@ -42,5 +47,4 @@
              $('#images-input').val(attachment_string).trigger('change');
          });
      });
-
 } )( jQuery );
