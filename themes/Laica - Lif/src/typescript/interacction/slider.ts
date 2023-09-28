@@ -89,40 +89,28 @@ function mouseMove(element : HTMLElement, widthElement: number){
     element.onmousemove = ( e : MouseEvent ) => {
         move(e, element, widthElement);
     }
-
-    element.ontouchmove = ( e: TouchEvent ) => {
-        move(e, element, widthElement);
-    }
 }
 
-function move(e : MouseEvent | TouchEvent, element : HTMLElement, widthElement: number){
+function move(e : MouseEvent, element : HTMLElement, widthElement: number){
 
-    if(isDragging){
+    if (isDragging) {
         movimiento += 1;
 
         let deltaX : number = 0;
 
-        if (e instanceof TouchEvent) {
+        if(e instanceof TouchEvent){
             deltaX = e.touches[0].clientX - startX;
-        } else {
+        }else{
             deltaX = e.clientX - startX;
         }
 
-        const percentageMoved =  Math.abs((deltaX / widthElement) * 100);
-
+        
+        var percentageMoved = Math.abs((deltaX / widthElement) * 100);
         // Mover el elemento mientras el usuario lo arrastra
-        element.style.transform = `translateX(${movimiento}px)`;
-
-        if(percentageMoved >= 50){
+        element.style.transform = "translateX(".concat(`${movimiento}`, "px)");
+        if (percentageMoved >= 50) {
             sendRight = true;
         }
-
-    }
-
-    if (e instanceof TouchEvent) {
-        startX = e.touches[0].clientX;
-    } else {
-        startX = e.clientX;
     }
 }
 

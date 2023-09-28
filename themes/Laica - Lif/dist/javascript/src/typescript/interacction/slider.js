@@ -59,9 +59,6 @@ function mouseMove(element, widthElement) {
     element.onmousemove = function (e) {
         move(e, element, widthElement);
     };
-    element.ontouchmove = function (e) {
-        move(e, element, widthElement);
-    };
 }
 function move(e, element, widthElement) {
     if (isDragging) {
@@ -75,16 +72,10 @@ function move(e, element, widthElement) {
         }
         var percentageMoved = Math.abs((deltaX / widthElement) * 100);
         // Mover el elemento mientras el usuario lo arrastra
-        element.style.transform = "translateX(".concat(movimiento, "px)");
+        element.style.transform = "translateX(".concat("".concat(movimiento), "px)");
         if (percentageMoved >= 50) {
             sendRight = true;
         }
-    }
-    if (e instanceof TouchEvent) {
-        startX = e.touches[0].clientX;
-    }
-    else {
-        startX = e.clientX;
     }
 }
 function mouseUp(element) {
