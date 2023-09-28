@@ -89,9 +89,13 @@ function mouseMove(element : HTMLElement, widthElement: number){
     element.onmousemove = ( e : MouseEvent ) => {
         move(e, element, widthElement);
     }
+
+    element.ontouchmove = ( e: TouchEvent ) => {
+        move(e, element, widthElement);
+    }
 }
 
-function move(e : MouseEvent, element : HTMLElement, widthElement: number){
+function move(e : MouseEvent | TouchEvent, element : HTMLElement, widthElement: number){
 
     if (isDragging) {
         movimiento += 1;
@@ -134,6 +138,9 @@ function closeElemet(element : HTMLElement){
     movimiento = 0;
 
     if(sendRight){
+
+        console.log("Hola");
+
         sendRight = false;
         element.classList.add('remove');
         element.classList.remove('active');

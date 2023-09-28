@@ -59,6 +59,9 @@ function mouseMove(element, widthElement) {
     element.onmousemove = function (e) {
         move(e, element, widthElement);
     };
+    element.ontouchmove = function (e) {
+        move(e, element, widthElement);
+    };
 }
 function move(e, element, widthElement) {
     if (isDragging) {
@@ -93,6 +96,7 @@ function closeElemet(element) {
     isDragging = false;
     movimiento = 0;
     if (sendRight) {
+        console.log("Hola");
         sendRight = false;
         element.classList.add('remove');
         element.classList.remove('active');
