@@ -38,31 +38,63 @@ function container() {
 }
 function ejecutarClick(element, widthElement) {
     element.onmousedown = function (e) {
-        isDragging = true;
-        startX = e.clientX;
+        start(e);
+    };
+    element.ontouchstart = function (e) {
+        start(e);
     };
     mouseMove(element, widthElement);
     mouseUp(element);
 }
+function start(e) {
+    isDragging = true;
+    if (e instanceof TouchEvent) {
+        startX = e.touches[0].clientX;
+    }
+    else {
+        startX = e.clientX;
+    }
+}
 function mouseMove(element, widthElement) {
     element.onmousemove = function (e) {
-        if (isDragging) {
-            movimiento += 1;
-            var deltaX = e.clientX - startX;
-            var percentageMoved = Math.abs((deltaX / widthElement) * 100);
-            // Mover el elemento mientras el usuario lo arrastra
-            element.style.transform = "translateX(".concat(movimiento, "px)");
-            if (percentageMoved >= 50) {
-                sendRight = true;
-            }
-        }
+        move(e, element, widthElement);
     };
+    element.ontouchmove = function (e) {
+        move(e, element, widthElement);
+    };
+}
+function move(e, element, widthElement) {
+    if (isDragging) {
+        movimiento += 1;
+        var deltaX = 0;
+        if (e instanceof TouchEvent) {
+            deltaX = e.touches[0].clientX - startX;
+        }
+        else {
+            deltaX = e.clientX - startX;
+        }
+        var percentageMoved = Math.abs((deltaX / widthElement) * 100);
+        // Mover el elemento mientras el usuario lo arrastra
+        element.style.transform = "translateX(".concat(movimiento, "px)");
+        if (percentageMoved >= 50) {
+            sendRight = true;
+        }
+    }
+    if (e instanceof TouchEvent) {
+        startX = e.touches[0].clientX;
+    }
+    else {
+        startX = e.clientX;
+    }
 }
 function mouseUp(element) {
     element.onmouseleave = function () {
         closeElemet(element);
     };
     element.onmouseup = function () {
+        closeElemet(element);
+    };
+    element.ontouchend = function () {
         closeElemet(element);
     };
 }

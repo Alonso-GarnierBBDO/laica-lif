@@ -62,8 +62,11 @@ function container(){
 
 function ejecutarClick(element : HTMLElement, widthElement : number){
     element.onmousedown = (e : MouseEvent) => {
-        isDragging = true;
-        startX = e.clientX;
+        start(e);
+    }
+
+    element.ontouchstart = ( e : TouchEvent ) => {
+        start(e);
     }
 
     mouseMove(element, widthElement);
@@ -71,22 +74,55 @@ function ejecutarClick(element : HTMLElement, widthElement : number){
     
 }
 
+function start( e: MouseEvent | TouchEvent){
+
+    isDragging = true;
+
+    if (e instanceof TouchEvent) {
+        startX = e.touches[0].clientX;
+    } else {
+        startX = e.clientX;
+    }
+}
+
 function mouseMove(element : HTMLElement, widthElement: number){
     element.onmousemove = ( e : MouseEvent ) => {
-        if(isDragging){
-            movimiento += 1;
+        move(e, element, widthElement);
+    }
 
-            const deltaX = e.clientX - startX;
-            const percentageMoved =  Math.abs((deltaX / widthElement) * 100);
+    element.ontouchmove = ( e: TouchEvent ) => {
+        move(e, element, widthElement);
+    }
+}
 
-            // Mover el elemento mientras el usuario lo arrastra
-            element.style.transform = `translateX(${movimiento}px)`;
+function move(e : MouseEvent | TouchEvent, element : HTMLElement, widthElement: number){
 
-            if(percentageMoved >= 50){
-                sendRight = true;
-            }
+    if(isDragging){
+        movimiento += 1;
 
+        let deltaX : number = 0;
+
+        if (e instanceof TouchEvent) {
+            deltaX = e.touches[0].clientX - startX;
+        } else {
+            deltaX = e.clientX - startX;
         }
+
+        const percentageMoved =  Math.abs((deltaX / widthElement) * 100);
+
+        // Mover el elemento mientras el usuario lo arrastra
+        element.style.transform = `translateX(${movimiento}px)`;
+
+        if(percentageMoved >= 50){
+            sendRight = true;
+        }
+
+    }
+
+    if (e instanceof TouchEvent) {
+        startX = e.touches[0].clientX;
+    } else {
+        startX = e.clientX;
     }
 }
 
@@ -97,6 +133,10 @@ function mouseUp(element : HTMLElement){
     }
 
     element.onmouseup = () => {
+        closeElemet(element);
+    }
+
+    element.ontouchend = () => {
         closeElemet(element);
     }
 }
