@@ -37,10 +37,10 @@
                     <?php
                         $allImageString = get_theme_mod('multi_image_selector');
                         $allImageArray = explode(",", $allImageString);
-                        
-                        if(count($allImageArray)){
+                        $count = count($allImageArray);
+                        if($count){
 
-                            foreach( $allImageArray as $value ){
+                            foreach( $allImageArray as $key => $value ){
                     ?>
                             <figure>
                                 <img src="<?= $value ?>" alt="Imagen de lif">

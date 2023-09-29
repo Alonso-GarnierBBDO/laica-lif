@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "@types/swiper": "^6.0.0",
     "ansi-regex": "^5.0.1",
     "ansi-styles": "^4.3.0",
     "chalk": "^4.1.2",
@@ -26,6 +27,7 @@
     "string-width": "^4.2.3",
     "strip-ansi": "^6.0.1",
     "supports-color": "^8.1.1",
+    "swiper": "^10.3.1",
     "tree-kill": "^1.2.2",
     "tslib": "^2.6.2",
     "wrap-ansi": "^7.0.0",

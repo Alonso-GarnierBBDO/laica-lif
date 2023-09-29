@@ -1,6 +1,8 @@
 
 .carrousel {
 
+    overflow: hidden;
+
     .slider_item{
 
         position: relative;
@@ -16,8 +18,9 @@
             overflow: hidden;
             user-select: none;
             transform: translateX(-17%) rotate(-10deg);
-            transition: .1s linear;
+            transition: .08s linear;
             z-index: 1;
+            pointer-events: none;
 
             img{
                 width: 100%;
@@ -27,9 +30,9 @@
             }
         }
 
-        figure.active,
-        figure.view{
+        figure.active{
             transform: translateX(0px) rotate(0deg);
+            pointer-events: initial;
         }
 
         figure.remove{

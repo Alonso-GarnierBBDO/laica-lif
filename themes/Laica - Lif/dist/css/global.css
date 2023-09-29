@@ -485,32 +485,35 @@ header {
         transition: 1s ease;
         opacity: 1; }
 
-.carrousel .slider_item {
-  position: relative;
-  width: 80%;
-  height: 70%; }
-  .carrousel .slider_item figure {
-    width: 100%;
-    height: 100%;
-    border-radius: 50px;
-    position: absolute;
-    overflow: hidden;
-    user-select: none;
-    transform: translateX(-17%) rotate(-10deg);
-    transition: .1s linear;
-    z-index: 1; }
-    .carrousel .slider_item figure img {
+.carrousel {
+  overflow: hidden; }
+  .carrousel .slider_item {
+    position: relative;
+    width: 80%;
+    height: 70%; }
+    .carrousel .slider_item figure {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      border-radius: 50px;
+      position: absolute;
+      overflow: hidden;
+      user-select: none;
+      transform: translateX(-17%) rotate(-10deg);
+      transition: .08s linear;
+      z-index: 1;
       pointer-events: none; }
-  .carrousel .slider_item figure.active,
-  .carrousel .slider_item figure.view {
-    transform: translateX(0px) rotate(0deg); }
-  .carrousel .slider_item figure.remove {
-    transform: translateX(15%) rotate(10deg);
-    z-index: 0;
-    pointer-events: none; }
+      .carrousel .slider_item figure img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        pointer-events: none; }
+    .carrousel .slider_item figure.active {
+      transform: translateX(0px) rotate(0deg);
+      pointer-events: initial; }
+    .carrousel .slider_item figure.remove {
+      transform: translateX(15%) rotate(10deg);
+      z-index: 0;
+      pointer-events: none; }
 
 html,
 body,
