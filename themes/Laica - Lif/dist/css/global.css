@@ -490,11 +490,11 @@ header {
   .carrousel .slider_item {
     position: relative;
     width: 80%;
-    height: 70%; }
+    height: 80%; }
     .carrousel .slider_item figure {
       width: 100%;
       height: 100%;
-      border-radius: 50px;
+      border-radius: 190px;
       position: absolute;
       overflow: hidden;
       user-select: none;
@@ -511,7 +511,7 @@ header {
       transform: translateX(0px) rotate(0deg);
       pointer-events: initial; }
     .carrousel .slider_item figure.remove {
-      transform: translateX(15%) rotate(10deg);
+      transform: translate(15%, 40px) rotate(10deg);
       z-index: 0;
       pointer-events: none; }
 
