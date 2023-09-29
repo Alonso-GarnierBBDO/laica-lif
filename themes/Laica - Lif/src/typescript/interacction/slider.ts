@@ -34,7 +34,24 @@ const slider = () : void => {
                 firstChild = getFirstChild;
 
                 // Cuando se le agrega la clase active es porque el item llega a estar activo
-                lastChild.classList.add('active');
+
+                if(window.innerWidth >= 700){
+                    lastChild.classList.add('remove')
+
+                    // Obtenemos el penultimo elemento para agregarle el active    
+                    const countElements = sliderMobile.childElementCount;
+                    const penultimoElemento = childElements[countElements - 2]
+
+                    if(penultimoElemento){
+                        penultimoElemento.classList.add('active');
+                    }
+                
+
+
+                }else{
+                    lastChild.classList.add('active');
+                }
+
             }
 
             // Ejecutamos el metodo de arrastre del elemento
@@ -82,6 +99,8 @@ function downEvent(element : HTMLElement, e : MouseEvent | TouchEvent){
     // Si moveItem pasa a true significa que el usuario puede arrastrar el item
     moveItem = true;    
 
+    element.style.cursor = 'grab';
+
     // Posicion inicial dle mouse
     if(e instanceof TouchEvent ){
         startX = e.touches[0].clientX;
@@ -112,6 +131,8 @@ function dragItem(element : HTMLElement) : void {
 // Esta funcion se encarga de mover la carta dependiendo del eje X del cursor o touch del mobile
 function moveEvent(element : HTMLElement, e : MouseEvent | TouchEvent){
     if(moveItem){
+
+        element.style.cursor = 'grabbing';
 
         // Definemos la posicion del mouse en px
         let positionXMouse : number;
@@ -212,26 +233,32 @@ function selectNewCard(element : HTMLElement, moverDerecha: boolean = true){
 function exitMove(element : HTMLElement){
 
     // Eliminas el moviento de las cartas
-    moveItem = false;
+    
+    if(moveItem){
+        moveItem = false;
 
-    // Ejecutamos la valicion, para ver mandamos la carta a la derecha o izquierda
-    if(porcentage >= 50){
-        if(firstChild != element){
-            element.classList.add('remove');
-            element.classList.remove('active');
+        element.style.cursor = 'pointer'
 
-            selectNewCard(element, true);
+        // Ejecutamos la valicion, para ver mandamos la carta a la derecha o izquierda
 
+        if(porcentage >= 50){
+            if(firstChild != element){
+                element.classList.add('remove');
+                element.classList.remove('active');
+
+                selectNewCard(element, true);
+
+            }
+            exitAnimation(element);
+        }else if(porcentage <= -50) {
+            if(lastChild != element){
+                element.classList.remove('active');
+                selectNewCard(element, false);
+            }
+            exitAnimation(element);
+        }else {
+            exitAnimation(element);
         }
-        exitAnimation(element);
-    }else if(porcentage <= -50) {
-        if(lastChild != element){
-            element.classList.remove('active');
-            selectNewCard(element, false);
-        }
-        exitAnimation(element);
-    }else {
-        exitAnimation(element);
     }
 }
 

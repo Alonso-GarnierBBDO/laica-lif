@@ -17,7 +17,7 @@
         @media (min-width: 1600px) { @content; }
     }
     @else if $point == laptop {
-        @media (min-width: 1250px) { @content; }
+        @media (min-width: 1100px) { @content; }
     }
     @else if $point == tablet {
         @media (min-width: 700px)  { @content; }

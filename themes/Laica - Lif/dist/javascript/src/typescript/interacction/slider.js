@@ -25,7 +25,18 @@ var slider = function () {
                 lastChild = getLastChild;
                 firstChild = getFirstChild;
                 // Cuando se le agrega la clase active es porque el item llega a estar activo
-                lastChild.classList.add('active');
+                if (window.innerWidth >= 700) {
+                    lastChild.classList.add('remove');
+                    // Obtenemos el penultimo elemento para agregarle el active    
+                    var countElements = sliderMobile.childElementCount;
+                    var penultimoElemento = childElements[countElements - 2];
+                    if (penultimoElemento) {
+                        penultimoElemento.classList.add('active');
+                    }
+                }
+                else {
+                    lastChild.classList.add('active');
+                }
             }
             // Ejecutamos el metodo de arrastre del elemento
             metodoArrastrar();
@@ -54,6 +65,7 @@ function pressItem(element) {
 function downEvent(element, e) {
     // Si moveItem pasa a true significa que el usuario puede arrastrar el item
     moveItem = true;
+    element.style.cursor = 'grab';
     // Posicion inicial dle mouse
     if (e instanceof TouchEvent) {
         startX = e.touches[0].clientX;
@@ -77,6 +89,7 @@ function dragItem(element) {
 // Esta funcion se encarga de mover la carta dependiendo del eje X del cursor o touch del mobile
 function moveEvent(element, e) {
     if (moveItem) {
+        element.style.cursor = 'grabbing';
         // Definemos la posicion del mouse en px
         var positionXMouse = void 0;
         if (e instanceof TouchEvent) {
@@ -150,25 +163,28 @@ function selectNewCard(element, moverDerecha) {
 }
 function exitMove(element) {
     // Eliminas el moviento de las cartas
-    moveItem = false;
-    // Ejecutamos la valicion, para ver mandamos la carta a la derecha o izquierda
-    if (porcentage >= 50) {
-        if (firstChild != element) {
-            element.classList.add('remove');
-            element.classList.remove('active');
-            selectNewCard(element, true);
+    if (moveItem) {
+        moveItem = false;
+        element.style.cursor = 'pointer';
+        // Ejecutamos la valicion, para ver mandamos la carta a la derecha o izquierda
+        if (porcentage >= 50) {
+            if (firstChild != element) {
+                element.classList.add('remove');
+                element.classList.remove('active');
+                selectNewCard(element, true);
+            }
+            exitAnimation(element);
         }
-        exitAnimation(element);
-    }
-    else if (porcentage <= -50) {
-        if (lastChild != element) {
-            element.classList.remove('active');
-            selectNewCard(element, false);
+        else if (porcentage <= -50) {
+            if (lastChild != element) {
+                element.classList.remove('active');
+                selectNewCard(element, false);
+            }
+            exitAnimation(element);
         }
-        exitAnimation(element);
-    }
-    else {
-        exitAnimation(element);
+        else {
+            exitAnimation(element);
+        }
     }
 }
 export default slider;
