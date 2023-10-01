@@ -7,7 +7,7 @@ header  {
     grid-template-columns: 10% auto 10%;
     justify-items: center;
     justify-content: space-around;
-    z-index: 999;
+    z-index: 9999;
 
     // Se crea este before para mantener centro el menu con la mano
     &::before{

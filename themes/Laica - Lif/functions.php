@@ -17,6 +17,21 @@ function theme_register_menus() {
 add_action('init', 'theme_register_menus');
 
 
+//  Habilitamos la seccion de widget en mi tema
+function widgetArea() {
+    register_sidebar(array(
+        'name' => 'Slider Products Widget Area',
+        'id' => 'slider-products-widget-area',
+        'description' => 'Área de widgets para el slider de productos',
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget' => '</div>',
+        'before_title' => '<h3 class="widget-title">',
+        'after_title' => '</h3>',
+    ));
+}
+add_action('widgets_init', 'widgetArea');
+
+
 /**
  * We include the css and javascript files
  */
@@ -32,38 +47,14 @@ function customRegister(WP_Customize_Manager $wp_customize){
 
     // Esta funcion genera multiples desarrollos
 
-    class Multi_Image_Customize_Control extends WP_Customize_Control {
-
-        public function enqueue()
-        {
-
-            wp_enqueue_style('multi-image-style', get_template_directory_uri().'/includes/custom-registers/controls/custom.css');
-            wp_enqueue_script('multi-image-script', get_template_directory_uri() . '/includes/custom-registers/controls/customizer-multimedia.js', array( 'jquery' ), rand(), true);
-
-        }
-
-        public function render_content()
-        { ?>
-            <label>
-                <span class='customize-control-title'>Imagen del slider principal</span>
-            </label>
-            <div>
-                <ul class='images'></ul>
-            </div>
-            <div class='actions' id="agregar">
-                <a class="button-secondary upload">Agregar</a>
-            </div>
-
-            <input class="wp-editor-area" id="images-input" type="hidden" <?php $this->link(); ?>
-        <?php
-        }
-    }
-
     // Menu Logo
     include(get_stylesheet_directory() . '/includes/custom-registers/menu.php');
     
     // Titulo del inicio
     include(get_stylesheet_directory() . '/includes/custom-registers/inicio.php');
+
+    // Seccion de productos
+    include(get_stylesheet_directory() . '/includes/custom-registers/productos.php');
 
     
 }

@@ -23,10 +23,6 @@
                     attachments.push(attachment.url);
 
                     console.log(attachment);
-
-                    // $(".supports-drag-drop").css({
-                    //     "display" : "none"
-                    // });
                 });
 
                 var attachment_string = attachments.join() + "," + $('#images-input').val();

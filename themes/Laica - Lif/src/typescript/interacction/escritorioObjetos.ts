@@ -33,10 +33,12 @@ const objetos = () => {
             const positionTitle : DOMRect = titlePrincipal.getBoundingClientRect();
 
             // La posicion del elemento a la izquierda
-            const positionTitleX : number = positionTitle.left;
+            // const positionTitleX : number = positionTitle.left;
+            const positionTitleX : number = titlePrincipal.offsetLeft;
 
             // La posicision del elemento havcia arriba
-            const positionTitleY : number = positionTitle.top;
+            // const positionTitleY : number = positionTitle.top;
+            const positionTitleY : number = titlePrincipal.offsetTop;
 
             // Elemento la posicion del todo el contenido del h1
             const titleHeight : number = title.offsetHeight;
@@ -54,9 +56,8 @@ const objetos = () => {
             if(firstImage){
 
                 // Guardamos las posiciones del elemento 1
-                // positionTop = positionTitleY - (titleHeight + (firstImage.offsetWidth / 2.4));
-                positionTop = positionTitleY + (firstImage.offsetHeight / 2);
-                positionLeft = positionTitleX - (firstImage.clientWidth / 1.5);
+                positionTop = positionTitleY + (firstImage.offsetHeight / 1.8);
+                positionLeft = positionTitleX - (firstImage.clientWidth / 2.1);
 
                 // Reajustamos tanto arriba como a la izquierda el elemento, y asi el elemento llega a ser responsivo
                 firstImage.style.position = "absolute";
@@ -71,7 +72,7 @@ const objetos = () => {
 
                 // Guardamos las pociciones del elemento 2
                 // positionTop = positionTitleY - (titleHeight + (secondImage.offsetWidth * 1.4)) + (secondImageHeight / 1.1);
-                positionTop = positionTitleY - (titlePixelSize / 10);
+                positionTop = positionTitleY - (titlePixelSize - 150);
                 positionLeft = positionTitleX - (secondImage.clientWidth - titlePrincipal.offsetWidth) + (secondImage.offsetWidth / 2);
 
                 // Reajustamos tanto arriba como a la derecha el elemento, y asi el elemento llega a ser responsivo
@@ -94,7 +95,7 @@ const objetos = () => {
 
             if(cuartaImage){
 
-                positionTop = positionTitleY + (titlePrincipal.offsetHeight * 3);
+                positionTop = positionTitleY + (titlePrincipal.offsetHeight * 4);
                 positionLeft = positionTitleX - (cuartaImage.clientWidth - titlePrincipal.offsetWidth) + (cuartaImage.offsetWidth * 1.1);
 
                 cuartaImage.style.position = "absolute";

@@ -23,4 +23,6 @@ window.addEventListener('load', function () {
 window.addEventListener('resize', function () {
     menu();
     circles();
+    slider();
+    objetos();
 });

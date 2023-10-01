@@ -26,4 +26,6 @@ window.addEventListener('load', () => {
 window.addEventListener('resize', () => {
     menu();    
     circles();      
+    slider();
+    objetos();
 })

@@ -1,0 +1,98 @@
+.products{
+    height: calc(100vh - 90px);
+    position: relative;
+    overflow: hidden;
+
+    .background{
+
+        position: absolute;
+        width: 100%;
+        height: 80%;
+        background-size: cover;
+        bottom: 0px;
+        z-index: -1;
+
+    }
+
+    .header{
+        display: flex;
+        position: relative;
+        align-items: center;    
+        flex-flow: column;
+        overflow: hidden;
+
+        @include bp(tablet) {
+            overflow: initial;
+        }
+
+        h3{
+            font-size: $font-producto-subtitle;
+            text-transform: uppercase;
+            color: $color_primary;
+            z-index: 1;
+            font-family: $family-secundary;
+        }
+
+        h2{
+            font-size: $font-producto-title;
+            text-transform:capitalize;
+            color: $color_primary;
+            background-color: $color_terciario;
+            padding: 5px 50px;
+            border-radius: 50px;
+            margin-top: 5px;
+            z-index: 1;
+            font-family: $family-primary;
+        }
+
+        .mobile{
+            display: block;
+            @include bp(tablet) {
+                display: none;
+            }
+        }
+
+        .escritorio{
+            display: none;
+            @include bp(tablet) {
+                display: block;
+            }
+        }
+
+        h2.escritorio{
+            background-color: transparent;
+            font-size: $font-size-medium-escritorio;
+            text-transform:initial;
+        }
+
+        img{
+            position: absolute;
+            z-index: 0;
+            width: 26%;
+            right: -5%;
+            pointer-events: none;
+            user-select: none;
+            z-index: 99;
+
+            @include bp(tablet) {
+                display: block;
+                width: 14%;
+                right: 5%;
+            }
+
+            @include keyframes(animationCircle){
+                0%{
+                    transform: rotate(0deg);
+                }
+
+                100%{
+                    transform: rotate(360deg);
+                }
+            }
+            @include animate(animationCircle, 10s, linear, infinite);
+
+        }
+
+    }
+
+}

@@ -30,7 +30,7 @@
     ));
 
     $wp_customize->add_control(new WP_Customize_Upload_Control($wp_customize, 'sobre-uno', array(
-        'label' => __('Objeto principal', 'themename'),
+        'label' => __('Imagen del primer producto fijado', 'themename'),
         'section' => 'home-presentation',
         'settings' => 'img-uno-presentation-setting'
     )));
@@ -42,13 +42,41 @@
     ));
 
     $wp_customize->add_control(new WP_Customize_Upload_Control($wp_customize, 'sobre-dos', array(
-        'label' => __('Objeto secundario', 'themename'),
+        'label' => __('Imagen del segundo producto fijado', 'themename'),
         'section' => 'home-presentation',
         'settings' => 'img-dos-presentation-setting',
     )));
 
 
     // Multiples imagenes en el slider
+
+    // Habilitamos este nuevo campo en el customice
+    class Multi_Image_Customize_Control extends WP_Customize_Control {
+
+        public function enqueue()
+        {
+
+            wp_enqueue_style('multi-image-style', get_template_directory_uri().'/includes/custom-registers/controls/custom.css');
+            wp_enqueue_script('multi-image-script', get_template_directory_uri() . '/includes/custom-registers/controls/customizer-multimedia.js', array( 'jquery' ), rand(), true);
+
+        }
+
+        public function render_content()
+        { ?>
+            <label>
+                <span class='customize-control-title'>Slider Principal</span>
+            </label>
+            <div>
+                <ul class='images'></ul>
+            </div>
+            <div class='actions' id="agregar">
+                <a class="button-secondary upload">Agregar</a>
+            </div>
+
+            <input class="wp-editor-area" id="images-input" type="hidden" <?php $this->link(); ?>
+        <?php
+        }
+    }
     
     // Registra la configuración personalizada para las imágenes múltiples
     $wp_customize->add_setting('multi_image_selector', array(

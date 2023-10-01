@@ -49,11 +49,50 @@
                             }
 
                         }
-
                         
                     ?>
                 </section>
+                <section class="image_escritorio">
+                        <img src="<?= get_stylesheet_directory_uri() ?>/assets/img/hojita_modals.svg" alt="Hojita ilustrativa">
+                        <img src="<?= get_stylesheet_directory_uri() ?>/assets/img/tuanis.svg" alt="Tuanis ilustrativa">
+                </section>
+                <section class="image_mobile">
+                        <img src="<?= get_stylesheet_directory_uri() ?>/assets/img/hand.draw.svg" alt="Arrastre las imagenes">
+                </section>
             </section>
         </section>
+        <section class="products">
+            <section class="header">
+                <?php
+                    $productsSubtitle = get_theme_mod('productos-setting-secundary');
+                    $productsTitle = get_theme_mod('productos-setting-principal');
+                ?>
+                <h3 class="mobile"><?= $productsSubtitle ?></h3>
+                <h2 class="mobile"><?= $productsTitle ?></h2>
+                <h2 class="escritorio"> <?= $productsSubtitle . " " .$productsTitle ?> </h2>
+                <img src="<?= get_stylesheet_directory_uri() ?>/assets/img/circle_constenvia.svg" alt="">
+            </section>
+            <section class="sliderWidget">
+                <?php dynamic_sidebar('slider-products-widget-area'); ?>
+            </section>
+            <div class="background"></div>
+        </section>
+
+        <!-- Backgrounds del img -->
+
+
+        <style>
+
+            .products .background {
+                background-image: url(<?= get_stylesheet_directory_uri()  . '/assets/img/background.svg' ?>)
+            }           
+
+            @media (min-width: 700px) {
+                .products .background {
+                    background-image: url(<?= get_stylesheet_directory_uri()  . '/assets/img/background_escritorio.svg' ?>)
+                }     
+            }
+
+        </style>
 
 <?php get_footer(); ?>

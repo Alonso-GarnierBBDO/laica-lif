@@ -8,6 +8,7 @@ let firstChild : HTMLElement | null;
 let moveItem : boolean = false;
 let startX : number = 0;
 let porcentage : number = 0;
+let fatherChild : HTMLElement;
 
 const slider = () : void => {
 
@@ -22,6 +23,7 @@ const slider = () : void => {
 
         // Obtenemos todos los elementos hijos
         childElements = Array.prototype.slice.call(sliderMobile.children);
+        fatherChild = sliderMobile;
 
         if(childElements.length){
             // Obtenemos el ultimo elemento hijo y el primero,
@@ -45,7 +47,10 @@ const slider = () : void => {
                     if(penultimoElemento){
                         penultimoElemento.classList.add('active');
                     }
-                
+
+                    // En la siguiente funcion validamos la posicion de las imagenes ilustrativas
+
+                    reajustarIlustraciones();
 
 
                 }else{
@@ -131,6 +136,12 @@ function dragItem(element : HTMLElement) : void {
 // Esta funcion se encarga de mover la carta dependiendo del eje X del cursor o touch del mobile
 function moveEvent(element : HTMLElement, e : MouseEvent | TouchEvent){
     if(moveItem){
+
+        const itemMove : HTMLElement | null = document.querySelector('.carrousel .image_mobile');
+
+        if(itemMove){
+            // itemMove.classList.add('remove')
+        }
 
         element.style.cursor = 'grabbing';
 
@@ -262,5 +273,48 @@ function exitMove(element : HTMLElement){
     }
 }
 
+function reajustarIlustraciones(){
+
+    /** 
+     * Ajustar el elemento con respecto a las imagenes
+     */
+
+    const imageEscritorio : HTMLElement | null = document.querySelector('.carrousel .image_escritorio');
+
+    if(imageEscritorio){
+
+        const firstImage : HTMLElement | null = imageEscritorio.firstElementChild as HTMLElement ;
+        const lastImage : HTMLElement | null = imageEscritorio.lastElementChild as HTMLElement;
+        let topLastElement : number;
+        let leftLastElement : number;
+        let leftFirstElement : number;
+
+        if(firstImage && lastImage){
+
+
+            if(firstChild && fatherChild && lastChild){
+
+                const porcentageElemento = (17 / 100) * fatherChild.offsetWidth;
+
+                topLastElement = (fatherChild.offsetHeight + fatherChild.offsetTop) - lastImage.offsetHeight;
+                leftLastElement = firstChild.offsetLeft;
+                leftFirstElement =  (leftLastElement + lastChild.offsetWidth + (firstImage.offsetWidth / 2) ) + porcentageElemento;
+
+
+                // Insertamos los estilos para posicionar los objetos
+                lastImage.style.top = `${topLastElement}px`;
+                lastImage.style.left = `${leftLastElement - porcentageElemento}px`;
+
+                firstImage.style.top = `${fatherChild.offsetTop}px`;
+                firstImage.style.left = `${leftFirstElement}px`;
+
+
+            }            
+
+        }
+
+    }
+
+}
 
 export default slider;

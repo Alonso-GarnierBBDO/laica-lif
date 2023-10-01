@@ -5,10 +5,100 @@
 
     .carrousel{
         height: 100vh;
-
         display: flex;
         justify-content: center;
         align-items: center;
+        position: relative;
+
+        .image_mobile{
+            display: block;
+            position: absolute;
+            bottom: 15%;
+            right: 15%;
+            z-index: 999;
+            pointer-events: none;
+            
+            img{
+                width: 50px;
+                transform: rotate(6deg);
+                // opacity: 0;
+
+                // @include keyframes(animationScroll){
+                //     0%{
+                //         transform: rotate(-75deg);
+                //         opacity: 0;
+                //     }
+                //     50%{
+                //         transform: rotate(-75deg);
+                //         opacity: 0;
+                //     }
+                //     60%{
+                //         transform: rotate(-75deg);
+                //         opacity: 1;
+                //     }
+        
+
+                //     80%{
+                //         transform: rotate(17deg);
+                //         opacity: 1;
+                //     }
+
+                //     90%{
+                //         transform: rotate(17deg);
+                //         opacity: 1;
+                //     }
+
+                //     100%{
+                //         transform: rotate(17deg);
+                //         opacity: 0;
+                //     }
+                //   }
+                // @include animate(animationScroll, 3s, linear, infinite);
+
+            }
+
+            @include bp(tablet) {
+                display: none;
+            }
+        }
+
+        .image_mobile.remove{
+
+            opacity: 0;
+
+            // @include keyframes(animationScrollRemove){
+            //     0%{
+            //         opacity: 1;
+            //     }
+
+            //     100%{
+            //         opacity: 0;
+            //     }
+            //   }
+            // @include animate(animationScrollRemove, 2s, linear, normal);
+        }
+
+        .image_escritorio{
+
+            display: none;
+
+            @include bp(tablet) {
+                display: block;
+            }
+
+            img{
+                position: absolute;
+                z-index: 99;
+
+                &:last-of-type{
+                    width: 300px;
+                }
+
+                pointer-events: none;
+                user-select: none;
+
+            }
+        }
 
     }
 

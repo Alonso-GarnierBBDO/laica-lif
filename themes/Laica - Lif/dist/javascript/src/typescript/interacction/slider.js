@@ -7,6 +7,7 @@ var firstChild;
 var moveItem = false;
 var startX = 0;
 var porcentage = 0;
+var fatherChild;
 var slider = function () {
     /**
      * Esta funcion solo se ejecuta una sola vez
@@ -16,6 +17,7 @@ var slider = function () {
     if (sliderMobile) {
         // Obtenemos todos los elementos hijos
         childElements = Array.prototype.slice.call(sliderMobile.children);
+        fatherChild = sliderMobile;
         if (childElements.length) {
             // Obtenemos el ultimo elemento hijo y el primero,
             // En este caso solo activamos el ultimo hijo
@@ -33,6 +35,8 @@ var slider = function () {
                     if (penultimoElemento) {
                         penultimoElemento.classList.add('active');
                     }
+                    // En la siguiente funcion validamos la posicion de las imagenes ilustrativas
+                    reajustarIlustraciones();
                 }
                 else {
                     lastChild.classList.add('active');
@@ -89,6 +93,10 @@ function dragItem(element) {
 // Esta funcion se encarga de mover la carta dependiendo del eje X del cursor o touch del mobile
 function moveEvent(element, e) {
     if (moveItem) {
+        var itemMove = document.querySelector('.carrousel .image_mobile');
+        if (itemMove) {
+            // itemMove.classList.add('remove')
+        }
         element.style.cursor = 'grabbing';
         // Definemos la posicion del mouse en px
         var positionXMouse = void 0;
@@ -184,6 +192,32 @@ function exitMove(element) {
         }
         else {
             exitAnimation(element);
+        }
+    }
+}
+function reajustarIlustraciones() {
+    /**
+     * Ajustar el elemento con respecto a las imagenes
+     */
+    var imageEscritorio = document.querySelector('.carrousel .image_escritorio');
+    if (imageEscritorio) {
+        var firstImage = imageEscritorio.firstElementChild;
+        var lastImage = imageEscritorio.lastElementChild;
+        var topLastElement = void 0;
+        var leftLastElement = void 0;
+        var leftFirstElement = void 0;
+        if (firstImage && lastImage) {
+            if (firstChild && fatherChild && lastChild) {
+                var porcentageElemento = (17 / 100) * fatherChild.offsetWidth;
+                topLastElement = (fatherChild.offsetHeight + fatherChild.offsetTop) - lastImage.offsetHeight;
+                leftLastElement = firstChild.offsetLeft;
+                leftFirstElement = (leftLastElement + lastChild.offsetWidth + (firstImage.offsetWidth / 2)) + porcentageElemento;
+                // Insertamos los estilos para posicionar los objetos
+                lastImage.style.top = "".concat(topLastElement, "px");
+                lastImage.style.left = "".concat(leftLastElement - porcentageElemento, "px");
+                firstImage.style.top = "".concat(fatherChild.offsetTop, "px");
+                firstImage.style.left = "".concat(leftFirstElement, "px");
+            }
         }
     }
 }

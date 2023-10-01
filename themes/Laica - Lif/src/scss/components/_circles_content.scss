@@ -20,7 +20,7 @@
             align-items: center;
             width: 100vw;
             position: relative;
-            overflow-x: hidden;
+            overflow: hidden;
 
             @include bp(tablet) {
                 position: absolute;
@@ -42,7 +42,7 @@
                 transform: translate(-10px, 0px);
 
                 @include bp(tablet) {
-                    width: 170px;
+                    width: 180px;
                 }
 
                 // @include keyframes(hojita){
@@ -68,7 +68,7 @@
                 transform: translate(40%, 0px);
 
                 @include bp(tablet) {
-                    width: 350px;
+                    width: 400px;
                 }
             }
 
@@ -96,7 +96,7 @@
                 top: 0px;
 
                 @include bp(tablet) {
-                    width: 350px;
+                    width: 400px;
                 }
             } 
 
@@ -104,6 +104,7 @@
                 display: flex;
                 flex-flow: row;
                 position: relative;
+                z-index: 99;
 
                 // img{
                 //     @include keyframes(hojita){
@@ -127,13 +128,17 @@
                     top: 30%;
                     width: 70%;
                     z-index: 1;
+
+                    @include bp(tablet){
+                        transform: translate(25%, 60%) rotate(-125deg);
+                    }
                 }
 
                 img.naranja{
                     width: 150px;
 
                     @include bp(tablet) {
-                        width: 170px;
+                        width: 190px;
                         transform: rotate(56deg);
                     }
 

@@ -22,7 +22,7 @@ header {
   grid-template-columns: 10% auto 10%;
   justify-items: center;
   justify-content: space-around;
-  z-index: 999; }
+  z-index: 9999; }
   header::before {
     content: ""; }
   header nav {
@@ -222,7 +222,35 @@ header {
     height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: center; }
+    align-items: center;
+    position: relative; }
+    .circulo .carrousel .image_mobile {
+      display: block;
+      position: absolute;
+      bottom: 15%;
+      right: 15%;
+      z-index: 999;
+      pointer-events: none; }
+      .circulo .carrousel .image_mobile img {
+        width: 50px;
+        transform: rotate(6deg); }
+      @media (min-width: 700px) {
+        .circulo .carrousel .image_mobile {
+          display: none; } }
+    .circulo .carrousel .image_mobile.remove {
+      opacity: 0; }
+    .circulo .carrousel .image_escritorio {
+      display: none; }
+      @media (min-width: 700px) {
+        .circulo .carrousel .image_escritorio {
+          display: block; } }
+      .circulo .carrousel .image_escritorio img {
+        position: absolute;
+        z-index: 99;
+        pointer-events: none;
+        user-select: none; }
+        .circulo .carrousel .image_escritorio img:last-of-type {
+          width: 300px; }
   .circulo .container_circles {
     position: absolute;
     top: 0%;
@@ -267,7 +295,7 @@ header {
     align-items: center;
     width: 100vw;
     position: relative;
-    overflow-x: hidden; }
+    overflow: hidden; }
     @media (min-width: 700px) {
       .circulo .presentation section.img {
         position: absolute;
@@ -285,14 +313,14 @@ header {
       transform: translate(-10px, 0px); }
       @media (min-width: 700px) {
         .circulo .presentation section.img img.lif_hojita {
-          width: 170px; } }
+          width: 180px; } }
     .circulo .presentation section.img img.lif_frasco {
       width: 200px;
       right: 0px;
       transform: translate(40%, 0px); }
       @media (min-width: 700px) {
         .circulo .presentation section.img img.lif_frasco {
-          width: 350px; } }
+          width: 400px; } }
   .circulo .presentation section.img_two {
     display: flex;
     width: 100vw;
@@ -313,22 +341,26 @@ header {
       top: 0px; }
       @media (min-width: 700px) {
         .circulo .presentation section.img_two .lif_frasco {
-          width: 350px; } }
+          width: 400px; } }
     .circulo .presentation section.img_two .objects {
       display: flex;
       flex-flow: row;
-      position: relative; }
+      position: relative;
+      z-index: 99; }
       .circulo .presentation section.img_two .objects img.hoja {
         position: absolute;
         left: -25%;
         top: 30%;
         width: 70%;
         z-index: 1; }
+        @media (min-width: 700px) {
+          .circulo .presentation section.img_two .objects img.hoja {
+            transform: translate(25%, 60%) rotate(-125deg); } }
       .circulo .presentation section.img_two .objects img.naranja {
         width: 150px; }
         @media (min-width: 700px) {
           .circulo .presentation section.img_two .objects img.naranja {
-            width: 170px;
+            width: 190px;
             transform: rotate(56deg); } }
   .circulo .presentation h1 {
     text-align: center;
@@ -540,13 +572,83 @@ header {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: rgba(255, 0, 0, 0.418);
     width: 75%;
     height: 75%;
     margin-top: 100px;
     display: flex;
     flex-flow: column;
     justify-content: space-between; }
+
+.products {
+  height: calc(100vh - 90px);
+  position: relative;
+  overflow: hidden; }
+  .products .background {
+    position: absolute;
+    width: 100%;
+    height: 80%;
+    background-size: cover;
+    bottom: 0px;
+    z-index: -1; }
+  .products .header {
+    display: flex;
+    position: relative;
+    align-items: center;
+    flex-flow: column;
+    overflow: hidden; }
+    @media (min-width: 700px) {
+      .products .header {
+        overflow: initial; } }
+    .products .header h3 {
+      font-size: 1.8rem;
+      text-transform: uppercase;
+      color: #FFFDD7;
+      z-index: 1;
+      font-family: poppints_bold; }
+    .products .header h2 {
+      font-size: 2.5rem;
+      text-transform: capitalize;
+      color: #FFFDD7;
+      background-color: #3304F7;
+      padding: 5px 50px;
+      border-radius: 50px;
+      margin-top: 5px;
+      z-index: 1;
+      font-family: champ; }
+    .products .header .mobile {
+      display: block; }
+      @media (min-width: 700px) {
+        .products .header .mobile {
+          display: none; } }
+    .products .header .escritorio {
+      display: none; }
+      @media (min-width: 700px) {
+        .products .header .escritorio {
+          display: block; } }
+    .products .header h2.escritorio {
+      background-color: transparent;
+      font-size: 5rem;
+      text-transform: initial; }
+    .products .header img {
+      position: absolute;
+      z-index: 0;
+      width: 26%;
+      right: -5%;
+      pointer-events: none;
+      user-select: none;
+      z-index: 99;
+      animation: animationCircle 10s linear infinite; }
+      @media (min-width: 700px) {
+        .products .header img {
+          display: block;
+          width: 14%;
+          right: 5%; } }
+
+@keyframes animationCircle {
+  0% {
+    transform: rotate(0deg); }
+  100% {
+    transform: rotate(360deg); } }
 
 html,
 body,
