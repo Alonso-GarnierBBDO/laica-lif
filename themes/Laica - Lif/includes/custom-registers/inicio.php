@@ -12,7 +12,7 @@
     ));
 
     // Insertamos el titulo del home
-    $wp_customize->add_control('title-control', array(
+    $wp_customize->add_control('title-control-home ', array(
         'label' => __('Titulo del inicio'),
         'section' => 'home-presentation',
         'settings' => 'home-presentation-setting',
@@ -50,33 +50,7 @@
 
     // Multiples imagenes en el slider
 
-    // Habilitamos este nuevo campo en el customice
-    class Multi_Image_Customize_Control extends WP_Customize_Control {
-
-        public function enqueue()
-        {
-
-            wp_enqueue_style('multi-image-style', get_template_directory_uri().'/includes/custom-registers/controls/custom.css');
-            wp_enqueue_script('multi-image-script', get_template_directory_uri() . '/includes/custom-registers/controls/customizer-multimedia.js', array( 'jquery' ), rand(), true);
-
-        }
-
-        public function render_content()
-        { ?>
-            <label>
-                <span class='customize-control-title'>Slider Principal</span>
-            </label>
-            <div>
-                <ul class='images'></ul>
-            </div>
-            <div class='actions' id="agregar">
-                <a class="button-secondary upload">Agregar</a>
-            </div>
-
-            <input class="wp-editor-area" id="images-input" type="hidden" <?php $this->link(); ?>
-        <?php
-        }
-    }
+    include(get_stylesheet_directory() . '/includes/custom-registers/controls/custom/very_image.php');
     
     // Registra la configuración personalizada para las imágenes múltiples
     $wp_customize->add_setting('multi_image_selector', array(

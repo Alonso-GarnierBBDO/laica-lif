@@ -56,6 +56,9 @@ function customRegister(WP_Customize_Manager $wp_customize){
     // Seccion de productos
     include(get_stylesheet_directory() . '/includes/custom-registers/productos.php');
 
+    // Seccion
+    include(get_stylesheet_directory() . '/includes/custom-registers/a-tu-manera.php');
+
     
 }
 

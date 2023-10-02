@@ -12,7 +12,7 @@
                 <?php
                     $textHomePage = get_theme_mod('title-presentation-setting');
                 ?>
-                <h1><?= $textHomePage ?></h1>
+                <h1 class="title_fragment"><?= $textHomePage ?></h1>
                 <section class="img_two">
                     <?php
                         $image_two = get_theme_mod('img-dos-presentation-setting');
@@ -83,20 +83,76 @@
             </section>
             <div class="background"></div>
         </section>
+        <section class="a_tu_manera">
+            <section class="conten-principal">
+                <section class="column-two">
+                    <div>
+                        <?php $textInit = get_theme_mod('title-presentation-setting'); ?>
+                        <h3 class="title_fragment"><?= $textHomePage ?></h3>
+                        <div class="content">
+                            <?php $textoContenPrincipal = get_theme_mod('a-tu-manera-setting-content') ?>
+                            <?= $textoContenPrincipal ?>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="image">
+                            <?php 
+                                $imagenID = get_theme_mod('img-principal-setting');
+                                $imagenTitlePrincipal = get_the_title($imagenID);
+                            ?>
+                            <img class="mobile" src="<?= $imagenID  ?>" alt="<?= $imagenTitlePrincipal ?>">
+                        </div>
+                    </div>
+                </section>
 
-        <!-- Backgrounds del img -->
+                <div class="column-normal imagen">
+                    <div>
+                        <?php 
+                            $imagenID = get_theme_mod('img-secundaria-setting');
+                            $imagenTitlePrincipal = get_the_title($imagenID);
+                        ?>
+                        <img src="<?= $imagenID  ?>" alt="<?= $imagenTitlePrincipal ?>">
+                        <img src="<?= get_stylesheet_directory_uri() ?>/assets/img/hojita.svg" class="lif_hojita" alt="Hoja ilustrativa">
+                        <img src="<?= get_stylesheet_directory_uri() ?>/assets/img/aplausos.svg" class="aplausos" alt="Aplausos ilustrativa">
+                    </div>
+                    <div>
+                        <?php 
+                            $imagenID = get_theme_mod('img-principal-setting');
+                            $imagenTitlePrincipal = get_the_title($imagenID);
+                        ?>
+                        <img class="escritorio" src="<?= $imagenID  ?>" alt="<?= $imagenTitlePrincipal ?>">
+                    </div>
+                </div>
+
+                <div class="column-normal">
+                    <div class="content_motivation">
+                            <?php $textoContenPrincipal = get_theme_mod('a-tu-manera-setting-motivacion') ?>
+                            <?= $textoContenPrincipal ?>
+                    </div>
+                </div>
+
+            </section>
+        </section>
 
 
         <style>
 
             .products .background {
                 background-image: url(<?= get_stylesheet_directory_uri()  . '/assets/img/background.svg' ?>)
-            }           
+            }      
+            
+            .a_tu_manera{
+                background-image: url(<?= get_stylesheet_directory_uri()  . '/assets/img/background_two.svg' ?>)
+            }
 
             @media (min-width: 700px) {
                 .products .background {
                     background-image: url(<?= get_stylesheet_directory_uri()  . '/assets/img/background_escritorio.svg' ?>)
                 }     
+
+                .a_tu_manera{
+                    background-image: url(<?= get_stylesheet_directory_uri()  . '/assets/img/background_two_destok.png' ?>)
+                }
             }
 
         </style>
