@@ -40,7 +40,7 @@
             <img src="<?= $image_url ?>" alt="Image slider">
             <section class="content_product_slider">
                 <h3><?= $title ?></h3>
-                <a href="">
+                <a href="<?=  $fileURL ?>" target="_black">
                     <img src="<?= plugins_url('assets/img/arrow.dowload.svg', __FILE__) ?>" alt="">
                     Tabla nutricional
                 </a>

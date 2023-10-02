@@ -29,10 +29,13 @@
 
 .slider_productos .item{
     position: absolute;
-    width: 22vw;
+    width: 30vw;
     cursor: pointer;
     z-index: 99;
     transition: .05s ease;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
 }
 
 .slider_productos .item.left{
@@ -60,10 +63,15 @@
 }
 
 .slider_productos .item h3{
-    font-size: 2rem;
+    font-size: 2.3rem;
     text-transform: uppercase;    
     font-family: champ;
     color: var(--color-principal-productos-active);
+}
+
+.slider_productos .item.item.left h3,
+.slider_productos .item.right h3{
+    font-size: 1rem;
 }
 
 .slider_productos .item.right h3,
@@ -74,23 +82,38 @@
 }
 
 .slider_productos .item img{
-    width: 100%;
+    width: 80%;
     pointer-events: none;
     user-select: none;
+    margin: auto;
+    transition: .2s ease;
+    max-width: 400px;
+}
+
+.slider_productos .item.left img,
+.slider_productos .item.right img{
+    width: 100%;
 }
 
 .slider_productos .item a{
-    display: flex;
-    justify-content: center;
     margin-top: 10px;
     font-size: 1.1rem;
     text-decoration: none;
     font-family: poppints_medium;
+    display: block;
 }
 
-.slider_productos .item a img{
+.slider_productos .item.left a,
+.slider_productos .item.right a{
+    font-size: 0.7rem;
+}
+
+.slider_productos .item a img,
+.slider_productos .item.left a img,
+.slider_productos .item.right a img{
     width: 20px;
-    margin-right: 10px;
+    margin-right: 5px;
+    transform: translateY(4px);
 }
 
 .nav_productos{
@@ -119,10 +142,16 @@
 }
 
 .content_product_slider{
-    margin-top: 40px;
+    margin-top: 20px;
 }
 
 @media (max-width: 700px) {
+
+
+    .content_product_slider{
+        margin-top: 40px;
+    }
+
     .slider_productos .item{
         width: 100%;
     }
@@ -141,5 +170,30 @@
         bottom: 24vh;
         justify-content: center;
         z-index: 99;
+        align-items: center;
+    }
+
+    .slider_productos .item.left img, 
+    .slider_productos .item.right img,
+    .slider_productos .item img {
+        width: 85%;
+        max-width: 100%;
+    }
+
+    .slider_productos .item a img{
+        margin-right: 10px;
+    }
+
+
+    .slider_productos .item h3,
+    .slider_productos .item.item.left h3,
+    .slider_productos .item.right h3{
+        font-size: 1.5rem;
+    }
+
+    .nav_productos button{
+        margin-left: 10px;
+        width: 10px;
+        height: 10px;
     }
 }

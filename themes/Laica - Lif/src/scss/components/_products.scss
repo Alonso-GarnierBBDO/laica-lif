@@ -1,7 +1,16 @@
 .products{
-    height: calc(100vh - 90px);
+    min-height: calc(100vh - 90px);
     position: relative;
     overflow: hidden;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    margin-top: 20px;
+
+    @include bp(tablet) {
+        // display: block;
+        margin-top: 50px;
+    }
 
     .background{
 
@@ -78,6 +87,7 @@
                 display: block;
                 width: 14%;
                 right: 5%;
+                max-width: 200px;
             }
 
             @include keyframes(animationCircle){
@@ -91,6 +101,59 @@
             }
             @include animate(animationCircle, 10s, linear, infinite);
 
+        }
+
+    }
+
+    .footer{
+        // position: absolute;       
+        // bottom: 0px;
+        width: calc(100% - 40px);
+        padding: 0px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        img{
+            width: 150px;
+            pointer-events: none;
+            user-select: none;
+
+            @include bp(tablet) {
+                width: auto;
+                height: 23vh;
+                // transform: translateY(-30%);
+                z-index: 99;
+            }
+
+            @include bp(escritorio) {
+                height: 26vh;
+            }
+
+        }
+
+        button{
+            background-color: $color_primary;
+            padding: 0px;
+            margin: 0px;
+            border: 0px;
+            display: flex;
+            border-radius: 10px;
+            overflow: hidden;
+            width: 40px;
+            height: 40px;
+            z-index: 1;
+            cursor: pointer;
+
+            @include bp(tablet) {
+                display: none;
+            }
+            
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
         }
 
     }
