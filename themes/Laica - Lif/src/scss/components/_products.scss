@@ -8,8 +8,8 @@
     margin-top: 20px;
 
     @include bp(tablet) {
-        // display: block;
         margin-top: 50px;
+        padding-bottom: 19px;
     }
 
     .background{
@@ -132,7 +132,7 @@
 
         }
 
-        button{
+        a{
             background-color: $color_primary;
             padding: 0px;
             margin: 0px;

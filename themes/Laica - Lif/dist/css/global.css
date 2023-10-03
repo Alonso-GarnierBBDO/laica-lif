@@ -589,7 +589,8 @@ header {
   margin-top: 20px; }
   @media (min-width: 700px) {
     .products {
-      margin-top: 50px; } }
+      margin-top: 50px;
+      padding-bottom: 19px; } }
   .products .background {
     position: absolute;
     width: 100%;
@@ -675,7 +676,7 @@ header {
       @media (min-width: 1600px) {
         .products .footer img {
           height: 26vh; } }
-    .products .footer button {
+    .products .footer a {
       background-color: #FFFDD7;
       padding: 0px;
       margin: 0px;
@@ -688,9 +689,9 @@ header {
       z-index: 1;
       cursor: pointer; }
       @media (min-width: 700px) {
-        .products .footer button {
+        .products .footer a {
           display: none; } }
-      .products .footer button img {
+      .products .footer a img {
         width: 100%;
         height: 100%;
         object-fit: cover; }
@@ -703,7 +704,16 @@ header {
   background-size: cover;
   background-position: center;
   position: relative;
-  z-index: 2; }
+  z-index: 2;
+  overflow: hidden; }
+  .a_tu_manera::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    background-color: #3304F7;
+    left: 0px;
+    top: 50%; }
   .a_tu_manera .escritorio {
     display: none; }
     @media (min-width: 700px) {

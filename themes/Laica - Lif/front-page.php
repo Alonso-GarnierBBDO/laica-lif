@@ -77,13 +77,13 @@
             </section>
             <section class="footer">
                 <img class="bajo_calerias" src="<?= get_stylesheet_directory_uri() ?>/assets/img/bajas_calorias.svg" alt="Bajo en calorias">
-                <button class="bottom_scroll" title="Arrastrar pagina">
+                <a href="#manera" class="bottom_scroll" title="Arrastrar pagina">
                     <img src="<?= get_stylesheet_directory_uri() ?>/assets/img/arrow_blue.svg" class="naranja" alt="Naranja ilustrativa">
-                </button>
+                </a>
             </section>
             <div class="background"></div>
         </section>
-        <section class="a_tu_manera">
+        <section class="a_tu_manera" id="manera">
             <section class="conten-principal">
                 <section class="column-two">
                     <div>
