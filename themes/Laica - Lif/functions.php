@@ -68,3 +68,10 @@ function permitir_svg_upload($mimes) {
     return $mimes;
 }
 add_filter('upload_mimes', 'permitir_svg_upload');
+
+
+// Reajustar la url
+function flush_rewrite_rules_on_activation() {
+    flush_rewrite_rules();
+}
+register_activation_hook( __FILE__, 'flush_rewrite_rules_on_activation' );

@@ -42,15 +42,17 @@
                 }
 ?>
                 <li class="glide__slide">
-                    <div class="image">
-                        <img src="<?= $image_url ?>" alt="Image slider">
-                    </div>
-                    <section class="link">
-                        <div>
-                            <a href="https://<?= $link ?>" target="_black">
-                                <img src="<?= plugins_url('assets/img/arrow_link.svg', __FILE__) ?>" alt="">
-                            </a>
+                    <section class="content_slide">
+                        <div class="image">
+                            <img src="<?= $image_url ?>" alt="Image slider">
                         </div>
+                        <section class="link">
+                            <div>
+                                <a href="https://<?= $link ?>" target="_black">
+                                    <img src="<?= plugins_url('assets/img/arrow_link.svg', __FILE__) ?>" alt="">
+                                </a>
+                            </div>
+                        </section>
                     </section>
                 </li>
 

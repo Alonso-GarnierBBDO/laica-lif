@@ -42,12 +42,14 @@
                 }
 ?>
                 <li class="glide__slide">
-                    <div class="image">
-                        <img src="<?= $image_url ?>" alt="Image slider">
-                    </div>
-                    <section class="content_product_slider">
-                        <h3><?= $title ?></h3>
-                        <p><?= $subtitle ?></p>
+                    <section class="content_slide">
+                        <div class="image">
+                            <img src="<?= $image_url ?>" alt="Image slider">
+                        </div>
+                        <section class="content_product_slider">
+                            <h3><?= $title ?></h3>
+                            <p><?= $subtitle ?></p>
+                        </section>
                     </section>
                 </li>
 

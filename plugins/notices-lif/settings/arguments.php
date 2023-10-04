@@ -3,7 +3,7 @@
     // Add settings to plugin
     $args = array(
         'labels' => $labels,
-        'public' => false,
+        'public' => true,
         'publicly_queryable' => true,
         'show_ui' => true,
         'show_in_menu' => true,
@@ -15,6 +15,9 @@
         'menu_position' => null,
         'supports' =>  array('title'),
         'menu_icon' => 'dashicons-text-page',
+        'show_in_rest' => true,
+        'rest_base' => 'noticias',
+        'rest_namespace' => 'noticias',
         'register_meta_box_cb' => function () {
             // All arguments
             include plugin_dir_path(__FILE__) . 'boxs/imagen.php';
