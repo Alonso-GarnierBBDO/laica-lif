@@ -133,25 +133,47 @@
 
             </section>
         </section>
+        <section class="noticias">
+            <div class="item">
+                <?php dynamic_sidebar('noticias-widget-area'); ?>
+                <section class="content">
+                    <?php
+                        $title_fresco = get_theme_mod('title-fresco-setting');
+                    ?>
+                    <h2><?= $title_fresco ?></h2>
+                    <section class="stikers">
+                        <?php dynamic_sidebar('stickers-widget-area'); ?>
+                    </section>
+                </section>
+            </div>
+        </section>
 
 
         <style>
 
             .products .background {
-                background-image: url(<?= get_stylesheet_directory_uri()  . '/assets/img/background.svg' ?>)
+                background-image: url(<?= get_stylesheet_directory_uri()  . '/assets/img/background.svg' ?>);
             }      
             
             .a_tu_manera{
-                background-image: url(<?= get_stylesheet_directory_uri()  . '/assets/img/background_two.svg' ?>)
+                background-image: url(<?= get_stylesheet_directory_uri()  . '/assets/img/background_two.svg' ?>);
+            }
+
+            .noticias .stikers{
+                background-image: url(<?= get_stylesheet_directory_uri()  . '/assets/img/background_stickers.svg' ?>);
             }
 
             @media (min-width: 700px) {
                 .products .background {
-                    background-image: url(<?= get_stylesheet_directory_uri()  . '/assets/img/background_escritorio.svg' ?>)
+                    background-image: url(<?= get_stylesheet_directory_uri()  . '/assets/img/background_escritorio.svg' ?>);
                 }     
 
                 .a_tu_manera{
-                    background-image: url(<?= get_stylesheet_directory_uri()  . '/assets/img/background_two_destok.png' ?>)
+                    background-image: url(<?= get_stylesheet_directory_uri()  . '/assets/img/background_two_destok.png' ?>);
+                }
+
+                .noticias{
+                    background-image: url(<?= get_stylesheet_directory_uri()  . '/assets/img/background_stickers.svg' ?>);
                 }
             }
 

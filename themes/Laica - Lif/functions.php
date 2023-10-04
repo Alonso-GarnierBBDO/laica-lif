@@ -19,15 +19,9 @@ add_action('init', 'theme_register_menus');
 
 //  Habilitamos la seccion de widget en mi tema
 function widgetArea() {
-    register_sidebar(array(
-        'name' => 'Slider Products Widget Area',
-        'id' => 'slider-products-widget-area',
-        'description' => 'Área de widgets para el slider de productos',
-        'before_widget' => '<div id="%1$s" class="widget %2$s">',
-        'after_widget' => '</div>',
-        'before_title' => '<h3 class="widget-title">',
-        'after_title' => '</h3>',
-    ));
+    include(get_stylesheet_directory() . '/includes/widgets/products_slider.php');
+    include(get_stylesheet_directory() . '/includes/widgets/noticias.php');
+    include(get_stylesheet_directory() . '/includes/widgets/stickers.php');
 }
 add_action('widgets_init', 'widgetArea');
 
@@ -58,6 +52,9 @@ function customRegister(WP_Customize_Manager $wp_customize){
 
     // Seccion
     include(get_stylesheet_directory() . '/includes/custom-registers/a-tu-manera.php');
+
+    // Lo mas fresco
+    include(get_stylesheet_directory() . '/includes/custom-registers/lo-mas-fresco.php');
 
     
 }

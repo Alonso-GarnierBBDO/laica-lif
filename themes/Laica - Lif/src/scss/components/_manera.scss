@@ -30,7 +30,7 @@
 
     @include bp(tablet) {
         min-height: calc(100vh - 150px);
-        padding: 150px 15px 150px 15px;
+        padding: 90px 15px 90px 15px;
         background-size: 100% 100%;
         background-repeat: no-repeat;
     }
@@ -95,9 +95,9 @@
                     position: relative;
 
                     @include bp(tablet) {
-                        font-size: $font-normal;
+                        font-size: $font-producto-title;
                         position: relative;
-                        bottom: 48px;
+                        bottom: 36px;
                     }
 
                 }
@@ -106,7 +106,7 @@
                     font-size: $font-producto-subtitle;
 
                     @include bp(tablet) {
-                        font-size: $font-size-medium-escritorio;
+                        font-size: $font-size-small-escritorio;
                         position: relative;
                         bottom: 20px;
                     }
@@ -169,6 +169,11 @@
                     object-fit: cover;
                     border-radius: 75px;
                     transform: translateY(50%);
+
+                    @include bp(tablet) {
+                        border-radius: 75px;
+                    }
+
                 }
             }
 
@@ -182,6 +187,10 @@
             img{
                 width: 100%;
                 border-radius: 120px;
+
+                @include bp(tablet) {
+                    border-radius: 200px;
+                }
             }
 
             .content_motivation{
@@ -228,7 +237,7 @@
                         z-index: 99;
                     }
 
-                    height: 40vh;
+                    height: 35vh;
                     border-radius: 200px;
                 }
 
@@ -267,7 +276,7 @@
                     @include bp(tablet) {
                         top: calc(40vh - 180px);
                         width: 100%;
-                        max-width: 200px;
+                        max-width: 150px;
                         right: -50px;
                         z-index: 99;
                     }

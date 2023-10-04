@@ -1,0 +1,29 @@
+img{
+    width: 100%;
+    height: auto;
+}
+
+.item_file {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background: #efefef;
+    border-radius: 1px;
+}
+
+.item_file span{
+    font-weight: bold;
+    cursor: default;
+}
+
+.item_file a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.item_file a path{
+    fill: #3a3838;
+}

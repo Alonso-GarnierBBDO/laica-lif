@@ -1,0 +1,36 @@
+.noticias{
+
+    background-color: $color_terciario;
+    background-size: cover;
+    background-position-x: center;
+
+    .content{
+        overflow: hidden;
+        padding: 0px 0px;
+        width: 100%;
+    }
+
+    .item{
+        @include bp(tablet) {
+            width: 80%;
+            margin: auto;
+        }
+    }
+
+    h2{
+        text-align: center;
+        padding: 30px 0px 0px 0px;
+        font-size: $font-normal;
+        line-height: 45px;
+        font-family: $family-primary;
+        color: $color_primary;
+    }
+
+    .stikers{
+        background-size: cover;
+        background-repeat: no-repeat;
+        padding-top: 30px;
+        background-position-x: center;
+    }
+
+}

@@ -1,0 +1,83 @@
+:root{
+    --color-principal-stickers: #FD6C02;
+    --color-principal-sticker-border: #2728EC;
+    --color-secundario-stickers: #3304F7;
+}
+
+/* Fuentes del plugin */
+
+@font-face {
+    font-family: champ;
+    src: url(./fonts/Champ-Black.ttf);
+}
+
+@font-face {
+    font-family: poppints_medium;
+    src: url(./fonts/Poppins-Medium_1.ttf);
+}
+
+.sticker_slider .glide__slide{
+
+    background-color: var(--color-principal-stickers);
+    padding: 20px;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px;
+    margin-bottom: 25px;
+    width: 100%;
+    padding-right: 10px;
+
+}
+
+.sticker_slider .glide__track{
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+    width: calc(100% - 9px);
+}
+
+.sticker_slider ul{
+    display: flex;
+}
+
+.sticker_slider ul li .image{
+    display: flex;
+    justify-content: center ;
+}
+
+.sticker_slider ul li img{
+    width: 80%;
+}
+
+.sticker_slider ul li .link{
+    margin-top: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.sticker_slider ul li .link a img{
+    width: 50px;
+}
+
+.titles_stickers{
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.titles_stickers h4{
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: var(--color-principal-stickers);
+    font-family: champ;
+}
+
+.titles_stickers span{
+    font-size: 1.2rem;
+    font-family: poppints_bold;
+    margin-bottom: 10px;
+    display: block;
+    color: var(--color-principal-sticker-border);
+}
