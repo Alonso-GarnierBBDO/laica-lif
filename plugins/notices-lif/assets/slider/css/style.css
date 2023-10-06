@@ -36,7 +36,9 @@
 
 .noticias_slider ul li .content_slide{
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 35% 65%;
+    grid-gap: 15px;
+    align-items: center;
     background-color: var(--color-principal-noticias);
     padding: 8px 20px;
     border-radius: 27px;
@@ -72,7 +74,7 @@
 }
 
 .noticias_slider ul li .image{
-    padding: 25px;
+    padding: 10px;
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
@@ -80,14 +82,14 @@
 
 body .noticias_slider ul li h3{
     font-family: champ;
-    font-size: 2.4rem !important;
+    font-size: 2.2rem !important;
     line-height: 35px;
     color: var(--color-principal-noticia-border) !important;
-    margin: 40px 0px 0px 0px !important;
+    margin: 0px 0px 0px 0px !important;
 }
 
 .noticias_slider ul li p{
-    margin-top: 5px;
+    margin-top: 0px;
     font-family: poppints_bold;
     font-size: 1.2rem;
     color: var( --color-secundario-noticias);

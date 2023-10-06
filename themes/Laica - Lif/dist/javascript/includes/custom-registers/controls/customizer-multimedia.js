@@ -19,6 +19,7 @@
                     attachment = attachment.toJSON();
                     $(".images").append("<li class='image-list'><img src='" + attachment.url + "'></li>");
                     attachments.push(attachment.url);
+                    console.log(attachment);
                 });
                 var attachment_string = attachments.join() + "," + $('#images-input').val();
                 $('#images-input').val(attachment_string).trigger('change');

@@ -25,6 +25,7 @@
             echo '</style>';
 
             include(plugin_dir_path(__FILE__) . 'notices/content.php');
+            echo "Hola nundo";
             
             // Insertar el javascript
             echo '<script src="' . plugins_url('notices/assets/js/glite/glide.min.js', __FILE__) . '"></script>';

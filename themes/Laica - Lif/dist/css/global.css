@@ -920,16 +920,91 @@ header {
 main .background {
   padding-top: 0px;
   overflow-x: hidden; }
-  @media (min-width: 700px) {
-    main .background {
-      padding-top: 125px; } }
   main .background .content {
     width: 100%;
     margin: auto; }
+    main .background .content .noticias {
+      background-color: transparent; }
+      @media (min-width: 700px) {
+        main .background .content .noticias {
+          padding-top: 125px;
+          padding-bottom: 30px; } }
+    main .background .content .background_escritorio {
+      background-size: 100% 80%;
+      background-repeat: no-repeat;
+      background-position: center 5%; }
+      main .background .content .background_escritorio::before {
+        content: " ";
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        height: 70%;
+        width: 100%;
+        background-color: #3304F7;
+        z-index: -1; }
+        @media (min-width: 700px) {
+          main .background .content .background_escritorio::before {
+            height: 50%; } }
+      main .background .content .background_escritorio::after {
+        content: " ";
+        position: absolute;
+        top: 70%;
+        left: 0px;
+        height: 50%;
+        width: 100%;
+        background-color: #A1DB04;
+        z-index: -1; }
+        @media (min-width: 700px) {
+          main .background .content .background_escritorio::after {
+            height: 50%; } }
+      main .background .content .background_escritorio .stickers {
+        text-align: center;
+        background-size: 160% 90%;
+        background-repeat: no-repeat;
+        background-position: bottom center;
+        padding-bottom: 90px; }
+        main .background .content .background_escritorio .stickers h1 {
+          margin: 45px auto;
+          max-width: 90%;
+          font-size: 4rem; }
+        main .background .content .background_escritorio .stickers h2 {
+          font-size: 2rem;
+          color: #FD6C02; }
+        main .background .content .background_escritorio .stickers span {
+          font-size: 1.1rem;
+          color: #3304F7;
+          font-family: poppints_medium; }
+      main .background .content .background_escritorio .screens h2 {
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center; }
+        main .background .content .background_escritorio .screens h2 span:first-of-type {
+          font-family: poppints_bold;
+          text-transform: uppercase;
+          font-size: 2.5rem; }
+        main .background .content .background_escritorio .screens h2 span:last-of-type {
+          text-transform: uppercase;
+          background-color: #FDD825;
+          padding: 4px 25px;
+          margin-top: 10px;
+          border-radius: 31px;
+          color: #00943B; }
+      main .background .content .background_escritorio .screens h3 {
+        font-size: 2rem;
+        color: #FFFDD7;
+        text-align: center; }
+      main .background .content .background_escritorio .screens span.descarga {
+        font-size: 1.1rem;
+        color: #3304F7;
+        font-family: poppints_medium;
+        text-align: center;
+        margin: auto;
+        display: block;
+        margin-bottom: 50px; }
     main .background .content h2,
     main .background .content h1 {
       color: #FFFDD7;
-      margin: 15px 0px;
       font-size: 3rem;
       font-family: champ;
       line-height: 45px; }
@@ -975,13 +1050,25 @@ main .background {
     main .background .content p {
       font-family: poppints_medium;
       font-size: 1.1rem; }
+  main .background .content.galery {
+    position: relative; }
+    main .background .content.galery h2 {
+      text-align: center;
+      margin: 0px auto 30px auto;
+      max-width: 70%;
+      color: #00943B; }
+    main .background .content.galery .background {
+      position: absolute;
+      z-index: -1;
+      bottom: 0px;
+      height: 50%; }
 
 figure.wp-block-gallery.has-nested-images {
-  width: 80%;
-  margin: auto;
-  column-gap: 20px;
-  row-gap: 20px; }
+  width: 90%;
+  column-count: 2;
+  margin: auto; }
   figure.wp-block-gallery.has-nested-images img {
+    object-fit: contain;
     border-radius: 10px; }
 
 .wp-block-cover__image-background {
