@@ -16,19 +16,18 @@
     src: url(./fonts/Poppins-Medium_1.ttf);
 }
 
-.sticker_slider .glide__slide{
+.sticker_slider{
+    width: 80%;
+    margin: auto;
+}
 
-    background-color: var(--color-principal-stickers);
-    padding: 20px;
+.sticker_slider .glide__slide{
     display: flex;
     flex-flow: column;
     justify-content: center;
     align-items: center;
-    border-radius: 25px;
-    margin-bottom: 25px;
+    margin-bottom: 0px;
     width: 100%;
-    padding-right: 10px;
-
 }
 
 .sticker_slider .glide__track{
@@ -36,6 +35,20 @@
     padding: 0px;
     margin: 0px;
     width: calc(100% - 9px);
+    overflow: hidden;
+    border-radius: 25px;
+    margin-bottom: 30px;
+}
+
+.sticker_slider .glide__slide .content_slide{
+    background-color: var(--color-principal-stickers);  
+    padding: 15px;
+    border-radius: 25px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
 }
 
 .sticker_slider ul{
@@ -44,11 +57,14 @@
 
 .sticker_slider ul li .image{
     display: flex;
-    justify-content: center ;
+    justify-content: center;
+    user-select: none;
+    pointer-events: none;
 }
 
 .sticker_slider ul li img{
     width: 80%;
+    padding: 25px;
 }
 
 .sticker_slider ul li .link{
@@ -56,10 +72,14 @@
     width: 100%;
     display: flex;
     justify-content: flex-end;
+    position: absolute;
+    bottom: 5px;
+    right: 9px;
 }
 
 .sticker_slider ul li .link a img{
-    width: 50px;
+    width: 40px;
+    padding: 0px;
 }
 
 .titles_stickers{
@@ -80,4 +100,11 @@
     margin-bottom: 10px;
     display: block;
     color: var(--color-principal-sticker-border);
+}
+
+@media (max-width: 700px) {
+
+    .sticker_slider .glide__track{
+        overflow: initial;
+    }
 }

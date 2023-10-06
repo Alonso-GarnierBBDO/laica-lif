@@ -133,20 +133,20 @@
 
             </section>
         </section>
-        <section class="noticias">
+        <!-- <section class="noticias">
             <div class="item">
-                <?php dynamic_sidebar('noticias-widget-area'); ?>
+                <?php //dynamic_sidebar('noticias-widget-area'); ?>
                 <section class="content">
                     <?php
-                        $title_fresco = get_theme_mod('title-fresco-setting');
+                        //$title_fresco = get_theme_mod('title-fresco-setting');
                     ?>
                     <h2><?= $title_fresco ?></h2>
                     <section class="stikers">
-                        <?php dynamic_sidebar('stickers-widget-area'); ?>
+                        <?php //dynamic_sidebar('stickers-widget-area'); ?>
                     </section>
                 </section>
             </div>
-        </section>
+        </section> -->
 
 
         <style>

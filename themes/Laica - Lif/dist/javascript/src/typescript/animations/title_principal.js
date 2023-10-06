@@ -1,7 +1,6 @@
 var titlePrincipal = function () {
     var allTitle = document.querySelectorAll('.title_fragment');
     if (allTitle) {
-        console.log(allTitle);
         allTitle.forEach(function (title) {
             var titleCotent = title.textContent;
             var arrayText = titleCotent === null || titleCotent === void 0 ? void 0 : titleCotent.split(" ");

@@ -8,6 +8,7 @@ import scroll from './interacction/scroll.js';
 import titlePrincipal from './text/title_principal.js';
 import objetos from './interacction/escritorioObjetos.js';
 import slider from './interacction/slider.js';
+import backgrounds from './backgrounds/index.js';
 window.addEventListener('load', function () {
     menu();
     hand();
@@ -19,10 +20,12 @@ window.addEventListener('load', function () {
     titlePrincipal();
     objetos();
     slider();
+    backgrounds();
 });
 window.addEventListener('resize', function () {
     menu();
     circles();
     slider();
     objetos();
+    backgrounds();
 });

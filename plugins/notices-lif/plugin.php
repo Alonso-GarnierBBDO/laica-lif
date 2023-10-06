@@ -39,6 +39,22 @@ function cargar_mi_bloque_script() {
 add_action('enqueue_block_editor_assets', 'cargar_mi_bloque_script');
 
 
+function cargarEstitlosBloque() {
+
+    // Importamos el glided
+    $script_url = plugins_url('assets/slider/js/glide/glide.min.js', __FILE__);
+    echo "<script src='$script_url'></script>";
+
+    $script_url = plugins_url('assets/slider/js/app.js', __FILE__);
+    echo "<script type='module' src='$script_url'></script>";
+
+    wp_enqueue_style('my-block-styles-slider-glided', plugins_url('assets/slider/css/glide/glide.theme.min.css', __FILE__));
+    wp_enqueue_style('my-block-styles-slider', plugins_url('assets/slider/css/style.css', __FILE__));
+}
+
+add_action('wp_enqueue_scripts', 'cargarEstitlosBloque');
+
+
 
 // Registramos la api del plugin
 function api_plugin() {

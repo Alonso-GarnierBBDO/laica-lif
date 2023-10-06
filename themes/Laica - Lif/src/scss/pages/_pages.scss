@@ -1,0 +1,173 @@
+main .background{
+
+    padding-top: 0px;
+    overflow-x: hidden;
+
+    @include bp(tablet) {
+        padding-top: 125px;
+    }
+
+    // background-color: $color_terciario;
+
+    .content{
+        width: 100%;
+        margin: auto;
+
+        h2,
+        h1{
+            color: $color_primary;
+            margin: 15px 0px;
+            font-size: $font-size-small-v2-escritorio;
+            font-family: $family-primary;
+            line-height: 45px;
+
+            @include bp(tablet) {
+                font-size: $font-size-small-escritorio;
+                margin: 30px 0px;
+            }
+
+        }
+
+        h2{
+            &:last-child{
+                margin-top: 0px !important;
+            }
+        }
+
+        h3{
+            font-size: $font-text-normal-mobile;
+            font-family: $family-primary;
+            color: $color-orange;
+            margin: 20px 0px 0px 0px;
+            text-transform: uppercase;
+
+            @include bp(tablet) {
+                font-size: $font-size-small-v2-escritorio;
+                margin: 0px 0px 0px 0px;
+            }
+        }
+
+        .wp-block-group__inner-container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+
+            @include bp(tablet) {   
+                margin-top: 80px;
+            }
+        }
+
+        h4{
+            background-color: $color-yellow-two;
+            color: $color_secundary;
+            width: auto;
+            padding: 5px 40px;
+            border-radius: 40px;
+            font-family: $family-primary;
+            text-transform: uppercase;
+            font-size: $font-producto-title;
+            margin-top: 60px;
+
+            @include bp(tablet) {
+                font-size: $font-size-small-v2-escritorio;
+                margin-top: 0px;
+            }
+        }
+
+        p{
+            font-family: $family-medium;
+            font-size: $font-text-normal;
+        }
+
+    }
+
+}
+
+// Se le agrega el import porque necesito saltarme las reglas de diseño de wordpress para acomplar la galeria al diseño
+
+figure.wp-block-gallery.has-nested-images{
+    
+    width: 80%;
+    margin: auto;
+    column-gap: 20px;
+    row-gap: 20px;
+
+    img{
+        border-radius: 10px;
+    }
+
+}
+
+.wp-block-cover__image-background {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+}
+
+// Agregamos los items del fondo
+
+.background_items{
+    position: absolute;
+    top: 0px;
+    width: 100vw;
+    height: 100%;
+    z-index: -1;
+
+    section {
+
+        &:first-of-type{
+            width: 100%;
+            height: 160vh;
+            position: relative;
+            background-size: 130%;
+            background-repeat: no-repeat;
+            background-position: center;
+
+            @include bp(tablet) {
+                background-size: contain;
+                height: 200vh;
+
+                background-position: 0px 80px;
+
+                background-size: 100% 55%;
+            }
+
+            &::before{
+                content: " ";
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                height: 50%;
+                width: 100%;
+                background-color: $color_terciario;
+                z-index: -1;
+            }
+
+            &::after{
+                content: " ";
+                position: absolute;
+                top: 50%;
+                left: 0px;
+                height: 50%;
+                width: 100%;
+                background-color: $color-green;
+                z-index: -1;
+            }
+
+        }
+
+        &:last-of-type{
+            position: absolute;
+            width: 100%;
+            height: 50%;
+            bottom: -35px;
+            display: flex;
+            flex-flow: column;
+            align-items: flex-end;
+            justify-content: flex-end;
+        }
+
+    }
+
+}

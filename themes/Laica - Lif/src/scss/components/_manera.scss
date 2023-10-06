@@ -30,7 +30,7 @@
 
     @include bp(tablet) {
         min-height: calc(100vh - 150px);
-        padding: 90px 15px 90px 15px;
+        padding: 90px 15px 30px 15px;
         background-size: 100% 100%;
         background-repeat: no-repeat;
     }

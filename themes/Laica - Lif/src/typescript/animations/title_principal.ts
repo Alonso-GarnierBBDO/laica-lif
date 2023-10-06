@@ -5,8 +5,6 @@ const titlePrincipal = () => {
 
     if (allTitle) {
 
-        console.log(allTitle);
-
         allTitle.forEach(title => {
             const titleCotent: string | null = title.textContent;
             const arrayText = titleCotent?.split(" ");

@@ -7,6 +7,7 @@ import { __ } from "@wordpress/i18n";
 import { useState, useEffect } from "@wordpress/element";
 import './assets/css/style.css';
 import logo from './assets/img/img.svg';
+import flor from './assets/img/flor.svg';
 
 // Registramos el nuevo bloque
 
@@ -16,8 +17,8 @@ registerBlockType("notices-lif/my-block", {
   category: "widgets",
   attributes: {
     content: {
-        type: "string",
-        default: "Sin noticias que mostrar",
+        type: "array",
+        default: ["Sin noticias que mostrar"],
     },
   },
   edit: function (props) {
@@ -66,7 +67,7 @@ registerBlockType("notices-lif/my-block", {
     }, []);
 
 
-
+    // Mostramos un ejemplo de como se vera en el img
     return (
         <>
             <img src={logo} class="img-fluid rounded-top" alt=""/>
@@ -76,17 +77,37 @@ registerBlockType("notices-lif/my-block", {
 
   save: function (props) {
 
-    // Contenido a mostrar en el html
-
     const { attributes } = props;
-    const content = attributes.content;
-
+    const content = attributes.content || []; // Asegurarse de que content sea una matriz
+  
+  
     return (
         <>
-            
+            <section className="noticias_slider">
+                <div className="glide__track" data-glide-el="track">
+                    <ul className="glide__slides">
+                        {
+                            content.map((item, index) => (
+                                <li className="glide__slide" key={index}>
+                                    <section className="content_slide">
+                                        <div className="image" style={{
+                                          backgroundImage:  `url(${flor})`
+                                        }}>
+                                            <img src={item.img} alt="Image slider"/>
+                                        </div>
+                                        <section className="content_product_slider">
+                                            <h3>{ item.titulo }</h3>
+                                            <p>{ item.subtitle }</p>
+                                        </section>        
+                                    </section>
+                                </li>
+                            ))
+                        }
+                    </ul>
+                </div>
+            </section>
         </>
-    )
 
-
+    );
   },
 });

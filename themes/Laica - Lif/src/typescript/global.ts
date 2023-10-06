@@ -8,6 +8,7 @@ import scroll from './interacction/scroll.js';
 import titlePrincipal from './text/title_principal.js';
 import objetos from './interacction/escritorioObjetos.js';
 import slider from './interacction/slider.js';
+import backgrounds from './backgrounds/index.js';
  
 
 window.addEventListener('load', () => {
@@ -21,6 +22,7 @@ window.addEventListener('load', () => {
     titlePrincipal(); 
     objetos();
     slider();
+    backgrounds();
 })
 
 window.addEventListener('resize', () => {
@@ -28,4 +30,5 @@ window.addEventListener('resize', () => {
     circles();      
     slider();
     objetos();
+    backgrounds();
 })
