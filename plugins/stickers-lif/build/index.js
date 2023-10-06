@@ -645,7 +645,7 @@ registerBlockType('stickers/stikers-lif', {
     const [stikets, setStikers] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_2__.useState)([]);
     const stikersFetch = async () => {
       try {
-        const response = await fetch(`${firstMatchingScript}/wp-json/wp/v2/stickers`);
+        const response = await fetch(`${firstMatchingScript}/?rest_route=/wp/v2/stickers`);
         if (!response.ok) {
           throw new Error("La solicitud no fue exitosa");
         }
