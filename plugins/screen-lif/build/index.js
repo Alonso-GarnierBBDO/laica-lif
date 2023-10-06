@@ -212,7 +212,7 @@ registerBlockType("screens-lif/my-block", {
 
     const noticiasFetch = async () => {
       try {
-        const response = await fetch(`${firstMatchingScript}/wp-json/wp/v2/pantallas`);
+        const response = await fetch(`${firstMatchingScript}/?rest_route=/wp/v2/pantallas`);
         if (!response.ok) {
           throw new Error("La solicitud no fue exitosa");
         }

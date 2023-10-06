@@ -38,7 +38,7 @@ registerBlockType('stickers/stikers-lif', {
         const stikersFetch = async () => {
             try {
               const response = await fetch(
-                `${firstMatchingScript}/wp-json/wp/v2/stickers`
+                `${firstMatchingScript}/?rest_route=/wp/v2/stickers`
               );
       
               if (!response.ok) {

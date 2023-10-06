@@ -46,7 +46,7 @@ registerBlockType("notices-lif/my-block", {
     const noticiasFetch = async () => {
       try {
         const response = await fetch(
-          `${firstMatchingScript}/wp-json/wp/v2/noticias`
+          `${firstMatchingScript}/?rest_route=/wp/v2/noticias`
         );
 
         if (!response.ok) {
