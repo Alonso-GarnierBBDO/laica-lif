@@ -6,9 +6,74 @@ Template Name: Lo más fresco
 
 
 <?php get_header(); ?>
-    <section class="background">
+<main class="fresco">
 
-        <section class="content">
+    <section class="container">
+
+            <section class="background_escritorio">
+                <img src="<?= get_stylesheet_directory_uri() ?>/assets/img/background_page.png" alt="">
+            </section>
+
+            <section class="background_mobile">
+                <img src="<?= get_stylesheet_directory_uri() ?>/assets/img/mobile_background.png" alt="">
+            </section>
+
+            <section class="panel stickers_container">
+                <section>
+                    <section class="noticias">
+                        <?php dynamic_sidebar('noticias-widget-area'); ?>
+                    </section>
+                    <section class="stickers">
+                        <h1>Decilo a tu manera</h1>
+                        <?php dynamic_sidebar('stickers-widget-area'); ?>
+                        <h2>STICKERS FRESCOS</h2>
+                        <span>Descargalos aquí</span>
+                    </section>
+                </section>
+            </section>
+
+
+            <section class="panel screens_container">
+                <section class="screens">
+                    <h2>
+                        <span>Lif</span>
+                        <span>Tqm</span>
+                    </h2>
+                    <?php dynamic_sidebar('screens-widget-area'); ?>
+                    <h3 class="escritorio_media">Descargalos aquí</h3>
+                    <h3 class="mobile_media">FONDOS DE PANTALLA</h3>
+                    <span class="descarga mobile">Descargalos aquí</span>
+                </section>
+            </section>
+
+            <section class="panel galeria_content">
+
+                    <h2>Lo más fresco</h2>
+                    <section class="galeria">
+                        <?php
+                            $allImageString = get_theme_mod('multi_image_selector');
+                            $allImageArray = explode(",", $allImageString);
+                            $count = count($allImageArray);
+                            if($count){
+
+                                foreach( $allImageArray as $key => $value ){
+                        ?>
+                                <div>
+                                    <img src="<?= $value ?>" alt="Imagen de lif">
+                                </div>
+                        <?php
+                                }
+
+                            }
+                            
+                        ?>
+                    </section>
+            </section>
+
+    </section>
+   
+
+        <!-- <section class="content">
             <section class="background_escritorio" style="background-image: url(<?= get_stylesheet_directory_uri() ?>/assets/img/background_page.png);">
                 <section class="noticias">
                     <?php dynamic_sidebar('noticias-widget-area'); ?>
@@ -38,22 +103,15 @@ Template Name: Lo más fresco
             <?php the_content(); ?>
             <img class="background" src="<?= get_stylesheet_directory_uri() ?>/assets/img/cuadros.svg" alt="">
         </section>
-    </section>
+    </section> -->
 
     <style>
 
-        @media (min-width: 700px) {
-            body .background_escritorio .background .stickers{
-                background-image: initial !important;
-            }
-        }
-
-        @media (max-width: 700px) {
-            body main .background_escritorio{
-                background-image: initial !important;
-            }
+        .galeria_content{
+            background-image: url(<?= get_stylesheet_directory_uri() ?>/assets/img/cuadro.png);
         }
 
     </style>
+</main>
 
 <?php get_footer(); ?>

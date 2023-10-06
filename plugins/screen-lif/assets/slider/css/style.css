@@ -130,10 +130,20 @@
     }   
 
     .screen_slider_content .screen_slider_content_defined .content_slide{
-        height: 400px;
+        height: 250px;
     }
 
     .screen_slider_content{
         margin-bottom: 20px;
     }
+
+    .screen_slider_content .itemsScreen{
+        margin-top: 0px;
+    }
+
+    .screen_slider_content{
+        margin-bottom: 0px;
+    }
+
+    
 }

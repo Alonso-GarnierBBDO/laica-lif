@@ -1,325 +1,687 @@
-main .background{
+// .items_main_fron{
+//     background-color: $color-orange-background;
+//     z-index: -1;
+//     position: relative;
+// }
 
-    padding-top: 0px;
-    overflow-x: hidden;
+// .main—conten-fresh{
+//     padding-top: 0px;
+//     @include bp(tablet) {
+//         padding-top: 0px; 
+//         padding-bottom: 30px;
+//     }
+// }
 
-    // @include bp(tablet) {
-    //     padding-top: 125px; 
-    // }
 
-    // background-color: $color_terciario;
+.fresco{
 
-    .content{
-        width: 100%;
-        margin: auto;
+    .container{
+        max-height: 100vh;
+	    overflow-y: scroll;
+        scroll-snap-type: y mandatory;
+        position: relative;
 
-        .noticias{
-
-            background-color: transparent;
+        .panel {
+            scroll-snap-align: start;
+            padding-top: 110px;
+            height: calc(100vh - 110px);
+            overflow: hidden;
+            display: flex;
+            flex-flow: column;
+            justify-content: center;
 
             @include bp(tablet) {
-                padding-top: 125px; 
-                padding-bottom: 30px;
+                padding-top: 80px;
+                height: calc(100vh - 80px);
             }
+
         }
 
-        .background_escritorio{
+        .stickers_container{
 
 
-            background-size: 100% 60%;
-            background-repeat: no-repeat;
-            background-position: center 5%;
-
-            &::before{
-                content: " ";
-                position: absolute;
-                top: 0px;
-                left: 0px;
-                height: 70%;
-                width: 100%;
-                background-color: $color_terciario;
-                z-index: -1;
-
-                @include bp(tablet) {
-                    height: 50%;
-                }
-
-            }
-
-            &::after{
-                content: " ";
-                position: absolute;
-                top: 70%;
-                left: 0px;
-                height: 50%;
-                width: 100%;
-                background-color: $color-green;
-                z-index: -1;
-
-                @include bp(tablet) {
-                    height: 50%;
-                }
-            }
-
-            .stickers{
+            h1{
                 text-align: center;
-                background-size: 160% 90%;
-                background-repeat: no-repeat;
-                background-position: bottom center;
-                padding-bottom: 90px;
+                width: 100%;
+                margin: 20px auto;
+                font-size: $font-text-normal-mobile;
+                text-transform: uppercase;
+                font-family: $family-primary;
+                color: $color_primary;
 
                 @include bp(tablet) {
-                    padding-bottom: 50px;
-                }
-
-                h1{
-                    margin: 45px auto;
-                    max-width: 90%;
-                    font-size: $font-size-small-escritorio;
-                }
-
-                h2{
-                    font-size: $font-text-normal-mobile;
-                    color: $color-orange;
-                }
-
-                span{
-                    font-size: $font-text-normal;
-                    color: $color_terciario;
-                    font-family: $family-medium;
+                    font-size: $font-size-small-v2-escritorio;
                 }
 
             }
 
-            .screens{
+            h2{
+                font-family: $family-primary;
+                font-size: $font-subtitle;
+                color: $color-circles-orange;
+                text-align: center;
 
-                h2{
-                    display: flex;
-                    flex-flow: column;
-                    justify-content: center;
-                    align-items: center;
+                @include bp(tablet) {
+                    font-size: $font-text-normal-mobile;
+                }
+            }
 
-                    span {
-                        &:first-of-type{
-                            font-family: $family-secundary;
-                            text-transform: uppercase;
-                            font-size: $font-producto-title;
+            span{
+                display: block;
+                width: 100%;
+                text-align: center;
+                font-family: $family-medium;
+                color: $color_terciario;
+            }
+
+        }
+
+        .screens_container{
+
+            h2{
+                text-align: center;
+                color: $color_secundary;
+                font-size: $font-text-normal-mobile;
+                text-transform: uppercase;
+                background-color: $color-yellow-two;
+                border-radius: 50px;
+                padding: 7px 19px;
+                font-family: $family-primary;
+                width: 175px;
+                margin: auto;
+            }
+
+            h3{
+                text-align: center;
+                width: 100%;
+                margin: 20px auto;
+                font-size: $font-text-normal-mobile;
+                text-transform: uppercase;
+                font-family: $family-primary;
+                color: $color_primary;
+                margin-top: 0px;
+                margin-bottom: 0px;
+
+                @include bp(tablet) {
+                    margin-bottom: 0px !important;
+                }
+            }
+
+            .escritorio_media{
+                display: none;
+            }
+
+            .mobile_media{
+                display: block;
+            }
+
+            span.descarga{
+                display: block;
+                width: 100%;
+                text-align: center;
+                font-family: $family-medium;
+                color: $color_terciario;
+            }
+
+            @include bp(tablet) {
+
+                h3{
+                    font-size: $font-size-small-v2-escritorio;
+                    margin: 20px auto;
+                    margin-top: auto;
+                }
+
+                .escritorio_media{
+                    display: block;
+                }
+
+                .mobile_media{
+                    display: none;
+                }
+            }
+
+        }
+
+        .galeria_content{
+
+            background-size: 100% 50%;
+            background-repeat: no-repeat;
+            background-position: bottom;
+
+            h2{
+                text-align: center;
+                width: 100%;
+                margin: 20px auto 0px auto;
+                font-size: $font-text-normal-mobile;
+                text-transform: uppercase;
+                font-family: $family-primary;
+                color: $color_secundary;
+
+                @include bp(tablet) {
+                    font-size: $font-size-small-v2-escritorio;
+                }
+            }
+
+            .galeria{
+
+                height: 80%;
+                width: 80%;
+                overflow: hidden;
+                margin: auto;
+                display: flex;
+                flex-flow: row wrap;
+
+                div{
+
+                    display: none;
+                    height: 50%;
+
+                    &:nth-of-type(1){
+                        display: block;
+                        width: 60%;
+                    }
+
+                    &:nth-of-type(2){
+                        display: block;
+                        width: 40%;
+                    }
+
+                    &:nth-of-type(3){
+                        display: block;
+                        width: 40%;
+                    }
+
+                    &:nth-of-type(4){
+                        display: block;
+                        width: 60%;
+                    }
+
+                    &:nth-of-type(5){
+                        display: block;
+                        width: 60%;
+                    }
+
+                    &:nth-of-type(6){
+                        display: block;
+                        width: 40%;
+                    }
+
+                    @include bp(tablet) {
+                        
+                        &:nth-of-type(1){
+                            display: block;
+                            width: 40%;
                         }
-
-                        &:last-of-type{
-                            text-transform: uppercase;
-                            background-color: $color-yellow-two;
-                            padding: 4px 25px;
-                            margin-top: 10px;
-                            border-radius: 31px;
-                            color: $color_secundary;
+    
+                        &:nth-of-type(2){
+                            display: block;
+                            width: 20%;
                         }
+    
+                        &:nth-of-type(3){
+                            display: block;
+                            width: 40%;
+                        }
+    
+                        &:nth-of-type(4){
+                            display: block;
+                            width: 20%;
+                        }
+    
+                        &:nth-of-type(5){
+                            display: block;
+                            width: 40%;
+                        }
+    
+                        &:nth-of-type(6){
+                            display: block;
+                            width: 40%;
+                        }
+    
+                    }
+
+                    img{
+                        width: calc(100% - 10px);
+                        height: calc(100% - 10px);
+                        object-fit: cover;
+                        border-radius: 10px;
+                        user-select: none;
+                        pointer-events: none;
                     }
 
                 }
-
-                h3{
-                    font-size: $font-text-normal-mobile;
-                    color: $color_primary;
-                    text-align: center;
-                }
-
-                span.descarga{
-                    font-size: $font-text-normal;
-                    color: $color_terciario;
-                    font-family: $family-medium;
-                    text-align: center;
-                    margin: auto;
-                    display: block;
-                    margin-bottom: 50px;
-                }
-
-            }
-        }
-
-        h2,
-        h1{
-            color: $color_primary;
-            // margin: 15px 0px;
-            font-size: $font-size-small-v2-escritorio;
-            font-family: $family-primary;
-            line-height: 45px;
-
-            @include bp(tablet) {
-                font-size: $font-size-small-escritorio;
-                margin: 30px 0px;
             }
 
-        }
-
-        h2{
-            &:last-child{
-                margin-top: 0px !important;
-            }
-        }
-
-        h3{
-            font-size: $font-text-normal-mobile;
-            font-family: $family-primary;
-            color: $color-orange;
-            margin: 20px 0px 0px 0px;
-            text-transform: uppercase;
-
-            @include bp(tablet) {
-                font-size: $font-size-small-v2-escritorio;
-                margin: 0px 0px 0px 0px;
-            }
-        }
-
-        .wp-block-group__inner-container{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: 20px;
-
-            @include bp(tablet) {   
-                margin-top: 80px;
-            }
-        }
-
-        h4{
-            background-color: $color-yellow-two;
-            color: $color_secundary;
-            width: auto;
-            padding: 5px 40px;
-            border-radius: 40px;
-            font-family: $family-primary;
-            text-transform: uppercase;
-            font-size: $font-producto-title;
-            margin-top: 60px;
-
-            @include bp(tablet) {
-                font-size: $font-size-small-v2-escritorio;
-                margin-top: 0px;
-            }
-        }
-
-        p{
-            font-family: $family-medium;
-            font-size: $font-text-normal;
         }
 
     }
 
-    .content.galery{
+    .background_escritorio{
+        position: absolute;
+        width: 100vw;
+        height: 120vh;
+        top: 0px;
+        left: 0px;
+        z-index: -1;
+        display: none;
 
-        position: relative;
-        padding-bottom: 20px;
-
-        h2{
-            text-align: center;
-            margin: 0px auto 30px auto;
-            max-width: 70%;
-            color: $color_secundary;
+        @include bp(tablet) {
+            display: block;
         }
 
-        .background{
-
+        &::after{
+            content: "";
             position: absolute;
-            z-index: -1;
-            bottom: 0px;
-            height: 50%;
+            width: 100%;
+            height: 40%;
+            top: 0px;
+            left: 0px;
+            background-color: $color_terciario;
+            z-index: -2;
+        }
 
-            @include bp(tablet) {
-                height: 20%;
-            }
+        &::before{
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 60%;
+            top: 40%;
+            left: 0px;
+            background-color: $color_background;
+            z-index: -2;
+        }
 
+        img{
+            width: 100%;
+            height: calc(100% - 30px);
+            transform: translateY(30px);
+        }
+
+    }
+
+    .background_mobile{
+        position: absolute;
+        width: 100vw;
+        height: 120vh;
+        top: 0px;
+        left: 0px;
+        z-index: -1;
+        display: block;
+
+        @include bp(tablet) {
+            display: none;
+        }
+
+        &::after{
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 40%;
+            top: 0px;
+            left: 0px;
+            background-color: $color_terciario;
+            z-index: -2;
+        }
+
+        &::before{
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 60%;
+            top: 40%;
+            left: 0px;
+            background-color: $color_background;
+            z-index: -2;
+        }
+
+        img{
+            width: 150%;
+            height: calc(100% - 100px);
+            transform: translate(-15%, 100px);
         }
     }
 
 }
 
-// Se le agrega el import porque necesito saltarme las reglas de diseño de wordpress para acomplar la galeria al diseño
 
-figure.wp-block-gallery.has-nested-images{
+// main .background{
+
+//     // padding-top: 0px;
+//     // overflow-x: hidden;
+//     // position: relative;
+//     // z-index: 3;
+
+//     .content{
+//         width: 100%;
+//         margin: auto;
+
+//         .noticias{
+
+//             background-color: transparent;
+//             padding-top: 125px; 
+
+//             @include bp(tablet) {
+//                 padding-top: 125px; 
+//                 padding-bottom: 30px;
+//             }
+//         }
+
+//         .background_escritorio{
+
+
+//             background-size: 100% 60%;
+//             background-repeat: no-repeat;
+//             background-position: center 5%;
+//             position: relative;
+
+//             @include bp(tablet) {
+//                 position: relative;
+//             }
+
+//             &::before{
+//                 content: " ";
+//                 position: absolute;
+//                 top: 0px;
+//                 left: 0px;
+//                 height: 30%;
+//                 width: 100%;
+//                 background-color: $color_terciario;
+//                 z-index: -1;
+
+//                 @include bp(tablet) {
+//                     height: 50%;
+//                 }
+
+//             }
+
+//             &::after{
+//                 content: " ";
+//                 position: absolute;
+//                 top: 70%;
+//                 left: 0px;
+//                 height: 50%;
+//                 width: 100%;
+//                 background-color: $color-green;
+//                 z-index: -1;
+
+//                 @include bp(tablet) {
+//                     height: 50%;
+//                 }
+//             }
+
+//             .stickers{
+//                 text-align: center;
+//                 background-size: 160% 90%;
+//                 background-repeat: no-repeat;
+//                 background-position: bottom center;
+//                 padding-bottom: 90px;
+
+//                 @include bp(tablet) {
+//                     padding-bottom: 50px;
+//                 }
+
+//                 h1{
+//                     margin: 45px auto;
+//                     max-width: 90%;
+//                     font-size: $font-size-small-escritorio;
+//                 }
+
+//                 h2{
+//                     font-size: $font-text-normal-mobile;
+//                     color: $color-orange;
+//                     margin-bottom: 0px;
+//                 }
+
+//                 span{
+//                     font-size: $font-text-normal;
+//                     color: $color_terciario;
+//                     font-family: $family-medium;
+
+//                     @include bp(tablet) {
+//                         height: 50%;
+//                         margin-top: 10px;
+//                     }
+//                 }
+
+//             }
+
+//             .screens{
+
+//                 background-color: $color_background;
+
+//                 h2{
+//                     display: flex;
+//                     flex-flow: column;
+//                     justify-content: center;
+//                     align-items: center;
+
+//                     span {
+//                         &:first-of-type{
+//                             font-family: $family-secundary;
+//                             text-transform: uppercase;
+//                             font-size: $font-producto-title;
+//                         }
+
+//                         &:last-of-type{
+//                             text-transform: uppercase;
+//                             background-color: $color-yellow-two;
+//                             padding: 4px 25px;
+//                             margin-top: 10px;
+//                             border-radius: 31px;
+//                             color: $color_secundary;
+//                         }
+//                     }
+
+//                 }
+
+//                 h3{
+//                     font-size: $font-text-normal-mobile;
+//                     color: $color_primary;
+//                     text-align: center;
+//                 }
+
+//                 span.descarga{
+//                     font-size: $font-text-normal;
+//                     color: $color_terciario;
+//                     font-family: $family-medium;
+//                     text-align: center;
+//                     margin: auto;
+//                     display: block;
+//                     margin-bottom: 50px;
+//                     margin-top: 7px;
+//                 }
+
+//             }
+//         }
+
+//         h2,
+//         h1{
+//             color: $color_primary;
+//             // margin: 15px 0px;
+//             font-size: $font-size-small-v2-escritorio;
+//             font-family: $family-primary;
+//             line-height: 45px;
+
+//             @include bp(tablet) {
+//                 font-size: $font-size-small-escritorio;
+//                 margin: 30px 0px;
+//             }
+
+//         }
+
+//         h2{
+//             &:last-child{
+//                 margin-top: 0px !important;
+//             }
+//         }
+
+//         h3{
+//             font-size: $font-text-normal-mobile;
+//             font-family: $family-primary;
+//             color: $color-orange;
+//             margin: 20px 0px 0px 0px;
+//             text-transform: uppercase;
+
+//             @include bp(tablet) {
+//                 font-size: $font-size-small-v2-escritorio;
+//                 margin: 0px 0px 0px 0px;
+//             }
+//         }
+
+//         .wp-block-group__inner-container{
+//             display: flex;
+//             justify-content: center;
+//             align-items: center;
+//             margin-top: 20px;
+
+//             @include bp(tablet) {   
+//                 margin-top: 80px;
+//             }
+//         }
+
+//         h4{
+//             background-color: $color-yellow-two;
+//             color: $color_secundary;
+//             width: auto;
+//             padding: 5px 40px;
+//             border-radius: 40px;
+//             font-family: $family-primary;
+//             text-transform: uppercase;
+//             font-size: $font-producto-title;
+//             margin-top: 60px;
+
+//             @include bp(tablet) {
+//                 font-size: $font-size-small-v2-escritorio;
+//                 margin-top: 0px;
+//             }
+//         }
+
+//         p{
+//             font-family: $family-medium;
+//             font-size: $font-text-normal;
+//         }
+
+//     }
+
+//     .content.galery{
+
+//         position: relative;
+//         padding-bottom: 20px;
+
+//         h2{
+//             text-align: center;
+//             margin: 0px auto 30px auto;
+//             max-width: 70%;
+//             color: $color_secundary;
+//             margin-top: 10px;
+
+//             @include bp(tablet) {
+//                 margin-top: 30px;
+//             }
+//         }
+
+//         .background{
+
+//             position: absolute;
+//             z-index: -1;
+//             bottom: 0px;
+//             height: 50%;
+
+//             @include bp(tablet) {
+//                 height: 20%;
+//             }
+
+//         }
+//     }
+
+// }
+
+// // Se le agrega el import porque necesito saltarme las reglas de diseño de wordpress para acomplar la galeria al diseño
+
+// figure.wp-block-gallery.has-nested-images{
     
-    width: 80%;
-    column-count: 2;
-    margin: auto;
-    // column-gap: 20px;
-    // row-gap: 20px;
+//     width: 80%;
+//     column-count: 2;
+//     margin: auto;
+//     // column-gap: 20px;
+//     // row-gap: 20px;
 
-    img{
-        object-fit: contain;
-        border-radius: 10px;
-    }
+//     img{
+//         object-fit: contain;
+//         border-radius: 10px;
+//     }
 
-}
+// }
 
-.wp-block-cover__image-background {
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: contain !important;
-}
+// .wp-block-cover__image-background {
+//     width: 100% !important;
+//     height: 100% !important;
+//     object-fit: contain !important;
+// }
 
-// Agregamos los items del fondo
+// // Agregamos los items del fondo
 
-.background_items{
-    position: absolute;
-    top: 0px;
-    width: 100vw;
-    height: 100%;
-    z-index: -1;
+// .background_items{
+//     position: absolute;
+//     top: 0px;
+//     width: 100vw;
+//     height: 100%;
+//     z-index: -1;
 
-    section {
+//     section {
 
-        &:first-of-type{
-            width: 100%;
-            height: 160vh;
-            position: relative;
-            background-size: 130%;
-            background-repeat: no-repeat;
-            background-position: center;
+//         &:first-of-type{
+//             width: 100%;
+//             height: 160vh;
+//             position: relative;
+//             background-size: 130%;
+//             background-repeat: no-repeat;
+//             background-position: center;
 
-            @include bp(tablet) {
-                background-size: contain;
-                height: 200vh;
+//             @include bp(tablet) {
+//                 background-size: contain;
+//                 height: 200vh;
 
-                background-position: 0px 80px;
+//                 background-position: 0px 80px;
 
-                background-size: 100% 55%;
-            }
+//                 background-size: 100% 55%;
+//             }
 
-            &::before{
-                content: " ";
-                position: absolute;
-                top: 0px;
-                left: 0px;
-                height: 50%;
-                width: 100%;
-                background-color: $color_terciario;
-                z-index: -1;
-            }
+//             &::before{
+//                 content: " ";
+//                 position: absolute;
+//                 top: 0px;
+//                 left: 0px;
+//                 height: 50%;
+//                 width: 100%;
+//                 background-color: $color_terciario;
+//                 z-index: -1;
+//             }
 
-            &::after{
-                content: " ";
-                position: absolute;
-                top: 50%;
-                left: 0px;
-                height: 50%;
-                width: 100%;
-                background-color: $color-green;
-                z-index: -1;
-            }
+//             &::after{
+//                 content: " ";
+//                 position: absolute;
+//                 top: 50%;
+//                 left: 0px;
+//                 height: 50%;
+//                 width: 100%;
+//                 background-color: $color-green;
+//                 z-index: -1;
+//             }
 
-        }
+//         }
 
-        &:last-of-type{
-            position: absolute;
-            width: 100%;
-            height: 50%;
-            bottom: -35px;
-            display: flex;
-            flex-flow: column;
-            align-items: flex-end;
-            justify-content: flex-end;
-        }
+//         &:last-of-type{
+//             position: absolute;
+//             width: 100%;
+//             height: 50%;
+//             bottom: -35px;
+//             display: flex;
+//             flex-flow: column;
+//             align-items: flex-end;
+//             justify-content: flex-end;
+//         }
 
-    }
+//     }
 
-}
+// }

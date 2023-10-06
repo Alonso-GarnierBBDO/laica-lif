@@ -1,0 +1,39 @@
+"use strict";
+(function ($) {
+    $(window).load(function () {
+        var begin_attachment_string = $("#images-galery").val();
+        var begin_attachment_array = begin_attachment_string.split(",");
+        for (var i = 0; i < begin_attachment_array.length; i++) {
+            if (begin_attachment_array[i] != "") {
+                $(".galery_items").append("<li class='image-list'><img src='" + begin_attachment_array[i] + "'></li>");
+            }
+        }
+        $(".button-secondary-galery.upload").click(function () {
+            var custom_uploader = wp.media.frames.file_frame = wp.media({
+                multiple: true
+            });
+            custom_uploader.on('select', function () {
+                var selection = custom_uploader.state().get('selection');
+                var attachments = [];
+                selection.map(function (attachment) {
+                    attachment = attachment.toJSON();
+                    $(".galery_items").append("<li class='image-list'><img src='" + attachment.url + "'></li>");
+                    attachments.push(attachment.url);
+                    console.log(attachment);
+                });
+                var attachment_string = attachments.join() + "," + $('#images-galery').val();
+                $('#images-galery').val(attachment_string).trigger('change');
+                // Cierra la ventana modal después de la selección
+            });
+            // Abre el modal
+            custom_uploader.open();
+        });
+        $(".galery_items").click(function () {
+            var img_src = $(event.target).find("img").attr('src');
+            $(event.target).closest("li").remove();
+            var attachment_string = $('#images-galery').val();
+            attachment_string = attachment_string.replace(img_src + ",", "");
+            $('#images-galery').val(attachment_string).trigger('change');
+        });
+    });
+})(jQuery);

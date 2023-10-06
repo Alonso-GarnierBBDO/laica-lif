@@ -37,7 +37,7 @@
     width: calc(100% - 9px);
     overflow: hidden;
     border-radius: 25px;
-    margin-bottom: 30px;
+    margin-bottom: 15px;
 }
 
 .sticker_slider .glide__slide .content_slide{
@@ -63,7 +63,7 @@
 }
 
 .sticker_slider ul li img{
-    width: 80%;
+    width: 70%;
     padding: 25px;
 }
 
@@ -107,4 +107,10 @@
     .sticker_slider .glide__track{
         overflow: initial;
     }
+
+    .sticker_slider ul li img{
+        width: 55%;
+        padding: 25px;
+    }
+
 }

@@ -42,7 +42,7 @@
     border-radius: 27px;
     border: 10px solid var(--color-principal-noticia-border);
     position: relative;
-    width: calc(100% - 89px);
+    width: 100%;
 }
 
 .noticias_slider ul li img{

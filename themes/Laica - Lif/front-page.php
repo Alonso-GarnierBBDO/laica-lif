@@ -1,7 +1,7 @@
 <?php get_header(); ?>
-
+    <main class="items_main_fron container">
         <section class="circulo">
-            <section class="presentation">
+            <section class="presentation panel">
                 <section class="img">
                     <img src="<?= get_stylesheet_directory_uri() ?>/assets/img/hojita.svg" class="lif_hojita" alt="Hoja ilustrativa">
                     <?php
@@ -32,7 +32,7 @@
                     </button>
                 </section>
             </section>
-            <section class="carrousel">
+            <section class="carrousel panel">
                 <section class="slider_item">
                     <?php
                         $allImageString = get_theme_mod('multi_image_selector');
@@ -178,5 +178,6 @@
             }
 
         </style>
+    </main>
 
 <?php get_footer(); ?>

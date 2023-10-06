@@ -9,6 +9,10 @@ header  {
     justify-content: space-around;
     z-index: 9999;
 
+    @include bp(tablet) {
+        top: 35px;
+    }
+
     // Se crea este before para mantener centro el menu con la mano
     &::before{
         content: "";
@@ -52,7 +56,7 @@ header  {
 
                     @include bp(tablet) {
                         font-size: $font-size-tablet;
-                        padding: 8px 5px;
+                        padding: 5px 5px;
                     }
 
                     &:hover,
@@ -65,7 +69,7 @@ header  {
                             transform: scale(2);    
 
                             @include bp(tablet) {
-                                transform: scale(2.6);
+                                transform: scale(2.2);
                             }
                         }    
                     }
@@ -143,7 +147,7 @@ header  {
         @include bp(tablet) {
             position: fixed;
             right: 40px;
-            top: 47px;  
+            top: 40px;  
         }
 
         @include keyframes(fade){
@@ -183,7 +187,7 @@ header  {
         width: 100vw;
         height: 100%;
         background-color: $color_terciario_transparent;
-        backdrop-filter: blur(4px);
+        backdrop-filter: blur(15px);
         display: flex;
         justify-content: center;
         align-items: flex-end;

@@ -20,3 +20,20 @@
             'placeholder' => __('Escriba aquí'),
         ),
     ));
+
+    // Incluimos la galeria
+
+    include(get_stylesheet_directory() . '/includes/custom-registers/controls/custom/very_galery.php');
+    
+    // Registra la configuración personalizada para las imágenes múltiples
+    $wp_customize->add_setting('multi_galery_selector', array(
+        'default'   => array(),
+        'transport' => 'refresh',
+        'type'      => 'option', // Puedes usar 'option' si prefieres guardar en opciones de tema
+    ));
+
+    // // Registra el control personalizado para las imágenes múltiples
+    $wp_customize->add_control(new Multi_Image_Customize_Galery($wp_customize, 'multi_galery_selector', array(
+        'label'       => __('Select Multiple Gakery', 'option'),
+        'section'     => 'lo-mas-fresco',
+    )));

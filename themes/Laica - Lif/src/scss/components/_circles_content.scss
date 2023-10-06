@@ -150,7 +150,7 @@
 
         h1{
             text-align: center;
-            color: $color_secundary;
+            color: $color-white;
             font-family: $family-primary;
 
             @include bp(tablet) {
@@ -345,7 +345,7 @@
                     right: -39px;
                     width: 59px;
                     height: 30px;
-                    background-color: $color_circles;
+                    background-color: $color-circles-orange;
                     transform: rotateZ(52deg);
                     transition: .1s ease;
                     opacity: 1;
