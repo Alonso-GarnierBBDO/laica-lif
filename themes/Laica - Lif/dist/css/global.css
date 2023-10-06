@@ -903,8 +903,8 @@ header {
   position: relative; }
   .fresco .container .panel {
     scroll-snap-align: start;
-    padding-top: 110px;
-    height: calc(100vh - 110px);
+    padding-top: 40px;
+    height: calc(100vh - 40px);
     overflow: hidden;
     display: flex;
     flex-flow: column;
@@ -997,12 +997,17 @@ header {
         .fresco .container .galeria_content h2 {
           font-size: 3rem; } }
     .fresco .container .galeria_content .galeria {
-      height: 80%;
+      height: 60%;
       width: 80%;
       overflow: hidden;
       margin: auto;
       display: flex;
-      flex-flow: row wrap; }
+      flex-flow: row wrap;
+      margin: 30px auto; }
+      @media (min-width: 700px) {
+        .fresco .container .galeria_content .galeria {
+          height: 80%;
+          margin: auto auto; } }
       .fresco .container .galeria_content .galeria div {
         display: none;
         height: 50%; }

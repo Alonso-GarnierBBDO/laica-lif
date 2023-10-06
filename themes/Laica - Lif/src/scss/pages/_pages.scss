@@ -23,8 +23,8 @@
 
         .panel {
             scroll-snap-align: start;
-            padding-top: 110px;
-            height: calc(100vh - 110px);
+            padding-top: 40px;
+            height: calc(100vh - 40px);
             overflow: hidden;
             display: flex;
             flex-flow: column;
@@ -164,12 +164,18 @@
 
             .galeria{
 
-                height: 80%;
+                height: 60%;
                 width: 80%;
                 overflow: hidden;
                 margin: auto;
                 display: flex;
                 flex-flow: row wrap;
+                margin: 30px auto;
+
+                @include bp(tablet) {
+                    height: 80%;
+                    margin: auto auto;
+                }
 
                 div{
 
