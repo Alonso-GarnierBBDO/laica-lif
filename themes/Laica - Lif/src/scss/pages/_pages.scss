@@ -26,7 +26,7 @@ main .background{
         .background_escritorio{
 
 
-            background-size: 100% 80%;
+            background-size: 100% 60%;
             background-repeat: no-repeat;
             background-position: center 5%;
 
@@ -67,6 +67,10 @@ main .background{
                 background-repeat: no-repeat;
                 background-position: bottom center;
                 padding-bottom: 90px;
+
+                @include bp(tablet) {
+                    padding-bottom: 50px;
+                }
 
                 h1{
                     margin: 45px auto;
@@ -221,6 +225,10 @@ main .background{
             bottom: 0px;
             height: 50%;
 
+            @include bp(tablet) {
+                height: 20%;
+            }
+
         }
     }
 
@@ -230,7 +238,7 @@ main .background{
 
 figure.wp-block-gallery.has-nested-images{
     
-    width: 90%;
+    width: 80%;
     column-count: 2;
     margin: auto;
     // column-gap: 20px;

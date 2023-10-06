@@ -42,8 +42,10 @@ Template Name: Lo más fresco
 
     <style>
 
-        body .background_escritorio .background{
-
+        @media (min-width: 700px) {
+            body .background_escritorio .background .stickers{
+                background-image: initial !important;
+            }
         }
 
         @media (max-width: 700px) {

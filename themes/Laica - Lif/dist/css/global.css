@@ -930,7 +930,7 @@ main .background {
           padding-top: 125px;
           padding-bottom: 30px; } }
     main .background .content .background_escritorio {
-      background-size: 100% 80%;
+      background-size: 100% 60%;
       background-repeat: no-repeat;
       background-position: center 5%; }
       main .background .content .background_escritorio::before {
@@ -963,6 +963,9 @@ main .background {
         background-repeat: no-repeat;
         background-position: bottom center;
         padding-bottom: 90px; }
+        @media (min-width: 700px) {
+          main .background .content .background_escritorio .stickers {
+            padding-bottom: 50px; } }
         main .background .content .background_escritorio .stickers h1 {
           margin: 45px auto;
           max-width: 90%;
@@ -1063,9 +1066,12 @@ main .background {
       z-index: -1;
       bottom: 0px;
       height: 50%; }
+      @media (min-width: 700px) {
+        main .background .content.galery .background {
+          height: 20%; } }
 
 figure.wp-block-gallery.has-nested-images {
-  width: 90%;
+  width: 80%;
   column-count: 2;
   margin: auto; }
   figure.wp-block-gallery.has-nested-images img {
