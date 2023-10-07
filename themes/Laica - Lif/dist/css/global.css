@@ -308,8 +308,7 @@ header {
   flex-flow: column;
   justify-content: space-between;
   position: relative;
-  padding-top: 100px;
-  max-height: calc(100vh - 100px); }
+  padding-top: 100px; }
   @media (min-width: 700px) {
     .circulo .presentation {
       justify-content: center; } }

@@ -10,7 +10,7 @@ const view = () : void => {
         const contentPadding =  parseInt(contentProperties.getPropertyValue('padding-top'));
 
         const heightView : number = window.innerHeight;
-        const vh : number = heightView - contentPadding;
+        const vh : number = (heightView - contentPadding - 100);
 
 
         view.style.height = `${vh}px`;
