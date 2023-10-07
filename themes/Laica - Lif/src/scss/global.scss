@@ -60,3 +60,25 @@ main{
         padding-top: 0px;
     }
 }
+
+
+// Frontpage
+
+.items_main_fron.container{
+    max-height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    position: relative;
+
+    .panel{
+        scroll-snap-align: start;
+        height: 100vh;
+        overflow: hidden;
+    }
+
+}
+
+.items_main_fron.container{
+    background-color: $color-orange-background;
+    z-index: -1;
+}

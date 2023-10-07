@@ -118,12 +118,13 @@
 
 .nav_productos{
     position: absolute;
-    bottom: 20px;
+    bottom: 35px;
     display: flex;
     flex-flow: row;
     justify-content: flex-end;
     padding: 0px 20px;
     width: calc(100% - 40px);
+    z-index: 1;
 }
 
 .nav_productos button{
@@ -171,7 +172,7 @@
     }
 
     .nav_productos{
-        bottom: calc(24vh + 20px);
+        bottom: calc(0vh + 39px);
         justify-content: center;
         z-index: 99;
         align-items: center;

@@ -61,7 +61,7 @@
                 </section>
             </section>
         </section>
-        <section class="products">
+        <section class="products panel">
             <section class="header">
                 <?php
                     $productsSubtitle = get_theme_mod('productos-setting-secundary');
@@ -83,7 +83,7 @@
             </section>
             <div class="background"></div>
         </section>
-        <section class="a_tu_manera" id="manera">
+        <section class="a_tu_manera panel" id="manera">
             <section class="conten-principal">
                 <section class="column-two">
                     <div>

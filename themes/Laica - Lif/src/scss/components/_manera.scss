@@ -1,5 +1,5 @@
 .a_tu_manera{
-    min-height: calc(100vh - 140px);
+    // min-height: calc(100vh - 140px);
     background-color: $color-yellow;
     width: calc(100% - 30px);
     padding: 140px 15px 30px 15px;
@@ -8,6 +8,14 @@
     position: relative;
     z-index: 2;
     overflow: hidden;
+    height: calc(100vh - 26px) !important;
+
+    @include bp(tablet) {
+        width: calc(100% - 0px);
+        height: auto !important;
+    }
+
+    
 
     &::before{
         content: "";
@@ -29,10 +37,10 @@
     }
 
     @include bp(tablet) {
-        min-height: calc(100vh - 150px);
-        padding: 90px 15px 30px 15px;
+        padding: 90px 0px 0px 0px;
         background-size: 100% 100%;
         background-repeat: no-repeat;
+        height: calc(100vh - 90px) !important;
     }
 
     .background_image{

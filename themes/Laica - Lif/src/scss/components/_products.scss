@@ -4,19 +4,29 @@
     overflow: hidden;
     display: flex;
     flex-flow: column;
-    justify-content: space-between;
+    justify-content: center;
     margin-top: 20px;
 
     @include bp(tablet) {
         margin-top: 50px;
         padding-bottom: 19px;
     }
+    
+    .sliderWidget {
+
+        margin-top: 40px;
+        z-index: 1;
+
+        @include bp(tablet) {
+            margin-top: 0px;
+        }
+    }
 
     .background{
 
         position: absolute;
         width: 100%;
-        height: 85%;
+        height: 65%;
         background-size: cover;
         bottom: 0px;
         z-index: -1;
@@ -107,13 +117,22 @@
     }
 
     .footer{
-        // position: absolute;       
-        // bottom: 0px;
         width: calc(100% - 40px);
         padding: 0px 20px;
         display: flex;
         justify-content: space-between;
         align-items: center;
+        position: absolute;       
+        bottom: 0px;
+        z-index: 0;
+
+        display: none;
+
+        @include bp(tablet) {
+            bottom: 15px;
+            z-index: 0;
+            display: block;
+        }
 
         img{
             width: 150px;

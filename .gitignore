@@ -1,0 +1,5 @@
+# Ignorar carpeta /node_modules/
+/uploads/
+
+#Ignore la carpeta upgrade
+/upgrade/
