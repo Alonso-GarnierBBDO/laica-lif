@@ -61,43 +61,49 @@ window.addEventListener('load', () => {
 
 
 function loadGlite(){
-  new Glide('.screen_slider_content_defined.mobile', {
-    type: 'carousel',
-    perView: 3,
-    focusAt: 'center',
-    autoplay: 5000, // 5000ms (5 segundos) entre cada transición
-    breakpoints: {
-      768: {
-        perView: 1 // Mostrar 1 elemento en pantallas más pequeñas (por ejemplo, dispositivos móviles)
+
+  const inputSlider = document.querySelector('.screen_slider_content_defined');
+
+  if(inputSlider){
+    
+    new Glide('.screen_slider_content_defined.mobile', {
+      type: 'carousel',
+      perView: 3,
+      focusAt: 'center',
+      autoplay: 5000, // 5000ms (5 segundos) entre cada transición
+      breakpoints: {
+        768: {
+          perView: 1 // Mostrar 1 elemento en pantallas más pequeñas (por ejemplo, dispositivos móviles)
+        }
       }
-    }
-  }).mount();
-
-
-  new Glide('.screen_slider_content_defined.escritorio', {
-    type: 'carousel',
-    perView: 3,
-    focusAt: 'center',
-    autoplay: 5000, // 5000ms (5 segundos) entre cada transición
-    breakpoints: {
-      768: {
-        perView: 1 // Mostrar 1 elemento en pantallas más pequeñas (por ejemplo, dispositivos móviles)
+    }).mount();
+  
+  
+    new Glide('.screen_slider_content_defined.escritorio', {
+      type: 'carousel',
+      perView: 3,
+      focusAt: 'center',
+      autoplay: 5000, // 5000ms (5 segundos) entre cada transición
+      breakpoints: {
+        768: {
+          perView: 1 // Mostrar 1 elemento en pantallas más pequeñas (por ejemplo, dispositivos móviles)
+        }
       }
-    }
-  }).mount();
-
-
-  new Glide('.screen_slider_content_defined.tablet', {
-    type: 'carousel',
-    perView: 3,
-    focusAt: 'center',
-    autoplay: 5000, // 5000ms (5 segundos) entre cada transición
-    breakpoints: {
-      768: {
-        perView: 1 // Mostrar 1 elemento en pantallas más pequeñas (por ejemplo, dispositivos móviles)
+    }).mount();
+  
+  
+    new Glide('.screen_slider_content_defined.tablet', {
+      type: 'carousel',
+      perView: 3,
+      focusAt: 'center',
+      autoplay: 5000, // 5000ms (5 segundos) entre cada transición
+      breakpoints: {
+        768: {
+          perView: 1 // Mostrar 1 elemento en pantallas más pequeñas (por ejemplo, dispositivos móviles)
+        }
       }
-    }
-  }).mount();
+    }).mount();
+  }
 
   remove();
 
