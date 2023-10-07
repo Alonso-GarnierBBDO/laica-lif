@@ -46,10 +46,19 @@
                     foreach($menuItems as $key => $value){
                         $title = $value->title;
                         $url = $value->url;
+
+                        $protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http";
+                        $host = $_SERVER['HTTP_HOST'];
+                        $uri = $_SERVER['REQUEST_URI'];
+
+                        $url_actual = "$protocol://$host$uri";
+
+                        $clase_active = ($url_actual == $url) ? "active" : "";
+
                 ?>
 
                         <li>
-                            <a href="<?= $url ?>" title="<?= $title ?>">
+                            <a href="<?= $url ?>" title="<?= $title ?>" class="<?= $clase_active ?>">
                                 <?= $title ?>
                             </a>
                         </li>

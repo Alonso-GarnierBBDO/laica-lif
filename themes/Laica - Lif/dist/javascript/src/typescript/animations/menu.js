@@ -15,7 +15,7 @@ var menu = function () {
             var positionLogoX_1 = allPositionLogo.x;
             menuItems.forEach(function (e) {
                 newElement_1.style.left = "".concat(positionXLogoRelative_1, "px");
-                if (!e.classList.contains('img')) {
+                if (!e.classList.contains('img') && !e.classList.contains('active')) {
                     var positionElement = e.getBoundingClientRect();
                     var positionX_1 = positionElement.x;
                     var positionRelative_1 = e.offsetLeft;

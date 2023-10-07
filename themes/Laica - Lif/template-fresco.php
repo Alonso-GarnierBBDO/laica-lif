@@ -59,11 +59,13 @@ Template Name: Lo más fresco
                             if($count > 1){
 
                                 foreach( $allImageArray as $key => $value ){
-                        ?>
-                                <div>
-                                    <img src="<?= $value ?>" alt="Imagen de lif">
-                                </div>
-                        <?php
+                                    if($value){
+                                        ?>
+                                            <div>
+                                                <img src="<?= $value ?>" alt="Imagen de lif">
+                                            </div>   
+                                        <?php
+                                    }
                                 }
 
                             }

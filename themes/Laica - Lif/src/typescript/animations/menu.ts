@@ -27,7 +27,7 @@ const menu = () => {
 
                 newElement.style.left = `${positionXLogoRelative}px`;
 
-                if(!e.classList.contains('img')){
+                if(!e.classList.contains('img') && !e.classList.contains('active')){
 
                     const positionElement = e.getBoundingClientRect();
                     const positionX = positionElement.x;
