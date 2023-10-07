@@ -51,10 +51,12 @@ Template Name: Lo más fresco
                     <h2>Lo más fresco</h2>
                     <section class="galeria">
                         <?php
-                            $allImageString = get_theme_mod('multi_image_selector');
+
+                            $allImageString = get_theme_mod('array_galerias');
                             $allImageArray = explode(",", $allImageString);
                             $count = count($allImageArray);
-                            if($count){
+
+                            if($count > 1){
 
                                 foreach( $allImageArray as $key => $value ){
                         ?>
