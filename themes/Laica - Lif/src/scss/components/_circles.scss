@@ -4,16 +4,19 @@
     position: relative;
 
     .carrousel{
-        padding-top: 40px;
-        height: calc(100vh - 40px);
+
+        padding-top: 100px;
+        padding-bottom: 100px;
+        height: calc(100vh - 200px) !important;
         display: flex;
         justify-content: center;
         align-items: center;
         position: relative;
 
         @include bp(tablet) {
-            padding-top: 0px;
-            height: 100vh;
+            padding-top: 40px;
+            padding-bottom: 40px;
+            height: 100vh !important;
         }
 
         .image_mobile{
@@ -98,10 +101,19 @@
 
                 &:last-of-type{
                     width: 300px;
+
+                    @include bp(tablet) {
+                        width: 240px;
+                        transform: translateY(50px);
+                    }
                 }
 
                 pointer-events: none;
                 user-select: none;
+
+                @include bp(tablet) {
+                    width: 180px;
+                }
 
             }
         }

@@ -11,14 +11,14 @@
 
         position: relative;
         width: 80%;
-        height: 75%;
+        height: 100%;
 
         @include bp(tablet) {
             display: flex;
             justify-content: center;
             align-content: center;
-            margin-top: 100px;
-            height: 80%;
+            margin: 100px auto;
+            height: calc(100% - 200px);
         }
 
         figure{

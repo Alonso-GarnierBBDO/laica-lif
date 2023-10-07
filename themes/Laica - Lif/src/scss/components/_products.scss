@@ -1,15 +1,17 @@
 .products{
-    min-height: calc(100vh - 90px);
     position: relative;
     overflow: hidden;
     display: flex;
     flex-flow: column;
     justify-content: center;
-    margin-top: 20px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    height: calc(100vh - 100px) !important;
 
     @include bp(tablet) {
-        margin-top: 50px;
-        padding-bottom: 19px;
+        padding-top: 50px;
+        padding-bottom: 50px;
+        height: calc(100vh - 100px) !important;
     }
     
     .sliderWidget {
@@ -39,7 +41,7 @@
         position: relative;
         align-items: center;    
         flex-flow: column;
-        overflow: hidden;
+        overflow: initial;
 
         @include bp(tablet) {
             overflow: initial;
@@ -54,7 +56,7 @@
         }
 
         h2{
-            font-size: $font-producto-title;
+            font-size: $font-text-normal-mobile;
             text-transform:capitalize;
             color: $color_primary;
             background-color: $color_terciario;
@@ -63,6 +65,10 @@
             margin-top: 5px;
             z-index: 1;
             font-family: $family-primary;
+
+            @include bp(tablet) {
+                font-size: $font-producto-title;
+            }
         }
 
         .mobile{
