@@ -10,11 +10,15 @@ const bottonScroll = () => {
 
             const height = window.innerHeight;
 
-            window.scrollTo({
-                top: height,
-                left: 0,
-                behavior: "smooth",
-            });
+            const container_element : HTMLElement | null = document.querySelector('.container.items_main_fron');
+
+            if(container_element){
+                container_element.scrollTo({
+                    top: height,
+                    left: 0,
+                    behavior: "smooth",
+                });
+            }
 
         }
 

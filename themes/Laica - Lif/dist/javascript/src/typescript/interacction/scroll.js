@@ -3,11 +3,14 @@ var bottonScroll = function () {
     if (bottomScroll) {
         bottomScroll.onclick = function () {
             var height = window.innerHeight;
-            window.scrollTo({
-                top: height,
-                left: 0,
-                behavior: "smooth",
-            });
+            var container_element = document.querySelector('.container.items_main_fron');
+            if (container_element) {
+                container_element.scrollTo({
+                    top: height,
+                    left: 0,
+                    behavior: "smooth",
+                });
+            }
         };
     }
 };
