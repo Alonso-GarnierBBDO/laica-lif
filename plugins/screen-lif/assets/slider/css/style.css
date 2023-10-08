@@ -70,7 +70,23 @@
 .screen_slider_content .screen_slider_content_defined{
     opacity: 1;
     transition: .1s ease;
+    min-height: 300px;
 }
+
+.screen_slider_content .screen_slider_content_defined.active{
+    animation: entryContent .5s ease;
+    opacity: 1;
+}
+
+@keyframes entryContent {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
 
 .screen_slider_content .screen_slider_content_defined .content_slide{
     height: 300px;

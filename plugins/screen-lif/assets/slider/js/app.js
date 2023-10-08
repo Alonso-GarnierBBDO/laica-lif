@@ -32,18 +32,13 @@ window.addEventListener('load', () => {
 
                 if(element.classList.contains(typeButton)){
 
+                  element.classList.add('active');
                   element.style.display = 'block';
-
-                  setTimeout(() => {
-                    element.style.opacity = '1';
-                  }, 100);
 
                 }else{
                   
-                  element.style.opacity = '0';
-                  setTimeout(() => {
-                    element.style.display = 'none';
-                  }, 100);
+                  element.style.display = 'none';
+                  element.classList.remove('active');
 
                 }
             });
@@ -117,7 +112,6 @@ function remove(){
     allScreens.forEach( (element, key) => {
 
         if(key > 0){
-          element.style.opacity = '0';
           element.style.display = 'none';
         }
 
