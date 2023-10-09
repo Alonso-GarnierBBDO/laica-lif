@@ -49,8 +49,9 @@ header {
         list-style: none;
         z-index: 9999; }
         @media (min-width: 700px) {
-          header nav ul li:last-of-type a {
-            padding: 5px 30px; } }
+          header nav ul li:last-of-type a,
+          header nav ul li:last-of-type a.active {
+            padding: 0px 30px; } }
         header nav ul li a.active {
           background-color: #00943B;
           border-radius: 20px;
