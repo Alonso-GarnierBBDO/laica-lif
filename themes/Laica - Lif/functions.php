@@ -58,6 +58,9 @@ function customRegister(WP_Customize_Manager $wp_customize){
     // Lo mas fresco
     include(get_stylesheet_directory() . '/includes/custom-registers/lo-mas-fresco.php');
 
+    // Contacto
+    include(get_stylesheet_directory() . '/includes/custom-registers/contacto.php');
+
     
 }
 

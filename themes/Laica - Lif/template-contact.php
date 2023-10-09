@@ -2,6 +2,13 @@
 /*
 Template Name: Plantilla de contacto
 */
+
+
+    $enlacePrincipal = get_theme_mod('enlace-principal-contacto'); 
+    $email = get_theme_mod('email-contacto-settings'); 
+    $phone = get_theme_mod('phone-contacto-settings'); 
+    $address = get_theme_mod('address-contacto-settings'); 
+
 ?>
 
 <?php get_header(); ?>
@@ -18,10 +25,11 @@ Template Name: Plantilla de contacto
                         </h2>
                     </section>
                     <section class="content_footer">
-                        <a href="" target="_black">@lifstevia</a>
-                        <a href="" target="_black">mercadeo@laica.co.cr</a>
-                        <a href="" target="_black">(506) 2284-6000</a>
-                        <p>Av. 15, Calle 3, San José, Costa Rica</p>
+
+                        <a href="#"><?= $enlacePrincipal ?></a>
+                        <a href="mailto:<?= $email ?>"><?= $email ?></a>
+                        <a href="tel:+506<?= $phone  ?>">(506) <?= $phone ?></a>
+                        <p><?= $address ?></p>
                     </section>
                     <img src="<?= get_stylesheet_directory_uri() ?>/assets/img/todo_fresco.svg" alt="" class="img_absolute">
                 </section>
@@ -41,10 +49,10 @@ Template Name: Plantilla de contacto
                         </h2>
                     </section>
                     <section class="content_footer">
-                        <a href="" target="_black">@lifstevia</a>
-                        <a href="" target="_black">mercadeo@laica.co.cr</a>
-                        <a href="" target="_black">(506) 2284-6000</a>
-                        <p>Av. 15, Calle 3, San José, Costa Rica</p>
+                        <a href="#"><?= $enlacePrincipal ?></a>
+                        <a href="mailto:<?= $email ?>"><?= $email ?></a>
+                        <a href="tel:+506<?= $phone  ?>">(506) <?= $phone ?></a>
+                        <p><?= $address ?></p>
                     </section>
                     <img src="<?= get_stylesheet_directory_uri() ?>/assets/img/todo_fresco.svg" alt="" class="img_absolute">
                 </section>
