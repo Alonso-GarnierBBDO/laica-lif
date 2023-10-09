@@ -23,6 +23,7 @@ function widgetArea() {
     include(get_stylesheet_directory() . '/includes/widgets/noticias.php');
     include(get_stylesheet_directory() . '/includes/widgets/stickers.php');
     include(get_stylesheet_directory() . '/includes/widgets/screens.php');
+    include(get_stylesheet_directory() . '/includes/widgets/contacto.php');
 }
 add_action('widgets_init', 'widgetArea');
 

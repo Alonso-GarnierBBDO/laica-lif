@@ -1,3 +1,6 @@
+/**
+ * En las importaciones los archivos realmente son ts, pero se le agrega js debido a una configuracion de tsconfig.json
+ */
 import menu from './animations/menu.js';
 import hand from './animations/hand.js';
 import circles from './animations/circles.js';
@@ -9,6 +12,7 @@ import titlePrincipal from './text/title_principal.js';
 import objetos from './interacction/escritorioObjetos.js';
 import slider from './interacction/slider.js';
 import backgrounds from './backgrounds/index.js';
+import formContact from './form/contacto_form.js';
 window.addEventListener('load', function () {
     menu();
     hand();
@@ -21,6 +25,7 @@ window.addEventListener('load', function () {
     objetos();
     slider();
     backgrounds();
+    formContact();
 });
 window.addEventListener('resize', function () {
     menu();
