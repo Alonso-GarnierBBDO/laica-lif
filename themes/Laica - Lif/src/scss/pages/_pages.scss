@@ -176,7 +176,6 @@
 
                 width: 80%;
                 margin: 30px  auto 0px auto;
-                padding-bottom: 30px;
                 column-count: 2;
 
                 @include bp(tablet) {
@@ -197,6 +196,10 @@
                         @include bp(tablet) {
                             margin-top: 10px;
                         }
+                    }
+
+                    &:last-of-type{
+                        padding-bottom: 50px;
                     }
 
                     // &:nth-of-type(2){
