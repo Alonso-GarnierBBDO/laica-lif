@@ -24,8 +24,14 @@
                     </section>
                 </section>
                 <section class="actions">
-                    <a href="" class="hover_animation" title="Tenemos cosas para contarte">
-                        Tenemos cosas para contarte
+                    
+                    <?php
+                        $tituloEnlace = get_theme_mod('home-titulo-enlace');
+                        $urlEnlace = get_theme_mod('home-enlace');
+                    ?>
+
+                    <a href="<?= $urlEnlace ?>" class="hover_animation" title="Tenemos cosas para contarte">
+                        <?= $tituloEnlace ?>
                     </a>
                     <button class="bottom_scroll" title="Arrastrar pagina">
                         <img src="<?= get_stylesheet_directory_uri() ?>/assets/img/arrow.svg" class="naranja" alt="Naranja ilustrativa">

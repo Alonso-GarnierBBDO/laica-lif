@@ -46,7 +46,7 @@ Template Name: Lo más fresco
                 </section>
             </section>
 
-            <section class="panel galeria_content">
+            <section class="panel galeria_content" id="galeria">
 
                     <h2>Lo más fresco</h2>
                     <section class="galeria">

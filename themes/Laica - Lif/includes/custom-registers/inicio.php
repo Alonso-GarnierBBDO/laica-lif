@@ -47,6 +47,37 @@
         'settings' => 'img-dos-presentation-setting',
     )));
 
+    // Titulo del enlace
+
+    $wp_customize->add_setting('home-titulo-enlace', array(
+        'capability' => 'edit_theme_options'
+    ));
+
+    $wp_customize->add_control('titulo-enlace-control-home ', array(
+        'label' => __('Titulo del enlace'),
+        'section' => 'home-presentation',
+        'settings' => 'home-titulo-enlace',
+        'input_attrs' => array(
+            'placeholder' => __('Escriba aquí'),
+        ),
+    ));
+
+    // Link del enlace
+
+    $wp_customize->add_setting('home-enlace', array(
+        'capability' => 'edit_theme_options'
+    ));
+
+    $wp_customize->add_control('enlace-control-home ', array(
+        'label' => __('URL del enlace'),
+        'section' => 'home-presentation',
+        'settings' => 'home-enlace',
+        'input_attrs' => array(
+            'placeholder' => __('Escriba aquí'),
+        ),
+    ));
+
+
 
     // Multiples imagenes en el slider
 
