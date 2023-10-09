@@ -156,7 +156,6 @@
             height: auto;
             min-height: calc(100vh - 40px);
             height: auto;
-            padding-bottom  : 20px;
 
             h2{
                 text-align: center;
@@ -165,7 +164,7 @@
                 font-size: $font-text-normal-mobile;
                 text-transform: uppercase;
                 font-family: $family-primary;
-                color: $color_secundary;
+                color: $color_secundary; 
 
                 @include bp(tablet) {
                     font-size: $font-size-small-v2-escritorio;
@@ -175,9 +174,7 @@
 
             .galeria{
 
-                // height: 60%;
                 width: 80%;
-                // overflow: hidden;
                 margin: 30px  auto 0px auto;
                 padding-bottom: 30px;
                 column-count: 2;
