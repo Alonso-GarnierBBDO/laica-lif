@@ -880,8 +880,7 @@ header {
       text-align: center; }
       @media (min-width: 700px) {
         .a_tu_manera .conten-principal .column-two div .content {
-          margin-top: 0px;
-          text-align: initial; } }
+          margin-top: 0px; } }
       .a_tu_manera .conten-principal .column-two div .content p {
         margin-bottom: 20px; }
         .a_tu_manera .conten-principal .column-two div .content p:first-of-type {
