@@ -95,7 +95,7 @@
                     <div>
                         <?php $textInit = get_theme_mod('title-presentation-setting'); ?>
                         <h3 class="title_fragment"><?= $textHomePage ?></h3>
-                        <div class="content">
+                        <div class="content mobile">
                             <?php $textoContenPrincipal = get_theme_mod('a-tu-manera-setting-content') ?>
                             <?= $textoContenPrincipal ?>
                         </div>
@@ -111,7 +111,7 @@
                     </div>
                 </section>
 
-                <div class="column-normal imagen">
+                <div class="column-normal imagen"> 
                     <div>
                         <?php 
                             $imagenID = get_theme_mod('img-secundaria-setting');
@@ -132,6 +132,10 @@
 
                 <div class="column-normal">
                     <div class="content_motivation">
+                            <div class="escritorio ">
+                                <?php $textoContenPrincipal = get_theme_mod('a-tu-manera-setting-content') ?>
+                                <?= $textoContenPrincipal ?>
+                            </div>
                             <?php $textoContenPrincipal = get_theme_mod('a-tu-manera-setting-motivacion') ?>
                             <?= $textoContenPrincipal ?>
                     </div>

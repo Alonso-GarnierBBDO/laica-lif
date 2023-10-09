@@ -130,6 +130,14 @@
                     text-align: center;
                 }
 
+                .content.mobile{
+                    display: block; 
+
+                    @include bp(tablet) {
+                        display: none;
+                    }
+                }
+
                 .content{
                     color: $color_primary;
                     margin-top: 20px;
@@ -218,6 +226,7 @@
             }
 
             .content_motivation{
+
                 color: $color_primary;
                 margin-top: 20px;
                 font-family: $family-regular;
@@ -225,9 +234,26 @@
                 font-size: $font-text-normal;
 
                 @include bp(tablet) {
-                    max-width: 700px;
+                    max-width: 900px;
                     margin: 30px auto 0px auto;
                     font-size: $font-link-table;
+                }
+
+                .escritorio{
+                    display: none;
+
+                    @include bp(tablet) {
+                        display: block;
+                    }
+
+                }
+
+                strong{
+
+                    @include bp(tablet) {
+                        font-family: $family-secundary;
+                    }
+
                 }
 
             }
