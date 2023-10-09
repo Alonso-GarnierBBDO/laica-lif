@@ -1461,40 +1461,40 @@ header {
     left: 0px;
     z-index: -1; }
 
-body {
-  width: 100vw; }
-  body .page_global {
+body .page_global {
+  width: 100vw;
+  margin: 100px auto 20px auto; }
+  body .page_global .page_conten {
     max-width: 1200px;
-    width: 100%;
-    margin: 100px auto 20px auto; }
-    body .page_global h1 {
-      font-family: champ;
-      font-size: 3rem;
-      color: #00943B;
-      margin-bottom: 20px; }
-    body .page_global h2,
-    body .page_global h3,
-    body .page_global h4,
-    body .page_global h5,
-    body .page_global h6 {
-      font-family: champ;
-      font-size: 2.5rem;
-      color: #00943B;
+    margin: auto; }
+  body .page_global h1 {
+    font-family: champ;
+    font-size: 3rem;
+    color: #00943B;
+    margin-bottom: 20px; }
+  body .page_global h2,
+  body .page_global h3,
+  body .page_global h4,
+  body .page_global h5,
+  body .page_global h6 {
+    font-family: champ;
+    font-size: 2.5rem;
+    color: #00943B;
+    margin: 20px auto; }
+  body .page_global .content {
+    font-family: poppints_regular;
+    font-size: 1.1rem; }
+    body .page_global .content strong {
+      font-family: poppints_bold;
+      color: #494DFB; }
+    body .page_global .content figure {
+      display: flex;
+      justify-content: center;
       margin: 20px auto; }
-    body .page_global .content {
-      font-family: poppints_regular;
-      font-size: 1.1rem; }
-      body .page_global .content strong {
-        font-family: poppints_bold;
-        color: #494DFB; }
-      body .page_global .content figure {
-        display: flex;
-        justify-content: center;
-        margin: 20px auto; }
-        body .page_global .content figure img {
-          width: 80%;
-          margin: auto;
-          border-radius: 20px; }
+      body .page_global .content figure img {
+        width: 80%;
+        margin: auto;
+        border-radius: 20px; }
 
 html,
 body,
