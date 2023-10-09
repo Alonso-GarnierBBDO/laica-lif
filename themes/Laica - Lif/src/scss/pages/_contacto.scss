@@ -166,14 +166,20 @@
 
                 @include bp(tablet) {
                     position: absolute;
-                    bottom: 15px;
-                    right: -35px;
+                    bottom: 16px;
+                    right: 20px;
                     margin-top: 0px;
                 }
 
                 .wpcf7-spinner{
                     height: 24px;   
                     width: 24px;
+
+                    @include bp(tablet) {
+                        position: absolute;
+                        right: -18px;
+                    }
+
                 }
 
                 p{
@@ -324,10 +330,17 @@
     }
 
     .wpcf7 form.sent .wpcf7-response-output{
-        margin: 1em 0px;
+        margin: 0px;
+        text-align: center;
         font-family: $family-regular;
         color: $color_background;
         position: absolute;
+
+        @include bp(tablet) {
+            margin: 1em 0px;
+            text-align: initial;
+        }
+        
     }
 
 

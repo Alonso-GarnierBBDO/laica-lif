@@ -255,10 +255,32 @@ header {
       pointer-events: none; }
       .circulo .carrousel .image_mobile img {
         width: 50px;
-        transform: rotate(6deg); }
+        transform: rotate(6deg);
+        opacity: 0;
+        animation: animationScroll 3s linear infinite; }
+
+@keyframes animationScroll {
+  0% {
+    transform: rotate(-75deg);
+    opacity: 0; }
+  50% {
+    transform: rotate(-75deg);
+    opacity: 0; }
+  60% {
+    transform: rotate(-75deg);
+    opacity: 1; }
+  80% {
+    transform: rotate(17deg);
+    opacity: 1; }
+  90% {
+    transform: rotate(17deg);
+    opacity: 1; }
+  100% {
+    transform: rotate(17deg);
+    opacity: 0; } }
       @media (min-width: 700px) {
         .circulo .carrousel .image_mobile {
-          display: none; } }
+          right: 41%; } }
     .circulo .carrousel .image_mobile.remove {
       opacity: 0; }
     .circulo .carrousel .image_escritorio {
@@ -562,7 +584,8 @@ header {
   .carrousel .slider_item {
     position: relative;
     width: 80%;
-    height: 100%; }
+    height: 100%;
+    user-select: none; }
     @media (min-width: 700px) {
       .carrousel .slider_item {
         display: flex;
@@ -580,7 +603,8 @@ header {
       transform: translateX(-17%) rotate(-10deg);
       transition: .08s linear;
       z-index: 1;
-      pointer-events: none; }
+      pointer-events: none;
+      user-select: none; }
       @media (min-width: 700px) {
         .carrousel .slider_item figure {
           width: 400px;
@@ -1276,12 +1300,16 @@ header {
       @media (min-width: 700px) {
         .contacto_main_page .content form .send {
           position: absolute;
-          bottom: 15px;
-          right: -35px;
+          bottom: 16px;
+          right: 20px;
           margin-top: 0px; } }
       .contacto_main_page .content form .send .wpcf7-spinner {
         height: 24px;
         width: 24px; }
+        @media (min-width: 700px) {
+          .contacto_main_page .content form .send .wpcf7-spinner {
+            position: absolute;
+            right: -18px; } }
       .contacto_main_page .content form .send p {
         display: flex;
         flex-flow: column;
@@ -1384,10 +1412,15 @@ header {
     font-family: poppints_regular;
     color: #FD2E02; }
   .contacto_main_page .wpcf7 form.sent .wpcf7-response-output {
-    margin: 1em 0px;
+    margin: 0px;
+    text-align: center;
     font-family: poppints_regular;
     color: #A1DB02;
     position: absolute; }
+    @media (min-width: 700px) {
+      .contacto_main_page .wpcf7 form.sent .wpcf7-response-output {
+        margin: 1em 0px;
+        text-align: initial; } }
 
 html,
 body,

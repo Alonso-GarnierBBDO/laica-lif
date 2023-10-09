@@ -12,6 +12,7 @@
         position: relative;
         width: 80%;
         height: 100%;
+        user-select: none;
 
         @include bp(tablet) {
             display: flex;
@@ -33,6 +34,7 @@
             transition: .08s linear;
             z-index: 1;
             pointer-events: none;
+            user-select: none;
 
             @include bp(tablet) {
                 width: 400px;

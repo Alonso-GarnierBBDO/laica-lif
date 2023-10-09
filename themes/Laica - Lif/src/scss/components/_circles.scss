@@ -30,44 +30,45 @@
             img{
                 width: 50px;
                 transform: rotate(6deg);
-                // opacity: 0;
+                opacity: 0;
 
-                // @include keyframes(animationScroll){
-                //     0%{
-                //         transform: rotate(-75deg);
-                //         opacity: 0;
-                //     }
-                //     50%{
-                //         transform: rotate(-75deg);
-                //         opacity: 0;
-                //     }
-                //     60%{
-                //         transform: rotate(-75deg);
-                //         opacity: 1;
-                //     }
+                @include keyframes(animationScroll){
+                    0%{
+                        transform: rotate(-75deg);
+                        opacity: 0;
+                    }
+                    50%{
+                        transform: rotate(-75deg);
+                        opacity: 0;
+                    }
+                    60%{
+                        transform: rotate(-75deg);
+                        opacity: 1;
+                    }
         
 
-                //     80%{
-                //         transform: rotate(17deg);
-                //         opacity: 1;
-                //     }
+                    80%{
+                        transform: rotate(17deg);
+                        opacity: 1;
+                    }
 
-                //     90%{
-                //         transform: rotate(17deg);
-                //         opacity: 1;
-                //     }
+                    90%{
+                        transform: rotate(17deg);
+                        opacity: 1;
+                    }
 
-                //     100%{
-                //         transform: rotate(17deg);
-                //         opacity: 0;
-                //     }
-                //   }
-                // @include animate(animationScroll, 3s, linear, infinite);
+                    100%{
+                        transform: rotate(17deg);
+                        opacity: 0;
+                    }
+                  }
+                @include animate(animationScroll, 3s, linear, infinite);
 
             }
 
             @include bp(tablet) {
-                display: none;
+                //display: none;
+                right: 41%;
             }
         }
 

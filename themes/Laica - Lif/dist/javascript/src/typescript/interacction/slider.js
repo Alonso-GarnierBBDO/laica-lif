@@ -71,11 +71,11 @@ function downEvent(element, e) {
     moveItem = true;
     element.style.cursor = 'grab';
     // Posicion inicial dle mouse
-    if (e instanceof TouchEvent) {
-        startX = e.touches[0].clientX;
-    }
-    else {
+    if (e instanceof MouseEvent) {
         startX = e.clientX;
+    }
+    else if (e instanceof TouchEvent) {
+        startX = e.touches[0].clientX;
     }
     // Reseteamos el porcentaje que movio el usuario
     porcentage = 0;
@@ -95,16 +95,19 @@ function moveEvent(element, e) {
     if (moveItem) {
         var itemMove = document.querySelector('.carrousel .image_mobile');
         if (itemMove) {
-            // itemMove.classList.add('remove')
+            itemMove.classList.add('remove');
         }
         element.style.cursor = 'grabbing';
         // Definemos la posicion del mouse en px
         var positionXMouse = void 0;
-        if (e instanceof TouchEvent) {
+        if (e instanceof MouseEvent) {
+            positionXMouse = e.clientX - startX;
+        }
+        else if (e instanceof TouchEvent) {
             positionXMouse = e.touches[0].clientX - startX;
         }
         else {
-            positionXMouse = e.clientX - startX;
+            positionXMouse = 0;
         }
         // Obtenemos la anchura del elemento para calcular el porcentage
         var widthElement = element.offsetWidth;
