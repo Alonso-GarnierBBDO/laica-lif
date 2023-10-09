@@ -831,7 +831,7 @@ header {
       margin: auto; } }
   .a_tu_manera .conten-principal .column-two {
     display: grid;
-    grid-template-columns: 60% 40%;
+    grid-template-columns: 1fr;
     position: relative; }
     @media (min-width: 700px) {
       .a_tu_manera .conten-principal .column-two {
@@ -842,7 +842,8 @@ header {
     .a_tu_manera .conten-principal .column-two h3 {
       text-transform: uppercase;
       font-family: champ;
-      color: #FFFDD7; }
+      color: #FFFDD7;
+      text-align: center; }
       @media (min-width: 700px) {
         .a_tu_manera .conten-principal .column-two h3 {
           text-align: center; } }
@@ -875,12 +876,19 @@ header {
     .a_tu_manera .conten-principal .column-two div .content {
       color: #FFFDD7;
       margin-top: 20px;
-      font-family: poppints_regular; }
+      font-family: poppints_regular;
+      text-align: center; }
       @media (min-width: 700px) {
         .a_tu_manera .conten-principal .column-two div .content {
-          margin-top: 0px; } }
+          margin-top: 0px;
+          text-align: initial; } }
       .a_tu_manera .conten-principal .column-two div .content p {
         margin-bottom: 20px; }
+        .a_tu_manera .conten-principal .column-two div .content p:first-of-type {
+          margin-bottom: 0px; }
+          @media (min-width: 700px) {
+            .a_tu_manera .conten-principal .column-two div .content p:first-of-type {
+              margin-bottom: 10px; } }
         @media (min-width: 700px) {
           .a_tu_manera .conten-principal .column-two div .content p {
             margin-bottom: 10px; }
@@ -908,6 +916,8 @@ header {
         @media (min-width: 700px) {
           .a_tu_manera .conten-principal .column-two .image img {
             border-radius: 75px; } }
+      .a_tu_manera .conten-principal .column-two .image .image_remove {
+        display: none; }
   .a_tu_manera .conten-principal .column-normal {
     position: relative; }
     .a_tu_manera .conten-principal .column-normal img {
@@ -949,7 +959,7 @@ header {
             z-index: 99; } }
       .a_tu_manera .conten-principal .column-normal.imagen div img {
         width: 100%;
-        height: 100px;
+        height: 100%;
         object-fit: cover;
         user-select: none;
         pointer-events: none; }

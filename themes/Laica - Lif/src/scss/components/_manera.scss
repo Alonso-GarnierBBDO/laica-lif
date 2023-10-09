@@ -65,7 +65,9 @@
 
         .column-two{
             display: grid;
-            grid-template-columns: 60% 40%;
+            //grid-template-columns: 60% 40%;
+            grid-template-columns: 1fr;
+
             position: relative;
 
             @include bp(tablet) {
@@ -80,6 +82,8 @@
                 text-transform: uppercase;
                 font-family: $family-primary;
                 color: $color_primary;
+
+                text-align: center;
 
                 @include bp(tablet) {
                     text-align: center;
@@ -130,13 +134,24 @@
                     color: $color_primary;
                     margin-top: 20px;
                     font-family: $family-regular;
+                    text-align: center;
 
                     @include bp(tablet) {
                         margin-top: 0px;
+                        text-align: initial;
                     }
 
                     p{
                         margin-bottom: 20px;
+
+                        &:first-of-type{
+                            margin-bottom: 0px;
+
+                            @include bp(tablet) {
+                                margin-bottom: 10px;
+                            }
+                        }
+
                         @include bp(tablet) {
                             margin-bottom: 10px;
 
@@ -180,6 +195,10 @@
                         border-radius: 75px;
                     }
 
+                }
+
+                .image_remove{
+                    display: none;
                 }
             }
 
@@ -249,7 +268,7 @@
 
                 img{
                     width: 100%;
-                    height: 100px;
+                    height: 100%;
                     object-fit: cover;
                     user-select: none;
                     pointer-events: none;

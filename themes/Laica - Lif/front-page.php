@@ -106,7 +106,7 @@
                                 $imagenID = get_theme_mod('img-principal-setting');
                                 $imagenTitlePrincipal = get_the_title($imagenID);
                             ?>
-                            <img class="mobile" src="<?= $imagenID  ?>" alt="<?= $imagenTitlePrincipal ?>">
+                            <img class="mobile image_remove" src="<?= $imagenID  ?>" alt="<?= $imagenTitlePrincipal ?>">
                         </div>
                     </div>
                 </section>
