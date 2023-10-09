@@ -20,7 +20,7 @@
                     <img src="<?= $image_two ?>" class="lif_frasco" alt="Lif contenido">
                     <section class="objects">
                         <img src="<?= get_stylesheet_directory_uri() ?>/assets/img/hoja.svg" class="hoja" alt="Hoja ilustrativa">
-                        <img src="<?= get_stylesheet_directory_uri() ?>/assets/img/naranja.svg" class="naranja" alt="Naranja ilustrativa">
+                        <img src="<?= get_stylesheet_directory_uri() ?>/assets/img/naranjaV2.svg" class="naranja" alt="Naranja ilustrativa">
                     </section>
                 </section>
                 <section class="actions">
