@@ -46,7 +46,6 @@ header{
                 &:last-of-type{
                     a,
                     a.active{
-
                         @include bp(tablet) {
                             padding: 0px 30px;
                         }
@@ -57,7 +56,7 @@ header{
                     background-color: $color_secundary;
                     border-radius: 20px;
                     color: $color_primary;
-                    padding: 4px 7px;
+                    padding: 0px 7px;
 
                     @include bp(tablet) {
                         padding: 0px 7px;
@@ -70,7 +69,7 @@ header{
                     color: $color_secundary;
                     font-size: $font-size;
                     transition: .2s ease;
-                    padding: 7px 5px;
+                    padding: 0px 5px;
                     display: block;
                     text-transform: uppercase;
                     font-family: $family-secundary;
@@ -123,14 +122,16 @@ header{
                     width: 0px;
                     height: calc(100% - 20px);
                     background-color: $color_secundary;
-                    top: 10px;
+                    top: 7px;
                     z-index: -1;
                     border-radius: 25px;
                     transition: .4s ease;
+                    padding: 3px 0px;
 
                     @include bp(tablet) {
                         height: calc(100% - 19px);
                         top: 9.5px;
+                        padding: 0px 0px;
                     }
                 }
 
