@@ -34,7 +34,7 @@
                         <?= $tituloEnlace ?>
                     </a>
                     <button class="bottom_scroll" title="Arrastrar pagina">
-                        <img src="<?= get_stylesheet_directory_uri() ?>/assets/img/arrow.svg" class="naranja" alt="Naranja ilustrativa">
+                        <img src="<?= get_stylesheet_directory_uri() ?>/assets/img/arrowV2.svg" class="naranja" alt="Naranja ilustrativa">
                     </button>
                 </section>
             </section>
