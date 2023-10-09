@@ -43,6 +43,15 @@ header{
                 list-style: none;
                 z-index: 9999;
 
+                &:last-of-type{
+                    a{
+
+                        @include bp(tablet) {
+                            padding: 5px 30px;
+                        }
+                    }
+                }
+
                 a.active{
                     background-color: $color_secundary;
                     border-radius: 20px;
