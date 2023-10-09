@@ -1422,6 +1422,80 @@ header {
         margin: 1em 0px;
         text-align: initial; } }
 
+.not-found {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  position: relative; }
+  .not-found h1 {
+    font-family: champ;
+    font-size: 10rem;
+    color: #FFFDD7; }
+  .not-found h2 {
+    font-family: champ;
+    font-size: 1.5rem;
+    color: #FFFDD7; }
+    @media (min-width: 700px) {
+      .not-found h2 {
+        font-size: 2rem; } }
+  .not-found a {
+    background-color: #00943B;
+    padding: 10px 20px;
+    margin-top: 15px;
+    text-decoration: none;
+    border-radius: 10px;
+    font-family: poppints_medium;
+    color: #FFFDD7;
+    box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0);
+    transform: translate(0px, 0px);
+    transition: .2s ease; }
+    .not-found a:hover {
+      box-shadow: 6px 5px 0px 1px rgba(0, 0, 0, 0.75);
+      transform: translate(-2px, -2px); }
+  .not-found canvas {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: -1; }
+
+body {
+  width: 100vw; }
+  body .page_global {
+    max-width: 1200px;
+    width: 100%;
+    margin: 100px auto 20px auto; }
+    body .page_global h1 {
+      font-family: champ;
+      font-size: 3rem;
+      color: #00943B;
+      margin-bottom: 20px; }
+    body .page_global h2,
+    body .page_global h3,
+    body .page_global h4,
+    body .page_global h5,
+    body .page_global h6 {
+      font-family: champ;
+      font-size: 2.5rem;
+      color: #00943B;
+      margin: 20px auto; }
+    body .page_global .content {
+      font-family: poppints_regular;
+      font-size: 1.1rem; }
+      body .page_global .content strong {
+        font-family: poppints_bold;
+        color: #494DFB; }
+      body .page_global .content figure {
+        display: flex;
+        justify-content: center;
+        margin: 20px auto; }
+        body .page_global .content figure img {
+          width: 80%;
+          margin: auto;
+          border-radius: 20px; }
+
 html,
 body,
 * {

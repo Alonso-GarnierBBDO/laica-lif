@@ -1,0 +1,53 @@
+body{
+    width: 100vw;
+
+    .page_global{
+
+        max-width: 1200px;
+        width: 100%;
+        margin: 100px auto 20px auto;
+
+        h1{
+            font-family: champ;
+            font-size: $font-size-small-v2-escritorio;
+            color: $color_secundary;
+            margin-bottom: 20px;
+        }
+
+        h2,
+        h3,
+        h4,
+        h5,
+        h6{
+            font-family: champ;
+            font-size: $font-producto-title;
+            color: $color_secundary;
+            margin: 20px auto;
+        }
+
+        .content{
+            font-family: $family-regular;
+            font-size: $font-text-normal;
+
+            strong{
+                font-family: $family-secundary;
+                color: $color-hover-send-mail;
+            }
+
+            figure{
+
+                display: flex;
+                justify-content: center;
+                margin: 20px auto;
+
+                img{
+                    width: 80%;
+                    margin: auto;
+                    border-radius: 20px;
+                }
+            }
+        }
+
+    }
+
+}

@@ -13,6 +13,7 @@ import objetos from './interacction/escritorioObjetos.js';
 import slider from './interacction/slider.js';
 import backgrounds from './backgrounds/index.js';
 import formContact from './form/contacto_form.js';
+import notFound from './404/animation.js';
 window.addEventListener('load', function () {
     menu();
     hand();
@@ -26,6 +27,7 @@ window.addEventListener('load', function () {
     slider();
     backgrounds();
     formContact();
+    notFound();
 });
 window.addEventListener('resize', function () {
     menu();
