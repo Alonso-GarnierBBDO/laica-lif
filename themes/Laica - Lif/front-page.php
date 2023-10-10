@@ -10,7 +10,7 @@
                     <img src="<?= $image_one ?>" class="lif_frasco" alt="Lif contenido">
                 </section>
                 <?php
-                    $textHomePage = get_theme_mod('title-presentation-setting');
+                    $textHomePage = get_theme_mod('home-principal-setting');
                 ?>
                 <h1 class="title_fragment"><?= $textHomePage ?></h1>
                 <section class="img_two">
@@ -47,11 +47,13 @@
                         if($count){
 
                             foreach( $allImageArray as $key => $value ){
-                    ?>
-                            <figure>
-                                <img src="<?= $value ?>" alt="Imagen de lif">
-                            </figure>
-                    <?php
+                                if($value){
+                                    ?>
+                                        <figure>
+                                            <img src="<?= $value ?>" alt="Imagen de lif">
+                                        </figure>
+                                    <?php
+                                }
                             }
 
                         }
@@ -93,7 +95,7 @@
             <section class="conten-principal">
                 <section class="column-two">
                     <div>
-                        <?php $textInit = get_theme_mod('title-presentation-setting'); ?>
+                        <?php $textInit = get_theme_mod('home-principal-setting'); ?>
                         <h3 class="title_fragment"><?= $textHomePage ?></h3>
                         <div class="content mobile">
                             <?php $textoContenPrincipal = get_theme_mod('a-tu-manera-setting-content') ?>

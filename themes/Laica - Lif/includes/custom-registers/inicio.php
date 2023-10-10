@@ -7,7 +7,7 @@
         'priority' => 120
     ));
 
-    $wp_customize->add_setting('home-presentation-setting', array(
+    $wp_customize->add_setting('home-principal-setting', array(
         'capability' => 'edit_theme_options'
     ));
 
@@ -15,7 +15,7 @@
     $wp_customize->add_control('title-control-home ', array(
         'label' => __('Titulo del inicio'),
         'section' => 'home-presentation',
-        'settings' => 'home-presentation-setting',
+        'settings' => 'home-principal-setting',
         'input_attrs' => array(
             'placeholder' => __('Escriba aquí'),
         ),

@@ -9,13 +9,14 @@
 
     <!-- Settings title  -->
     <title>
-        <?php wp_title(''); ?>
+        Lif / Tomalo a tu manera
+        <?php //wp_title(''); ?>
         <?php 
             if(wp_title('', false)){ 
-                echo ' - '; 
+                //echo ' - '; 
             } 
         ?>
-        <?php bloginfo('name'); ?>
+        <?php //bloginfo('name'); ?>
     </title>
 </head>
 <body>

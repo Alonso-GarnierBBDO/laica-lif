@@ -1513,7 +1513,8 @@ body .page_global {
     margin: 20px auto; }
   body .page_global .content {
     font-family: poppints_regular;
-    font-size: 1.1rem; }
+    font-size: 1.1rem;
+    color: #FFFDD7; }
     body .page_global .content strong {
       font-family: poppints_bold;
       color: #494DFB; }

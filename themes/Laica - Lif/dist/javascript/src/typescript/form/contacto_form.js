@@ -108,7 +108,12 @@ function setType(element, type, father, id) {
                     response = _a.sent();
                     element.innerHTML = '';
                     defaultOption = document.createElement('option');
-                    defaultOption.innerText = type;
+                    if (type == "canton") {
+                        defaultOption.innerText = 'Cantón';
+                    }
+                    else {
+                        defaultOption.innerText = type;
+                    }
                     defaultOption.value = ''; // Asignar la clave como valor de opción
                     element === null || element === void 0 ? void 0 : element.appendChild(defaultOption);
                     if (!response.ok) return [3 /*break*/, 3];
@@ -145,7 +150,12 @@ function inicializarElementos(element, type) {
     if (selectItem) {
         selectItem.innerHTML = '';
         var defaultOption = document.createElement('option');
-        defaultOption.innerText = type;
+        if (type == 'canton') {
+            defaultOption.innerText = 'Cantón';
+        }
+        else {
+            defaultOption.innerText = type;
+        }
         defaultOption.value = ''; // Asignar la clave como valor de opción
         selectItem.appendChild(defaultOption);
     }

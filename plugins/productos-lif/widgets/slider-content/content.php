@@ -52,5 +52,7 @@
 ?>
     </section>
 
+    <img src="<?= plugins_url('assets/img/hand.draw.svg', __FILE__) ?>" alt="manita de scroll" class="movimiento_manita_productos">
+
     <!--  Eeste slider contiene el punture para mover el slider -->
     <section class="nav_productos"></section>

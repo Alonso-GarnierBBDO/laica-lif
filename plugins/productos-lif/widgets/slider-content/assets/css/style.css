@@ -26,6 +26,43 @@
 
 }
 
+.movimiento_manita_productos{
+    position: absolute;
+    left: calc(50% - 30px);
+    width: 60px;
+    transform: translateY(20px);
+    animation: manitaAnimationProdutos 3s linear infinite;
+    transform: rotate(6deg);
+    opacity: 0;
+}
+
+
+@keyframes  manitaAnimationProdutos {
+    0% {
+        transform: rotate(-75deg);
+        opacity: 0;
+    }
+    50% {
+        transform: rotate(-75deg);
+        opacity: 0;
+    }
+    60% {
+        transform: rotate(-75deg);
+        opacity: 1;
+    }
+    80% {
+        transform: rotate(17deg);
+        opacity: 1;
+    }
+    90% {
+        transform: rotate(17deg);
+        opacity: 1;
+    }
+    100% {
+        transform: rotate(17deg);
+        opacity: 0;
+    }
+}
 
 .slider_productos .item{
     position: absolute;

@@ -8,6 +8,7 @@ let porcentage = 0;
 let startX = 0;
 let positionXMouse;
 let activeElement;
+let rightElement;
 let chilsAll;
 let content_puntero;
 let content_puntero_childs;
@@ -21,6 +22,8 @@ window.onload = () => {
 function initSlider(){
     
     const getFather = document.querySelector('.slider_productos');
+
+    
 
     if(getFather){
 
@@ -81,7 +84,31 @@ function activarMovimiento(father){
                 startX = e.touches[0].clientX;
                 eventDown(father)
             }
+
+            /*activeElement.onclick = () => {
+                moveActive = true;
+                porcentage = -60;
+                exitMove(father);
+
+            }*/
+
         }
+
+        /*setTimeout( () => {
+            rightElement = father.querySelectorAll('.left');
+
+            if(rightElement){
+
+                rightElement.forEach( e => {
+                    if(!e.classList.contains('active')){
+                        e.onclick = () => {
+                            console.log(e);
+                        }
+                    }
+                })
+    
+            }
+        }, 100)*/
 
         father.onmousemove = (e) => {
             eventMove(e.clientX, father);
@@ -92,10 +119,8 @@ function activarMovimiento(father){
         }
 
         if(moveActive){
-            father.onmouseup = () => {
-
+            father.onmouseup = () => { 
                 exitMove(father);
-    
             }
     
             father.onmouseleave = () => {
@@ -143,6 +168,12 @@ function exitMove(father){
 
     if(moveActive){
         moveActive = false;
+        
+        const removeMano = document.querySelector('.movimiento_manita_productos');
+
+        if(removeMano){
+            removeMano.remove()
+        }
 
         if(porcentage >= 50){
 
@@ -154,8 +185,10 @@ function exitMove(father){
 
             moveDirection('left');
 
+        }else if(porcentage == 0){
+            moveDirection('left');
         }else{
-            noMove()
+            noMove();
         }
 
         activarMovimiento(father);

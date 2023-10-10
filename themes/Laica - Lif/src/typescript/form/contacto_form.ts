@@ -92,7 +92,13 @@ const form = () => {
         // Default option
 
         const defaultOption = document.createElement('option');
-        defaultOption.innerText = type;
+
+        if(type == "canton"){
+            defaultOption.innerText = 'Cantón';    
+        }else{
+            defaultOption.innerText = type;
+        }
+        
         defaultOption.value = ''; // Asignar la clave como valor de opción
         element?.appendChild(defaultOption);
 
@@ -136,7 +142,13 @@ const form = () => {
         selectItem.innerHTML = '';
 
         const defaultOption = document.createElement('option');
-        defaultOption.innerText = type;
+
+        if(type == 'canton'){
+            defaultOption.innerText = 'Cantón';
+        }else{
+            defaultOption.innerText = type;
+        }
+        
         defaultOption.value = ''; // Asignar la clave como valor de opción
         selectItem.appendChild(defaultOption);
 
